@@ -8,7 +8,7 @@ namespace LGDP.Interaction
 {
     public class RoomTransition : MonoBehaviour, IInteractable
     {
-        public InteractionType InteractionType { get; set; }
+        [field: SerializeField] public InteractionType InteractionType { get; set; }
 
         public void Activate()
         {

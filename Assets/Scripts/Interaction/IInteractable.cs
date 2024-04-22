@@ -13,7 +13,7 @@ namespace LGDP.Interaction
 
 	public interface IInteractable
 	{
-		InteractionType InteractionType { get; set; }
+        InteractionType InteractionType { get; set; }
 		void Activate();
 	}
 }
