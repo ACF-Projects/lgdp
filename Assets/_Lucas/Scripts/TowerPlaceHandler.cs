@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP
+namespace LGDP.TowerDefense
 {
     public class TowerPlaceHandler : MonoBehaviour
     {
 
+        [Header("Tower Properties")]
         public bool IsPlaceable = true;
 
         private void Update()
