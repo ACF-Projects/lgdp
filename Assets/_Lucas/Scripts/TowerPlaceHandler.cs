@@ -22,6 +22,7 @@ namespace LGDP.TowerDefense
         {
             if (IsPlaceable)
             {
+                // TODO: Add functionality to cancel
                 RenderTowerMove();
             }
             if (IsPlaceable && Input.GetMouseButtonDown(0))
@@ -52,6 +53,7 @@ namespace LGDP.TowerDefense
             // Or else, place this tower down here
             IsPlaceable = false;
             IsPlacingTower = false;
+            // TODO: Add this tower to the blocked layer
             Globals.Money -= 100;  // TODO: This is for testing!
         }
 
