@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 603150945}
   - component: {fileID: 603150946}
   - component: {fileID: 603150947}
+  - component: {fileID: 603150948}
   m_Layer: 0
   m_Name: Main Scripts
   m_TagString: Untagged
@@ -312,6 +313,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerPrefab: {fileID: 147347580765370494, guid: 01ee2ea2e4e18af46a548086378d4e4d, type: 3}
+--- !u!114 &603150948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603150944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dfe923ea2c9fa4889a6679a45a9a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllTowerData:
+  - {fileID: 11400000, guid: 1a280d825bd500e45b3fa627d2e659f3, type: 2}
+  - {fileID: 11400000, guid: 5a8d872acf4c5cd489cc0164246ba835, type: 2}
 --- !u!1 &635586491
 GameObject:
   m_ObjectHideFlags: 0
