@@ -9,7 +9,9 @@ namespace LGDP.TowerDefense.Data
     {
         [field: SerializeField] public string Name { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
+        [field: SerializeField] public float Cost { get; protected set; }
+        [field: SerializeField] public float PlacementRadius { get; protected set; }
 
-        [field: SerializeField] public float Cost;
+        public GameObject towerPrefab;
     }
 }
