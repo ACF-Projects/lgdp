@@ -8,10 +8,15 @@ namespace LGDP.TowerDefense.Data
     public abstract class TowerData : ScriptableObject
     {
         [field: SerializeField] public string Name { get; protected set; }
+        /// <summary>
+        /// Tower Icon for UI -- should be square
+        /// </summary>
+        [field:SerializeField, ShowAssetPreview] public Sprite Icon { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
         [field: SerializeField] public float Cost { get; protected set; }
         [field: SerializeField] public float PlacementRadius { get; protected set; }
 
         public GameObject towerPrefab;
+
     }
 }
