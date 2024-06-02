@@ -11,17 +11,20 @@ namespace LGDP.TowerDefense
         [Header("Object Assignments")]
         [SerializeField] private TextMeshProUGUI _moneyText;
 
-        private void Awake()
+        private void OnEnable()
         {
-            Globals.OnMoneyChanged += () =>
-            {
-                _moneyText.text = "Money: $" + Globals.Money.ToString();
-            };
+            UpdateMoney();
+            Globals.OnMoneyChanged += UpdateMoney;
         }
 
-        private void Start()
+        private void OnDisable()
         {
-            Globals.OnMoneyChanged.Invoke();
+            Globals.OnMoneyChanged -= UpdateMoney;
+        }
+
+        private void UpdateMoney()
+        {
+            _moneyText.text = "Money: $" + Globals.Money.ToString();
         }
 
     }
