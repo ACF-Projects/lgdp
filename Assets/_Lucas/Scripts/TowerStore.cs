@@ -11,9 +11,26 @@ namespace LGDP.TowerDefense
     public class TowerStore : MonoBehaviour
     {
 
-        [field: SerializeField] public List<TowerData> AllTowerData = new();
+        public static TowerStore Instance;
+
+        public List<TowerData> AllTowerData = new();
+
+        #region Singleton Logic
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Destroy(this);
+            }
+            Instance = null;
+        }
+        #endregion
 
 #if UNITY_EDITOR
+        /// <summary>
+        /// Searches through the entire project for files of type "TowerData".
+        /// Then, clears and adds all these to the `AllTowerData` list.
+        /// </summary>
         [Button]
         public void RefreshTowerData()
         {
