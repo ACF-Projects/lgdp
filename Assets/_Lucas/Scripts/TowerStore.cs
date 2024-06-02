@@ -13,7 +13,7 @@ namespace LGDP.TowerDefense
 
         public static TowerStore Instance;
 
-        public List<TowerData> AllTowerData = new();
+        public List<TowerData> AllTowerData;
 
         #region Singleton Logic
         private void Awake()
@@ -22,7 +22,7 @@ namespace LGDP.TowerDefense
             {
                 Destroy(this);
             }
-            Instance = null;
+            Instance = this;
         }
         #endregion
 
