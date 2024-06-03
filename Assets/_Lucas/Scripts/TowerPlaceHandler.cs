@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace LGDP.TowerDefense
 {
+    [RequireComponent(typeof(Collider2D))]
     public class TowerPlaceHandler : MonoBehaviour
     {
 
@@ -53,7 +54,7 @@ namespace LGDP.TowerDefense
             // Or else, place this tower down here
             IsPlaceable = false;
             IsPlacingTower = false;
-            // TODO: Add this tower to the blocked layer
+            gameObject.layer = LayerMask.NameToLayer("Blocked");  // Don't let other towers place here
         }
 
         /// <summary>
