@@ -10,8 +10,6 @@ namespace LGDP.TowerDefense
     public class UITowerSlot : MonoBehaviour, IPointerClickHandler
     {
 
-        [Header("Prefab Assignments")]
-        [SerializeField] private GameObject _towerPrefab;
         [Header("Object Assignments")]
         [SerializeField] private TextMeshProUGUI _costText;
 
@@ -35,7 +33,7 @@ namespace LGDP.TowerDefense
             {
                 return;
             }
-            Instantiate(_towerPrefab);  // Spawn tower
+            Instantiate(_cachedData.towerPrefab);  // Spawn tower
             Globals.Money -= _cachedData.Cost;  // Decrease current funds
         }
 
