@@ -14,9 +14,10 @@ namespace LGDP.TowerDefense
         public float TowerPlaceRadius = 0.6f;  // Radius to check for collisions to allow placement
         public bool IsPlaceable = true;
 
-        private void Start()
+        private void OnEnable()
         {
             IsPlacingTower = true;
+            RenderTowerMove();  // Start this at the mouse
         }
 
         private void Update()

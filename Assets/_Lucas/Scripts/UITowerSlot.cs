@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace LGDP.TowerDefense
 {
@@ -11,6 +12,7 @@ namespace LGDP.TowerDefense
     {
 
         [Header("Object Assignments")]
+        [SerializeField] private Image _slotImage;
         [SerializeField] private TextMeshProUGUI _costText;
 
         private TowerData _cachedData;  // Set when initialized
@@ -18,6 +20,7 @@ namespace LGDP.TowerDefense
         public void Initialize(TowerData data)
         {
             _costText.text = "$" + data.Cost.ToString();
+            _slotImage.sprite = data.Icon;
             _cachedData = data;
         }
 
