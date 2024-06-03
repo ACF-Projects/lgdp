@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6620921af90f654ab19ab0f94ea4293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerPrefab: {fileID: 147347580765370494, guid: 01ee2ea2e4e18af46a548086378d4e4d, type: 3}
   _costText: {fileID: 5494195229477555934}
 --- !u!1 &4502370693689987719
 GameObject:
