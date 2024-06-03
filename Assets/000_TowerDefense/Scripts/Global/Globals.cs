@@ -8,8 +8,8 @@ namespace LGDP.TowerDefense
     public static class Globals
     {
 
-        private static int _money = 500;
-        public static int Money {
+        private static float _money = 500;
+        public static float Money {
             get => _money;
             set
             {
