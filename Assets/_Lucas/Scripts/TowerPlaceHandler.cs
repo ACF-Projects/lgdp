@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace LGDP.TowerDefense
         [Header("Tower Properties")]
         public float TowerPlaceRadius = 0.6f;  // Radius to check for collisions to allow placement
         public bool IsPlaceable = true;
+
+        public event Action OnPlaced;
 
         private void OnEnable()
         {
@@ -40,7 +43,7 @@ namespace LGDP.TowerDefense
         private void RenderTowerMove()
         {
             Vector3 posToMoveTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            posToMoveTo.z = 0;
+            posToMoveTo.z = -1;
             transform.position = posToMoveTo;
         }
 
@@ -56,6 +59,8 @@ namespace LGDP.TowerDefense
             IsPlaceable = false;
             IsPlacingTower = false;
             gameObject.layer = LayerMask.NameToLayer("Blocked");  // Don't let other towers place here
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            OnPlaced?.Invoke();
         }
 
         /// <summary>
