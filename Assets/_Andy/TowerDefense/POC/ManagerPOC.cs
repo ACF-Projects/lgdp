@@ -40,7 +40,7 @@ namespace LGDP.TowerDefense.POC
 
         private void OnEnable()
         {
-            EnemyPOC.OnEnemyKilled += EnemyPOC_OnEnemyKilled;
+            EnemyPOC .OnEnemyKilled += EnemyPOC_OnEnemyKilled;
             EnemyPOC.OnEndReached += EnemyPOC_OnEndReached;
         }
 
