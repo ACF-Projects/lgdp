@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Andy/TowerDefense/Scenes/TD_POC.unity
     guid: d08521cd44f15ee4ebcefc7ae4b2876d
+  - enabled: 1
+    path: Assets/_Lucas/Scenes/TD_SELECT.unity
+    guid: 3da06836aac3d9f448a63228ae6f1aaf
   m_configObjects: {}
