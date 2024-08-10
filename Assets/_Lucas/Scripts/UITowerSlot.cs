@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 namespace LGDP.TowerDefense
 {
+    [RequireComponent(typeof(UIDraggable))]
     public class UITowerSlot : MonoBehaviour
     {
 
@@ -19,6 +20,13 @@ namespace LGDP.TowerDefense
         private bool _isPlaceable = false;  // True if hovering over placeable area, else False
         private TowerData _cachedData;  // Set by other script when initialized
 
+        private UIDraggable _draggable;
+
+        private void Awake()
+        {
+            _draggable = GetComponent<UIDraggable>();
+        }
+
         public void Initialize(TowerData data)
         {
             _costText.text = "$" + data.Cost.ToString();
@@ -28,22 +36,28 @@ namespace LGDP.TowerDefense
 
         public void OnEnable()
         {
-            if (TryGetComponent(out UIDraggable drag))
-            {
-                drag.OnStartDrag += UIDraggable_BeginDrag;
-                drag.OnBeingDragged += UIDraggable_WhileDrag;
-                drag.OnDropped += UIDraggable_TryPlaceAt;
-            }
+            Globals.OnMoneyChanged += DisableDragIfTooPoor;
+            _draggable.OnStartDrag += UIDraggable_BeginDrag;
+            _draggable.OnBeingDragged += UIDraggable_WhileDrag;
+            _draggable.OnDropped += UIDraggable_TryPlaceAt;
         }
 
         public void OnDisable()
         {
-            if (TryGetComponent(out UIDraggable drag))
-            {
-                drag.OnStartDrag -= UIDraggable_BeginDrag;
-                drag.OnBeingDragged -= UIDraggable_WhileDrag;
-                drag.OnDropped -= UIDraggable_TryPlaceAt;
-            }
+            Globals.OnMoneyChanged -= DisableDragIfTooPoor;
+            _draggable.OnStartDrag -= UIDraggable_BeginDrag;
+            _draggable.OnBeingDragged -= UIDraggable_WhileDrag;
+            _draggable.OnDropped -= UIDraggable_TryPlaceAt;
+        }
+
+        /// <summary>
+        /// Only allow the player to drag if the player has enough money
+        /// to place the unit this slot represents.
+        /// </summary>
+        public void DisableDragIfTooPoor()
+        {
+            _draggable.enabled = Globals.Money >= _cachedData.Cost;
+            _costText.color = Globals.Money >= _cachedData.Cost ? Color.black : Color.red;
         }
 
         /// <summary>
