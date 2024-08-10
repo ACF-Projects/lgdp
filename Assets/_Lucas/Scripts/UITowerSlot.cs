@@ -66,9 +66,33 @@ namespace LGDP.TowerDefense
         /// </summary>
         public void UIDraggable_BeginDrag(Vector3 startPosition)
         {
-            _slotImage.GetComponent<RectTransform>().sizeDelta = new Vector2(_cachedData.TowerSprite.rect.width * _cachedData.SpriteScale.x, 
-                                                                             _cachedData.TowerSprite.rect.height * _cachedData.SpriteScale.y);
+            MatchUISpriteToWorldSprite(_cachedData.TowerSprite, _cachedData.SpriteScale, _slotImage.GetComponent<RectTransform>(), Camera.main);
         }
+
+        #region Code to match UI sprite to world sprite
+        /// <summary>
+        /// Given a sprite and scale for that sprite, perfectly sizes a passed in UI RectTransform
+        /// to appear like that sprite in world position.
+        /// </summary>
+        public static void MatchUISpriteToWorldSprite(Sprite worldSprite, Vector2 worldSpriteScale, RectTransform uiElement, Camera mainCamera)
+        {
+            // Calculate the world sprite's size in world units
+            Vector2 worldSpriteSizeInWorldUnits = new(
+                worldSprite.bounds.size.x * worldSpriteScale.x,
+                worldSprite.bounds.size.y * worldSpriteScale.y
+            );
+
+            // Convert world units to screen pixels
+            Vector3 worldSpriteSizeInScreenSpace = mainCamera.WorldToScreenPoint(new(worldSpriteSizeInWorldUnits.x, worldSpriteSizeInWorldUnits.y, 0))
+                                                   - mainCamera.WorldToScreenPoint(Vector3.zero);
+
+            float worldSpriteWidthInPixels = Mathf.Abs(worldSpriteSizeInScreenSpace.x);
+            float worldSpriteHeightInPixels = Mathf.Abs(worldSpriteSizeInScreenSpace.y);
+
+            // Adjust the UI element's size to match the world sprite's pixel size
+            uiElement.sizeDelta = new Vector2(worldSpriteWidthInPixels, worldSpriteHeightInPixels);
+        }
+        #endregion
 
         /// <summary>
         /// When this unit is being dragged around, check if it is colliding with
