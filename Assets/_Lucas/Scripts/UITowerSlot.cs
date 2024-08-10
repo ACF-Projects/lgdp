@@ -30,8 +30,9 @@ namespace LGDP.TowerDefense
         {
             if (TryGetComponent(out UIDraggable drag))
             {
-                drag.OnBeingDragged += WhileDrag;
-                drag.OnDropped += TryPlaceAt;
+                drag.OnStartDrag += UIDraggable_BeginDrag;
+                drag.OnBeingDragged += UIDraggable_WhileDrag;
+                drag.OnDropped += UIDraggable_TryPlaceAt;
             }
         }
 
@@ -39,12 +40,27 @@ namespace LGDP.TowerDefense
         {
             if (TryGetComponent(out UIDraggable drag))
             {
-                drag.OnBeingDragged += WhileDrag;
-                drag.OnDropped -= TryPlaceAt;
+                drag.OnStartDrag -= UIDraggable_BeginDrag;
+                drag.OnBeingDragged -= UIDraggable_WhileDrag;
+                drag.OnDropped -= UIDraggable_TryPlaceAt;
             }
         }
 
-        public void WhileDrag(Vector3 currPosition)
+        /// <summary>
+        /// When this unit begins dragging, make sure the scale mimics the
+        /// world sprite's size for full accuracy.
+        /// </summary>
+        public void UIDraggable_BeginDrag(Vector3 startPosition)
+        {
+            _slotImage.GetComponent<RectTransform>().sizeDelta = new Vector2(_cachedData.TowerSprite.rect.width * _cachedData.SpriteScale.x, 
+                                                                             _cachedData.TowerSprite.rect.height * _cachedData.SpriteScale.y);
+        }
+
+        /// <summary>
+        /// When this unit is being dragged around, check if it is colliding with
+        /// anything in world space, and edit _isPlaceable correspondingly.
+        /// </summary>
+        public void UIDraggable_WhileDrag(Vector3 currPosition)
         {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(currPosition);
 
@@ -59,7 +75,7 @@ namespace LGDP.TowerDefense
         /// Given a position in UI space, attempts to place this
         /// tower at that location. 
         /// </summary>
-        public void TryPlaceAt(Vector3 placedPosition)
+        public void UIDraggable_TryPlaceAt(Vector3 placedPosition)
         {
             // If we are hovering over an invalid spot, then we cannot place
             if (!_isPlaceable)
