@@ -22,7 +22,7 @@ namespace LGDP.TowerDefense
         public void Initialize(TowerData data)
         {
             _costText.text = "$" + data.Cost.ToString();
-            _slotImage.sprite = data.Icon;
+            _slotImage.sprite = data.UIIcon;
             _cachedData = data;
         }
 
@@ -48,8 +48,8 @@ namespace LGDP.TowerDefense
         {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(currPosition);
 
-            // TODO: The default radius for towers is 0.6f. Make this dynamic by assigning val in ScriptableObject
-            Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, 0.6f, LayerMask.GetMask("Blocked"));
+            float towerPlaceRadius = _cachedData.PlacementRadius;
+            Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, towerPlaceRadius, LayerMask.GetMask("Blocked"));
            
             // We are placeable if not colliding with blocked objects or UI objects
             _isPlaceable = col.Length == 0 && EventSystem.current.currentSelectedGameObject == null;

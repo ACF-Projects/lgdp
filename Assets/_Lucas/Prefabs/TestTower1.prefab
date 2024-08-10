@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 658008196753615934}
   - component: {fileID: -9037048357355301639}
   - component: {fileID: 262175146891765732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TestTower1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfbc03ffbd5e93a41b47933ea76f6528, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
