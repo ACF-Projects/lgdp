@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 658008196753615934}
-  - component: {fileID: 2542032421765597850}
+  - component: {fileID: -9037048357355301639}
   - component: {fileID: 262175146891765732}
   m_Layer: 0
   m_Name: TestTower1
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 5544068040496342556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2542032421765597850
+--- !u!114 &-9037048357355301639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,11 +43,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 147347580765370494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa97b38665d96f44db321a26d5b1c596, type: 3}
+  m_Script: {fileID: 11500000, guid: 64f9e0a25da09834aa251244af9d0327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPlaceRadius: 0.6
-  IsPlaceable: 1
+  visual: {fileID: 5544068040496342556}
+  cooldown: 1
+  damage: 1
+  projectileSpeed: 4
+  projectile: {fileID: 9173969704333894249, guid: 7c45dc95c56ef9a498b7a6ab90bcfbef, type: 3}
 --- !u!58 &262175146891765732
 CircleCollider2D:
   m_ObjectHideFlags: 0
