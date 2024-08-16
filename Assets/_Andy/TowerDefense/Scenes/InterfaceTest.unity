@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vCam: {fileID: 1034348355}
-  panSpeed: 0
+  panSpeed: 3
+  panBorderWidth: 150
 --- !u!4 &94309343
 Transform:
   m_ObjectHideFlags: 0
