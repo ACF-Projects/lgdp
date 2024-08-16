@@ -60,7 +60,7 @@ namespace RushHour
             OnWavesCompleted += () =>  // TODO: This is for testing purposes; can remove
             {
                 Debug.Log("All waves are done!");
-            }
+            };
             EnemyPOC.OnEndReached += (EnemyPOC enemy) => // When an enemy reaches end, decrement remaining count
             {
                 EnemiesRemaining--;
