@@ -1520,6 +1520,7 @@ GameObject:
   - component: {fileID: 1821319941}
   - component: {fileID: 1821319938}
   - component: {fileID: 1821319937}
+  - component: {fileID: 1821319942}
   m_Layer: 0
   m_Name: Main Scripts
   m_TagString: Untagged
@@ -1584,6 +1585,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyText: {fileID: 678664535}
+--- !u!114 &1821319942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821319936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3a462e5f6c9ad4bac860ddbbb39c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waypoint: {fileID: 2056626551}
+  Waves:
+  - WaveBurstInfo:
+    - EnemyData: {fileID: 11400000, guid: 36047188d09b0d74ba6b935aa7b50051, type: 2}
+      TimeBeforeSpawn: 3
+      TimeBetweenSpawns: 1
+      EnemyCount: 5
+  - WaveBurstInfo:
+    - EnemyData: {fileID: 11400000, guid: 36047188d09b0d74ba6b935aa7b50051, type: 2}
+      TimeBeforeSpawn: 1
+      TimeBetweenSpawns: 0.2
+      EnemyCount: 15
 --- !u!1 &1911247759
 GameObject:
   m_ObjectHideFlags: 0
