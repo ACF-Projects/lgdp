@@ -3,6 +3,7 @@ using LGDP.TowerDefense;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LGDP.TowerDefense.Data;
 
 namespace RushHour
 {
@@ -37,24 +38,38 @@ namespace RushHour
             if (collision.TryGetComponent<EnemyPOC>(out var enemy) && enemyList.Contains(enemy)) enemyList.Remove(enemy);
         }
 
-        private void Update()
+        /// <summary>
+        /// Initializes this tower's data.
+        /// </summary>
+        public void Init(TowerData towerData)
         {
-            GetCurrentEnemy();
-            FaceEnemy();
-            Attack();
+            visual.localScale = towerData.SpriteScale;
         }
 
-        private void GetCurrentEnemy()
+        private void Update()
+        {
+            TargetEnemy();
+            FaceEnemy();
+            TryAttack();
+        }
+
+        /// <summary>
+        /// Searches through cached enemy list, sets the `currentEnemy`
+        /// variable to the next enemy this tower should target.
+        /// </summary>
+        private void TargetEnemy()
         {
             if (enemyList.Count <= 0)
             {
                 currentEnemy = null;
                 return;
             }
-
             currentEnemy = enemyList[0];
         }
 
+        /// <summary>
+        /// Makes this tower point towards the `currentEnemy`.
+        /// </summary>
         private void FaceEnemy()
         {
             if (currentEnemy == null) return;
@@ -64,7 +79,11 @@ namespace RushHour
             visual.Rotate(0, 0, angle);
         }
 
-        private void Attack()
+        /// <summary>
+        /// Makes this tower attack the `currentEnemy` if its attack
+        /// cooldown has refreshed. Or else, does nothing.
+        /// </summary>
+        private void TryAttack()
         {
             if (currentEnemy == null) return;
             if (currentTimer > 0f) currentTimer -= Time.deltaTime;

@@ -130,7 +130,8 @@ namespace LGDP.TowerDefense
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(placedPosition);
             worldPosition.z = 0;
 
-            Instantiate(_cachedData.towerPrefab, worldPosition, Quaternion.identity);  // Spawn tower
+            GameObject obj = Instantiate(_cachedData.towerPrefab, worldPosition, Quaternion.identity);  // Spawn tower
+            obj.GetComponent<TowerHandler>().Init(_cachedData);
             Globals.Money -= _cachedData.Cost;  // Decrease current funds
         }
 
