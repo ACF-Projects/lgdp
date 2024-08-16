@@ -12,6 +12,7 @@ namespace RushHour.InputHandling
 
         public static event Action OnLeftClicked;
         public static event Action OnRightClicked;
+        public static event Action<Vector2> OnMouseMoved;
 
         private void Awake()
         {
@@ -38,6 +39,12 @@ namespace RushHour.InputHandling
             {
                 OnRightClicked?.Invoke();
             }
+        }
+
+        public void OnPan(InputAction.CallbackContext context)
+        {
+            if (context.canceled) return;
+            OnMouseMoved?.Invoke(context.ReadValue<Vector2>());
         }
 
     }
