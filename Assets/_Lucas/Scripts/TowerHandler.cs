@@ -11,6 +11,8 @@ namespace RushHour
     {
 
         [SerializeField] private Transform visual;
+        [SerializeField] private Transform effectPreview;
+        [SerializeField] private CircleCollider2D effectTrigger;
         [SerializeField] private float cooldown;
         [SerializeField] private float damage;
         [SerializeField] private float projectileSpeed;
@@ -44,6 +46,11 @@ namespace RushHour
         public void Init(TowerData towerData)
         {
             visual.localScale = towerData.SpriteScale;
+            effectPreview.GetComponent<SpriteRenderer>().sprite = towerData.EffectPreviewSprite;
+            float spriteDiameter = effectPreview.GetComponent<SpriteRenderer>().bounds.size.x; // Assuming the sprite is a circle
+            float scaleFactor = towerData.EffectRadius * 2f / spriteDiameter;
+            effectPreview.localScale = new Vector3(scaleFactor, scaleFactor);
+            effectTrigger.radius = towerData.EffectRadius;
         }
 
         private void Update()

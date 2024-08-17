@@ -15,6 +15,7 @@ namespace LGDP.TowerDefense
 
         [Header("Object Assignments")]
         [SerializeField] private Image _slotImage;
+        [SerializeField] private Image _effectPreviewImage;
         [SerializeField] private TextMeshProUGUI _costText;
 
         private bool _isPlaceable = false;  // True if hovering over placeable area, else False
@@ -32,6 +33,8 @@ namespace LGDP.TowerDefense
             _costText.text = "$" + data.Cost.ToString();
             _slotImage.sprite = data.UIIcon;
             _cachedData = data;
+            _effectPreviewImage.sprite = data.EffectPreviewSprite;
+            _effectPreviewImage.enabled = false;
         }
 
         public void OnEnable()
@@ -67,6 +70,11 @@ namespace LGDP.TowerDefense
         public void UIDraggable_BeginDrag(Vector3 startPosition)
         {
             MatchUISpriteToWorldSprite(_cachedData.TowerSprite, _cachedData.SpriteScale, _slotImage.GetComponent<RectTransform>(), Camera.main);
+
+            _effectPreviewImage.enabled = true;
+            float spriteDiameter = _cachedData.EffectPreviewSprite.bounds.size.x; // Assuming the sprite is a circle
+            float scaleFactor = _cachedData.EffectRadius * 2f / spriteDiameter; 
+            MatchUISpriteToWorldSprite(_cachedData.EffectPreviewSprite, new Vector2(scaleFactor, scaleFactor), _effectPreviewImage.GetComponent<RectTransform>(), Camera.main);
         }
 
         #region Code to match UI sprite to world sprite
@@ -102,7 +110,7 @@ namespace LGDP.TowerDefense
         {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(currPosition);
 
-            float towerPlaceRadius = _cachedData.PlacementRadius;
+            float towerPlaceRadius = _cachedData.SpriteRadius;
             Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, towerPlaceRadius, LayerMask.GetMask("Blocked"));
            
             // We are placeable if not colliding with blocked objects or UI objects
@@ -115,6 +123,7 @@ namespace LGDP.TowerDefense
         /// </summary>
         public void UIDraggable_TryPlaceAt(Vector3 placedPosition)
         {
+            _effectPreviewImage.enabled = false;
             // If we are hovering over an invalid spot, then we cannot place
             if (!_isPlaceable)
             {

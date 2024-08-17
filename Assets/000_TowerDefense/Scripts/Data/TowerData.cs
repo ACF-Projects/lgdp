@@ -11,6 +11,7 @@ namespace LGDP.TowerDefense.Data
 
         [field: Header("Tower Properties")]
         [field: SerializeField] public float Cost { get; protected set; }
+        [field: SerializeField] public float EffectRadius { get; protected set; }
 
         [field: Header("Other Tower Data")]
         [field: SerializeField] public string Name { get; protected set; }
@@ -19,6 +20,7 @@ namespace LGDP.TowerDefense.Data
         /// </summary>
         [field:SerializeField, ShowAssetPreview] public Sprite UIIcon { get; protected set; }
         [field: SerializeField, ShowAssetPreview] public Sprite TowerSprite { get; protected set; }
+        [field: SerializeField] public Sprite EffectPreviewSprite { get; protected set; }
         [field: SerializeField] public Vector2 SpriteScale { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
 
@@ -28,7 +30,7 @@ namespace LGDP.TowerDefense.Data
         /// Calculate the radius of this sprite by using the assigned Icon and SpriteScale. (uses width)
         /// Divide by two because it's the radius, not the whole width.
         /// </summary>
-        public float PlacementRadius => TowerSprite.textureRect.width / TowerSprite.pixelsPerUnit * SpriteScale.x / 2;
+        public float SpriteRadius => TowerSprite.textureRect.width / TowerSprite.pixelsPerUnit * SpriteScale.x / 2;
 
     }
 }
