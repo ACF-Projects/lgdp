@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LGDP.TowerDefense.Data;
+using DG.Tweening;
 
 namespace RushHour
 {
@@ -24,6 +25,8 @@ namespace RushHour
         private EnemyPOC currentEnemy;
 
         private float currentTimer;
+
+        private const float EFFECT_ALPHA_ON_HOVER = 0.3f;  // Opacity of effect circle when shown
 
         private void Awake()
         {
@@ -101,5 +104,32 @@ namespace RushHour
                 currentTimer = cooldown;
             }
         }
+
+        public void OnMouseEnter()
+        {
+            ShowEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+        }
+
+        public void OnMouseExit()
+        {
+            HideEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+        }
+
+        public void ShowEffectRadius()
+        {
+            SpriteRenderer previewRenderer = effectPreview.GetComponent<SpriteRenderer>();
+            DOTween.To(() => previewRenderer.color.a, 
+                x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x), 
+                EFFECT_ALPHA_ON_HOVER, 0.2f).SetEase(Ease.OutSine);
+        }
+
+        public void HideEffectRadius()
+        {
+            SpriteRenderer previewRenderer = effectPreview.GetComponent<SpriteRenderer>();
+            DOTween.To(() => previewRenderer.color.a,
+                x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x),
+                0, 0.2f).SetEase(Ease.OutSine);
+        }
+
     }
 }
