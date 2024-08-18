@@ -56,20 +56,27 @@ namespace RushHour
         private void Start()
         {
             SpawnNextWave();
-            OnAllEnemiesDead = SpawnNextWave;  // When all enemies are dead, start next wave
             OnWavesCompleted += () =>  // TODO: This is for testing purposes; can remove
             {
                 Debug.Log("All waves are done!");
             };
-            EnemyPOC.OnEndReached += (EnemyPOC enemy) => // When an enemy reaches end, decrement remaining count
-            {
-                EnemiesRemaining--;
-            };
-            EnemyPOC.OnEnemyKilled += (EnemyPOC enemy) =>  // When we kill an enemy, decrement remaining count
-            {
-                EnemiesRemaining--;
-            };
         }
+
+        private void OnEnable()
+        {
+            OnAllEnemiesDead += SpawnNextWave;
+            EnemyPOC.OnEndReached += DecrementEnemiesRemaining;
+            EnemyPOC.OnEnemyKilled += DecrementEnemiesRemaining;
+        }
+
+        private void OnDisable()
+        {
+            OnAllEnemiesDead -= SpawnNextWave;
+            EnemyPOC.OnEndReached -= DecrementEnemiesRemaining;
+            EnemyPOC.OnEnemyKilled -= DecrementEnemiesRemaining;
+        }
+
+        private void DecrementEnemiesRemaining(EnemyPOC enemy) => EnemiesRemaining--;
 
         /// <summary>
         /// Increments the current wave number and begins spawning the
