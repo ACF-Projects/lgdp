@@ -6,7 +6,7 @@ namespace RushHour
 {
     public abstract class ContextElement : MonoBehaviour
     {
-        [SerializeField] private ContextType allowedTypes;
+        [SerializeField] protected ContextType allowedTypes;
 
         private void OnEnable()
         {
@@ -20,9 +20,9 @@ namespace RushHour
 
         private void OnContextChange(object obj, ContextType contextType)
         {
-           ProcessContext(allowedTypes.HasFlag(contextType));
+           ProcessContext(obj, contextType);
         }
 
-        protected abstract void ProcessContext(bool passedCheck);
+        protected abstract void ProcessContext(object obj, ContextType contextType);
     }
 }

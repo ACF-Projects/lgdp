@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using RushHour.UserInterface;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,9 +6,10 @@ using UnityEngine;
 
 namespace RushHour
 {
-    public class InfoBar : ContextElement
+    [RequireComponent(typeof(SlideUI))]
+    public class SliderContext : ContextElement
     {
-        [SerializeField] private SlideUI slider;
+        [SerializeField, ReadOnly] private SlideUI slider;
 
         protected override void ProcessContext(object obj, ContextType contextType)
         {
@@ -21,5 +23,12 @@ namespace RushHour
                 slider.SlideOut();
             }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            slider = GetComponent<SlideUI>();
+        }
+#endif
     }
 }
