@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LGDP.TowerDefense.Data;
 using DG.Tweening;
+using System.Linq;
 
 namespace LGDP.TowerDefense.Lucas.POC
 {
@@ -66,6 +67,8 @@ namespace LGDP.TowerDefense.Lucas.POC
         /// </summary>
         private void TargetEnemy()
         {
+            // If enemies are dead in the trigger list, delete them
+            enemyList = enemyList.FindAll((e) => !e.IsDead);
             if (enemyList.Count <= 0)
             {
                 currentEnemy = null;

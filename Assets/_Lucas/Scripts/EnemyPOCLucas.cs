@@ -23,7 +23,7 @@ namespace LGDP.TowerDefense.Lucas.POC
         private float _currentHealth;
         public float CurrentHealth => _currentHealth;
 
-        private bool dead;
+        public bool IsDead { get; private set; }
 
         public void Init(WaypointPOC waypoint, EnemyData enemyData)
         {
@@ -31,12 +31,12 @@ namespace LGDP.TowerDefense.Lucas.POC
             _enemyData = enemyData;
             currentWaypoint = 0;
             _currentHealth = enemyData.Health;
-            dead = false;
+            IsDead = false;
         }
 
         private void Update()
         {
-            if (!dead)
+            if (!IsDead)
             {
                 CheckWaypoint();
                 Rotate();
@@ -75,17 +75,19 @@ namespace LGDP.TowerDefense.Lucas.POC
 
         public void TakeDamage(float damage)
         {
-            if (dead) return;
+            if (IsDead) return;
             _currentHealth -= damage;
-            if (_currentHealth <= 0 && !dead)
+            if (_currentHealth <= 0 && !IsDead)
             {
                 _currentHealth = 0;
                 OnEnemyKilled?.Invoke(this);
-                dead = true;
+                IsDead = true;
                 // If this enemy should go to the store, make them do that
                 if (TryGetComponent(out EnemyGoToStore enemyGoToStore))
                 {
                     enemyGoToStore.TrackStore();
+                    // Then, disable this sprite (no longer trackable by towers)
+                    enabled = false;
                 }
             }
             else
