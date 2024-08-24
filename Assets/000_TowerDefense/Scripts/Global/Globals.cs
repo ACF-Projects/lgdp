@@ -18,7 +18,19 @@ namespace LGDP.TowerDefense
             }
         }
 
+        private static int _timer;
+        public static int Timer
+        {
+            get => _timer;
+            set
+            {
+                _timer = value;
+                OnTimerChanged?.Invoke(value);
+            }
+        }
+
         public static Action OnMoneyChanged = null;
+        public static Action<int> OnTimerChanged = null;  // Param is current time
 
     }
 }
