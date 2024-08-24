@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: -495943331199601483}
   - component: {fileID: 2679028367463983193}
   - component: {fileID: 1673285292278166503}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: TestTower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
