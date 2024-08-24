@@ -53,7 +53,7 @@ namespace LGDP.TowerDefense.Lucas.POC
         /// </summary>
         private void TryPlaceTower()
         {
-            Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, TowerPlaceRadius, LayerMask.GetMask("Blocked"));
+            Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, TowerPlaceRadius, LayerMask.GetMask("Blocked") | LayerMask.GetMask("Obstacle"));
             if (col.Length != 0) return;  // If colliding with blockable, do not place
             // Or else, place this tower down here
             IsPlaceable = false;

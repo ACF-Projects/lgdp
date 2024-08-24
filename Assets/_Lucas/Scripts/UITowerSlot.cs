@@ -111,7 +111,7 @@ namespace LGDP.TowerDefense.Lucas.POC
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(currPosition);
 
             float towerPlaceRadius = _cachedData.SpriteRadius;
-            Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, towerPlaceRadius, LayerMask.GetMask("Blocked"));
+            Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, towerPlaceRadius, LayerMask.GetMask("Blocked", "Obstacle"));
            
             // We are placeable if not colliding with blocked objects or UI objects
             _isPlaceable = col.Length == 0 && EventSystem.current.currentSelectedGameObject == null;
