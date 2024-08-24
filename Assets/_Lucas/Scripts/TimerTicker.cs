@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace LGDP.TowerDefense.Lucas.POC
 {
+    /// <summary>
+    /// Each instance of an object with this script will tick
+    /// the timer up by one every second.
+    /// </summary>
     public class TimerTicker : MonoBehaviour
     {
 

@@ -43,6 +43,8 @@ namespace LGDP.TowerDefense.Lucas.POC
 
         /// <summary>
         /// Initializes this tower's data.
+        /// 
+        /// Also logs this unit's salary into Globals.
         /// </summary>
         public void Init(TowerData towerData)
         {
@@ -52,6 +54,9 @@ namespace LGDP.TowerDefense.Lucas.POC
             float scaleFactor = towerData.EffectRadius * 2f / spriteDiameter;
             effectPreview.localScale = new Vector3(scaleFactor, scaleFactor);
             effectTrigger.radius = towerData.EffectRadius;
+
+            // Log salary per hour
+            Globals.SalaryPerHour += towerData.SalaryPerHour;
         }
 
         private void Update()

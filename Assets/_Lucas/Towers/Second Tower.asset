@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Second Tower
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 250
+  <SalaryPerHour>k__BackingField: 120
   <EffectRadius>k__BackingField: 2
   <Name>k__BackingField: HI
   <UIIcon>k__BackingField: {fileID: 21300000, guid: 97f5a28c46858f144a48856ae99fc70a, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace LGDP.TowerDefense.Lucas.POC
 {
+    [Obsolete("Replaced with UIDraggable and UITowerSlot")]
     [RequireComponent(typeof(Collider2D))]
     public class TowerPlaceHandler : MonoBehaviour
     {

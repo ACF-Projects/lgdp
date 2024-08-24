@@ -11,6 +11,7 @@ namespace LGDP.TowerDefense.Data
 
         [field: Header("Tower Properties")]
         [field: SerializeField] public float Cost { get; protected set; }
+        [field: SerializeField] public float SalaryPerHour { get; protected set; }
         [field: SerializeField] public float EffectRadius { get; protected set; }
 
         [field: Header("Other Tower Data")]
