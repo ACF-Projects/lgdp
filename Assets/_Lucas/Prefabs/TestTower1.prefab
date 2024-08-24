@@ -54,7 +54,7 @@ MonoBehaviour:
   cooldown: 1
   damage: 1
   projectileSpeed: 4
-  projectile: {fileID: 9173969704333894249, guid: 7c45dc95c56ef9a498b7a6ab90bcfbef, type: 3}
+  projectile: {fileID: 6091352775172332683, guid: 56188de7f1d146743be9103f45cc4acf, type: 3}
 --- !u!58 &262175146891765732
 CircleCollider2D:
   m_ObjectHideFlags: 0

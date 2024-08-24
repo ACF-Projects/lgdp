@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace LGDP.TowerDefense
+namespace LGDP.TowerDefense.Lucas.POC
 {
     public class UIMoneyHandler : MonoBehaviour
     {

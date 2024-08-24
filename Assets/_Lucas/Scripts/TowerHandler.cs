@@ -1,12 +1,9 @@
-using LGDP.TowerDefense.POC;
-using LGDP.TowerDefense;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LGDP.TowerDefense.Data;
 using DG.Tweening;
 
-namespace RushHour
+namespace LGDP.TowerDefense.Lucas.POC
 {
     public class TowerHandler : MonoBehaviour
     {
@@ -18,11 +15,11 @@ namespace RushHour
         [SerializeField] private float damage;
         [SerializeField] private float projectileSpeed;
 
-        [SerializeField] private ProjectilePOC projectile;
+        [SerializeField] private ProjectilePOCLucas projectile;
 
-        private List<EnemyPOC> enemyList;
+        private List<EnemyPOCLucas> enemyList;
 
-        private EnemyPOC currentEnemy;
+        private EnemyPOCLucas currentEnemy;
 
         private float currentTimer;
 
@@ -35,12 +32,12 @@ namespace RushHour
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<EnemyPOC>(out var enemy)) enemyList.Add(enemy);
+            if (collision.TryGetComponent<EnemyPOCLucas>(out var enemy)) enemyList.Add(enemy);
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<EnemyPOC>(out var enemy) && enemyList.Contains(enemy)) enemyList.Remove(enemy);
+            if (collision.TryGetComponent<EnemyPOCLucas>(out var enemy) && enemyList.Contains(enemy)) enemyList.Remove(enemy);
         }
 
         /// <summary>

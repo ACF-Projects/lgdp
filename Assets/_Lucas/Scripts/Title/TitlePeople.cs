@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP
+namespace LGDP.TowerDefense.Lucas.POC
 {
     /// <summary>
     /// Given two endpoints, spawns people prefabs that move from

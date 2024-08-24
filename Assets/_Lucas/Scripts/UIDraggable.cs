@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace RushHour
+namespace LGDP.TowerDefense.Lucas.POC
 {
     public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {

@@ -4,9 +4,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
-namespace RushHour
+namespace LGDP.TowerDefense.Lucas.POC
 {
     [System.Serializable]
     public struct BurstInfo
@@ -65,18 +64,18 @@ namespace RushHour
         private void OnEnable()
         {
             OnAllEnemiesDead += SpawnNextWave;
-            EnemyPOC.OnEndReached += DecrementEnemiesRemaining;
-            EnemyPOC.OnEnemyKilled += DecrementEnemiesRemaining;
+            EnemyPOCLucas.OnEndReached += DecrementEnemiesRemaining;
+            EnemyPOCLucas.OnEnemyKilled += DecrementEnemiesRemaining;
         }
 
         private void OnDisable()
         {
             OnAllEnemiesDead -= SpawnNextWave;
-            EnemyPOC.OnEndReached -= DecrementEnemiesRemaining;
-            EnemyPOC.OnEnemyKilled -= DecrementEnemiesRemaining;
+            EnemyPOCLucas.OnEndReached -= DecrementEnemiesRemaining;
+            EnemyPOCLucas.OnEnemyKilled -= DecrementEnemiesRemaining;
         }
 
-        private void DecrementEnemiesRemaining(EnemyPOC enemy) => EnemiesRemaining--;
+        private void DecrementEnemiesRemaining(EnemyPOCLucas enemy) => EnemiesRemaining--;
 
         /// <summary>
         /// Increments the current wave number and begins spawning the
@@ -108,7 +107,7 @@ namespace RushHour
             yield return new WaitForSeconds(burst.TimeBeforeSpawn);
             for (int i = 0; i < burst.EnemyCount; i++)
             {
-                var enemyObj = Instantiate(burst.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyPOC>();
+                var enemyObj = Instantiate(burst.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyPOCLucas>();
                 enemyObj.Init(_waypoint, burst.EnemyData);
                 _enemiesRemaining++;
                 yield return new WaitForSeconds(burst.TimeBetweenSpawns);

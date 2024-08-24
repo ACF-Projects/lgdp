@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace LGDP
+namespace LGDP.TowerDefense.Lucas.POC
 {
     public class UILevelHandler : MonoBehaviour
     {

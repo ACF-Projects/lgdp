@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP.TowerDefense
+namespace LGDP.TowerDefense.Lucas.POC
 {
     [RequireComponent(typeof(Collider2D))]
     public class TowerPlaceHandler : MonoBehaviour

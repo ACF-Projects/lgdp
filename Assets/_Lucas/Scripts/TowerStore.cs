@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace LGDP.TowerDefense
+namespace LGDP.TowerDefense.Lucas.POC
 {
     public class TowerStore : MonoBehaviour
     {
