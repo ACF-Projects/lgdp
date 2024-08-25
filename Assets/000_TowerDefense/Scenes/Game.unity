@@ -873,6 +873,7 @@ GameObject:
   - component: {fileID: 681709507}
   - component: {fileID: 681709506}
   - component: {fileID: 681709505}
+  - component: {fileID: 681709510}
   m_Layer: 0
   m_Name: Main Scripts
   m_TagString: Untagged
@@ -960,6 +961,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &681709510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681709504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac95cacb9379ce4790500efb0689d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentContext: 0
 --- !u!1 &807372080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1719,7 @@ GameObject:
   - component: {fileID: 1501747052}
   - component: {fileID: 1501747051}
   - component: {fileID: 1501747050}
+  - component: {fileID: 1501747053}
   - component: {fileID: 1501747049}
   m_Layer: 5
   m_Name: TowerShop
@@ -1812,6 +1827,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501747047}
   m_CullTransparentMesh: 1
+--- !u!114 &1501747053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501747047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c787160354b1247a82576aa93bac41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedTypes: 2
+  slider: {fileID: 1501747050}
 --- !u!1 &1518047673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1883,8 @@ GameObject:
   - component: {fileID: 1537858574}
   - component: {fileID: 1537858576}
   - component: {fileID: 1537858575}
+  - component: {fileID: 1537858578}
+  - component: {fileID: 1537858577}
   m_Layer: 5
   m_Name: ContextMenu
   m_TagString: Untagged
@@ -1918,6 +1949,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537858573}
   m_CullTransparentMesh: 1
+--- !u!114 &1537858577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537858573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c787160354b1247a82576aa93bac41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedTypes: 4
+  slider: {fileID: 1537858578}
+--- !u!114 &1537858578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537858573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5bcdc5f91e046d4ca94e85f520bab54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 1537858574}
+  horizontal: 0
+  inPosition: 150
+  outPosition: -125
+  duration: 0.35
+  easeType: 4
 --- !u!1 &1595125889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2634,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911750900}
   m_CullTransparentMesh: 1
+--- !u!1001 &1926724105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3587202372717006285, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_Name
+      value: InputHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425196284660937684, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1375c91bf4e43eb47ba974a3bca72831, type: 3}
 --- !u!1 &1933452371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,6 +2703,7 @@ GameObject:
   - component: {fileID: 1933452375}
   - component: {fileID: 1933452374}
   - component: {fileID: 1933452373}
+  - component: {fileID: 1933452376}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -2652,19 +2773,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1933452374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1501747050}
-        m_TargetAssemblyTypeName: RushHour.SlideUI, Assembly-CSharp
-        m_MethodName: SlideIn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1933452374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2703,6 +2812,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933452371}
   m_CullTransparentMesh: 1
+--- !u!114 &1933452376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933452371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0559bd27a1fb94883e131835cd6312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: 2
+  button: {fileID: 1933452373}
 --- !u!1 &2014951726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +3027,7 @@ SceneRoots:
   - {fileID: 664636390}
   - {fileID: 681709509}
   - {fileID: 273858273}
+  - {fileID: 1926724105}
   - {fileID: 1098837626}
   - {fileID: 63305828}
   - {fileID: 2014951727}
