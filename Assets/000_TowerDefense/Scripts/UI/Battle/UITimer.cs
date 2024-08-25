@@ -5,7 +5,7 @@ using System.Transactions;
 using TMPro;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     /// <summary>
     /// Updates some fields based on the Globals timer variable.

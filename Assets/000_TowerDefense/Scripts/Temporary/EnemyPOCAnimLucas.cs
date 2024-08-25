@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class EnemyPOCAnimLucas : MonoBehaviour
     {

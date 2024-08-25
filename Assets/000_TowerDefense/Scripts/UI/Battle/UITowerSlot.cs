@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     [RequireComponent(typeof(UIDraggable))]
     public class UITowerSlot : MonoBehaviour

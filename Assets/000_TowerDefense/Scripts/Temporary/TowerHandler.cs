@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using LGDP.TowerDefense.Data;
 using DG.Tweening;
-using System.Linq;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class TowerHandler : MonoBehaviour
     {

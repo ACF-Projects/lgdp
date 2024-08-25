@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class TowerStore : MonoBehaviour
     {

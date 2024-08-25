@@ -1,7 +1,6 @@
-using LGDP.TowerDefense.Lucas.POC;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class ProjectilePOCLucas : MonoBehaviour
     {

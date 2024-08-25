@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class UIMoneyHandler : MonoBehaviour
     {

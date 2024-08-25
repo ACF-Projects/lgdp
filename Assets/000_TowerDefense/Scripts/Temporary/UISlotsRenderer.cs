@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour
 {
     public class UISlotsRenderer : MonoBehaviour
     {
