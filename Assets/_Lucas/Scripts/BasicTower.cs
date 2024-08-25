@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace LGDP.TowerDefense.Lucas.POC
 {
-    [CreateAssetMenu(menuName = "TowerDefense/TestTowerData", fileName = "New TestTowerData")]
-    public class TestTowerData : TowerData
+    [CreateAssetMenu(menuName = "TowerDefense/Basic Tower", fileName = "New Basic Tower")]
+    public class BasicTower : TowerData
     {
         
 
