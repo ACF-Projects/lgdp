@@ -2884,12 +2884,16 @@ MonoBehaviour:
   _waypoint: {fileID: 1609363656}
   Waves:
   - WaveBurstInfo:
-    - EnemyData: {fileID: 11400000, guid: 1b9587042e56ec64c9141b79d786ac9f, type: 2}
+    - EnemyData: {fileID: 11400000, guid: 34b2116b8ffd2fb4da4c85b32fe83e27, type: 2}
       TimeBeforeSpawn: 3
       TimeBetweenSpawns: 1
       EnemyCount: 5
+    - EnemyData: {fileID: 11400000, guid: 9a7cc3828c66b0f42ac638a8e4dfb319, type: 2}
+      TimeBeforeSpawn: 3
+      TimeBetweenSpawns: 3
+      EnemyCount: 2
   - WaveBurstInfo:
-    - EnemyData: {fileID: 11400000, guid: 1b9587042e56ec64c9141b79d786ac9f, type: 2}
+    - EnemyData: {fileID: 11400000, guid: 34b2116b8ffd2fb4da4c85b32fe83e27, type: 2}
       TimeBeforeSpawn: 1
       TimeBetweenSpawns: 0.2
       EnemyCount: 15
