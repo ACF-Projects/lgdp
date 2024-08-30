@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RushHour
+namespace RushHour.Lucas.POC
 {
     public class SceneSwitcher : MonoBehaviour
     {
