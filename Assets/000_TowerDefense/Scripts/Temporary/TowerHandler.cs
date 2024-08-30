@@ -88,7 +88,9 @@ namespace RushHour
         {
             if (currentEnemy == null) return;
             Vector3 targetPos = currentEnemy.transform.position - transform.position;
-            float angle = Vector3.SignedAngle(visual.up, targetPos, visual.forward);
+
+            // Add 180 to the angle to account for offset (unit will be facing opposite way otherwise)
+            float angle = Vector3.SignedAngle(visual.up, targetPos, visual.forward) + 180f; 
 
             visual.Rotate(0, 0, angle);
         }
