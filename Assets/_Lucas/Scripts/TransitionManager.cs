@@ -30,12 +30,10 @@ namespace Lucas
         {
             if (Instance != this)
             {
-                Debug.Log("Destroying lol");
                 Destroy(this);
             }
             if (HasFadedInFromPrevScene)
             {
-                Debug.Log("Fading out");
                 TransitionFadeOut();
             }
         }
