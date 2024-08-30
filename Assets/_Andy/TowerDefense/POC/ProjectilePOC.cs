@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.POC
+namespace RushHour.POC
 {
     public class ProjectilePOC : MonoBehaviour
     {

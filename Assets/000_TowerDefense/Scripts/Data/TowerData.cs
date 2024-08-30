@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace LGDP.TowerDefense.Data
+namespace RushHour.Data
 {
     public abstract class TowerData : ScriptableObject
     {

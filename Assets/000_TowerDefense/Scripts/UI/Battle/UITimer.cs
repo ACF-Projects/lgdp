@@ -5,7 +5,7 @@ using System.Transactions;
 using TMPro;
 using UnityEngine;
 
-namespace RushHour
+namespace RushHour.UserInterface
 {
     /// <summary>
     /// Updates some fields based on the Globals timer variable.

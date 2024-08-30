@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using LGDP.TowerDefense.Data;
+using RushHour.Data;
 using DG.Tweening;
 
 namespace RushHour

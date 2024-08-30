@@ -1,10 +1,10 @@
-using LGDP.TowerDefense.Data;
+using RushHour.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.POC
+namespace RushHour.POC
 {
     public class EnemyPOC : MonoBehaviour
     {

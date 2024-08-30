@@ -1,9 +1,9 @@
-using LGDP.TowerDefense.Data;
+using RushHour.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LGDP.TowerDefense.Lucas.POC
+namespace RushHour.Data
 {
     [CreateAssetMenu(menuName = "TowerDefense/SimpleTowerData", fileName = "New SimpleTowerData")]
     public class SimpleTowerData : TowerData
