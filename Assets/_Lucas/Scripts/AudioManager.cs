@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RushHour
+namespace Lucas
 {
     [RequireComponent(typeof(AudioSource))]
     public class AudioManager : MonoBehaviour
@@ -22,6 +22,7 @@ namespace RushHour
         }
 
         private AudioSource _audioSource;
+        private float _audioVolume = 1;
 
         private void Awake()
         {
@@ -38,7 +39,15 @@ namespace RushHour
         /// </summary>
         public void PlayOneShot(AudioClip sfx, float volume = 1)
         {
-            _audioSource.PlayOneShot(sfx, volume);
+            _audioSource.PlayOneShot(sfx, volume * _audioVolume);
+        }
+
+        /// <summary>
+        /// Sets the global volume of this player's audio source.
+        /// </summary>
+        public void SetVolume(float volume)
+        {
+            _audioVolume = volume;
         }
 
     }
