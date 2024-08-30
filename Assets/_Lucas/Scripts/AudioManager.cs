@@ -7,7 +7,7 @@ namespace Lucas
 
     public enum SoundEffect
     {
-        InsufficientFunds = 0, InvalidPlacement = 1
+        InsufficientFunds = 0, InvalidPlacement = 1, Chaching = 2
     }
 
     [RequireComponent(typeof(AudioSource))]
@@ -30,6 +30,7 @@ namespace Lucas
         [Header("Cached Sound Effects")]
         [SerializeField] private AudioClip _insufficientFundsSFX;
         [SerializeField] private AudioClip _invalidPlacementSFX;
+        [SerializeField] private AudioClip _chachingSFX;
 
         private AudioSource _audioSource;
         private float _audioVolume = 1;
@@ -66,6 +67,9 @@ namespace Lucas
                     break;
                 case SoundEffect.InvalidPlacement: 
                     _audioSource.PlayOneShot(_invalidPlacementSFX, 0.6f * volumeScale);
+                    break;
+                case SoundEffect.Chaching:
+                    _audioSource.PlayOneShot(_chachingSFX, 0.6f * volumeScale);
                     break;
             }
         }

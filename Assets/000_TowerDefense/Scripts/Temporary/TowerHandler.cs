@@ -47,6 +47,7 @@ namespace RushHour
         /// </summary>
         public void Init(TowerData towerData)
         {
+            visual.GetComponent<SpriteRenderer>().sprite = towerData.TowerSprite;
             visual.localScale = towerData.SpriteScale;
             effectPreview.GetComponent<SpriteRenderer>().sprite = towerData.EffectPreviewSprite;
             float spriteDiameter = effectPreview.GetComponent<SpriteRenderer>().bounds.size.x; // Assuming the sprite is a circle

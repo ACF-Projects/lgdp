@@ -3089,14 +3089,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2694101784251733182, guid: 50092fd509bc7db48b91d7ad575b2f17, type: 3}
-      propertyPath: _invalidPlacementSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 60da8fa2721907f488b73d86393ba536, type: 3}
-    - target: {fileID: 2694101784251733182, guid: 50092fd509bc7db48b91d7ad575b2f17, type: 3}
-      propertyPath: _insufficientFundsSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 837d461bcca84354b927a5391f440f1c, type: 3}
     - target: {fileID: 7463285347891490393, guid: 50092fd509bc7db48b91d7ad575b2f17, type: 3}
       propertyPath: m_Name
       value: AudioManager

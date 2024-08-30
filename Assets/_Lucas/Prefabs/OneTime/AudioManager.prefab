@@ -141,3 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0ffc5f3367349449328742ccae54a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _insufficientFundsSFX: {fileID: 8300000, guid: 837d461bcca84354b927a5391f440f1c, type: 3}
+  _invalidPlacementSFX: {fileID: 8300000, guid: 60da8fa2721907f488b73d86393ba536, type: 3}
+  _chachingSFX: {fileID: 8300000, guid: 539684d5fcde10a4ab8de2953f4a052a, type: 3}
