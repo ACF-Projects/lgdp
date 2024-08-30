@@ -12,7 +12,7 @@ namespace RushHour
         [Header("References")]
         [SerializeField] private CinemachineVirtualCamera vCam;
 
-        private Transform followTarget;
+        private Rigidbody2D followTarget;
 
         [Header("Settings")]
         [SerializeField] private float panSpeed;
@@ -22,7 +22,7 @@ namespace RushHour
 
         private void Awake()
         {
-            followTarget = vCam.Follow;
+            followTarget = vCam.Follow.GetComponent<Rigidbody2D>();
             direction = Vector2.zero;
         }
 
@@ -36,13 +36,6 @@ namespace RushHour
             MouseReceiver.OnMouseMoved -= TryPanCamera;
         }
 
-        private void Update()
-        {
-            if (direction.sqrMagnitude == 0) return;
-
-            followTarget.position += panSpeed * Time.deltaTime * (Vector3)direction;
-        }
-
         private void TryPanCamera(Vector2 pos)
         {
             direction = Vector2.zero;
@@ -50,6 +43,8 @@ namespace RushHour
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
             GetPanDirection(pos.x, pos.y);
+
+            followTarget.velocity = direction * panSpeed;
         }
 
         private void GetPanDirection(float x, float y)

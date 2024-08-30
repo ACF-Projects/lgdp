@@ -76,6 +76,12 @@ namespace RushHour
                 {
                     entity.Interact();
                 }
+                else
+                {
+                    // Hit Nothing
+                    ChangeContext(ContextType.None);
+                    return;
+                }
             }
         }
 
