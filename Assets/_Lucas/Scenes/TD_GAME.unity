@@ -2843,6 +2843,7 @@ GameObject:
   - component: {fileID: 2054535463}
   - component: {fileID: 2054535456}
   - component: {fileID: 2054535455}
+  - component: {fileID: 2054535464}
   m_Layer: 0
   m_Name: Main Scripts
   m_TagString: Untagged
@@ -2947,6 +2948,19 @@ MonoBehaviour:
       TimeBeforeSpawn: 1
       TimeBetweenSpawns: 0.2
       EnemyCount: 15
+--- !u!114 &2054535464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054535454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471744a298fad0241af8c7fe445eb90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialAnimator: {fileID: 0}
 --- !u!1 &2094686647
 GameObject:
   m_ObjectHideFlags: 0
