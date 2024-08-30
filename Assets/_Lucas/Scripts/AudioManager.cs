@@ -57,15 +57,15 @@ namespace Lucas
         /// the same audio clips. Use the `AudioType` enum instead to
         /// do this.
         /// </summary>
-        public void PlayOneShot(SoundEffect sfx, float volume = 1)
+        public void PlayOneShot(SoundEffect sfx, float volumeScale = 1)
         {
             switch (sfx)
             {
                 case SoundEffect.InsufficientFunds:
-                    _audioSource.PlayOneShot(_insufficientFundsSFX, volume);
+                    _audioSource.PlayOneShot(_insufficientFundsSFX, 0.6f * volumeScale);
                     break;
                 case SoundEffect.InvalidPlacement: 
-                    _audioSource.PlayOneShot(_invalidPlacementSFX, volume);
+                    _audioSource.PlayOneShot(_invalidPlacementSFX, 0.6f * volumeScale);
                     break;
             }
         }

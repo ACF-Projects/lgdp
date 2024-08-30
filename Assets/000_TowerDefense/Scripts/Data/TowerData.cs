@@ -24,6 +24,9 @@ namespace RushHour.Data
         [field: SerializeField] public Sprite EffectPreviewSprite { get; protected set; }
         [field: SerializeField] public Vector2 SpriteScale { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
+        [Header("Audio Data (Optional)")]
+        [field: SerializeField] public AudioClip PlacementSFX;  // Sound to play after placing
+        [field: SerializeField] public float PlacementSFXVolume = 1;
 
         public GameObject towerPrefab;
 

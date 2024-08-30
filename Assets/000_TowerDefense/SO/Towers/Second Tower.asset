@@ -16,9 +16,11 @@ MonoBehaviour:
   <SalaryPerHour>k__BackingField: 120
   <EffectRadius>k__BackingField: 2
   <Name>k__BackingField: HI
-  <UIIcon>k__BackingField: {fileID: 21300000, guid: 97f5a28c46858f144a48856ae99fc70a, type: 3}
-  <TowerSprite>k__BackingField: {fileID: 21300000, guid: 97f5a28c46858f144a48856ae99fc70a, type: 3}
+  <UIIcon>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
+  <TowerSprite>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
   <EffectPreviewSprite>k__BackingField: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   <SpriteScale>k__BackingField: {x: 0.3, y: 0.3}
   <Description>k__BackingField: 
+  PlacementSFX: {fileID: 8300000, guid: 78307393aca91014682336d5c24ecab4, type: 3}
+  PlacementSFXVolume: 0.8
   towerPrefab: {fileID: 5843096298518568633, guid: 11d06c32b0285cb4a9a9ef8e195ffdf5, type: 3}

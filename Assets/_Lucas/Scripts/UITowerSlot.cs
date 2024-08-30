@@ -17,6 +17,8 @@ namespace Lucas
         [SerializeField] private Image _slotImage;
         [SerializeField] private Image _effectPreviewImage;
         [SerializeField] private TextMeshProUGUI _costText;
+        [Header("Audio Assignments")]
+        [SerializeField] private AudioClip _placedUnitSFX;
 
         private bool _isPlaceable = false;  // True if hovering over placeable area, else False
         private TowerData _cachedData;  // Set by other script when initialized
@@ -132,12 +134,14 @@ namespace Lucas
             // If we are hovering over an invalid spot, then we cannot place
             if (!_isPlaceable)
             {
+                AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
                 return;
             }
 
             // If we don't have sufficient funds, then we also cannot place
             if (Globals.Money < _cachedData.Cost)
             {
+                AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
                 return;
             }
 
@@ -147,6 +151,14 @@ namespace Lucas
             GameObject obj = Instantiate(_cachedData.towerPrefab, worldPosition, Quaternion.identity);  // Spawn tower
             obj.GetComponent<TowerHandler>().Init(_cachedData);
             Globals.Money -= _cachedData.Cost;  // Decrease current funds
+
+            AudioManager.Instance.PlayOneShot(_placedUnitSFX, 0.6f);  // Play sound effect when placed
+
+            // If the unit has a unique placement sound effect, also play that too
+            if (_cachedData.PlacementSFX != null)
+            {
+                AudioManager.Instance.PlayOneShot(_cachedData.PlacementSFX, _cachedData.PlacementSFXVolume);
+            }
         }
 
     }
