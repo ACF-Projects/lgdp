@@ -929,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9941cfe01a7ee4b985cb8c7a8a9483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiTowerSlotPrefab: {fileID: 9017385417608212896, guid: f260f0d838bd87640a95b037543c1f7f, type: 3}
+  _uiTowerSlotPrefab: {fileID: 4396496427572530397, guid: 8b98c1c6ec29f034d88e2e4009515bfd, type: 3}
   _slotParentTransform: {fileID: 1501747048}
 --- !u!114 &681709508
 MonoBehaviour:
