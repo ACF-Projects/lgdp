@@ -2889,8 +2889,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllTowerData:
-  - {fileID: 11400000, guid: 1a280d825bd500e45b3fa627d2e659f3, type: 2}
-  - {fileID: 11400000, guid: 5a8d872acf4c5cd489cc0164246ba835, type: 2}
+  - {fileID: 11400000, guid: 49ea12b2056c4474ab20740b0077df26, type: 2}
+  - {fileID: 11400000, guid: b60e23ad0755c6e48aacf61962cf71da, type: 2}
 --- !u!4 &2054535460
 Transform:
   m_ObjectHideFlags: 0
