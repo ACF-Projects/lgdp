@@ -2838,7 +2838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054535460}
-  - component: {fileID: 2054535459}
+  - component: {fileID: 2054535465}
   - component: {fileID: 2054535461}
   - component: {fileID: 2054535463}
   - component: {fileID: 2054535456}
@@ -2876,21 +2876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df10e069cba4e940b2dd94ef74585c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2054535459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054535454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01dfe923ea2c9fa4889a6679a45a9a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllTowerData:
-  - {fileID: 11400000, guid: 49ea12b2056c4474ab20740b0077df26, type: 2}
-  - {fileID: 11400000, guid: b60e23ad0755c6e48aacf61962cf71da, type: 2}
 --- !u!4 &2054535460
 Transform:
   m_ObjectHideFlags: 0
@@ -2943,11 +2928,10 @@ MonoBehaviour:
       TimeBeforeSpawn: 3
       TimeBetweenSpawns: 3
       EnemyCount: 2
-  - WaveBurstInfo:
-    - EnemyData: {fileID: 11400000, guid: 34b2116b8ffd2fb4da4c85b32fe83e27, type: 2}
-      TimeBeforeSpawn: 1
-      TimeBetweenSpawns: 0.2
-      EnemyCount: 15
+    - EnemyData: {fileID: 11400000, guid: d9db5a83b553ec24b9352399f8c3c5c8, type: 2}
+      TimeBeforeSpawn: 8
+      TimeBetweenSpawns: 0
+      EnemyCount: 1
 --- !u!114 &2054535464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,6 +2944,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471744a298fad0241af8c7fe445eb90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2054535465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054535454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fba99556879fd42a487fefaf2e3738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllTowerData:
+  - {fileID: 11400000, guid: 49ea12b2056c4474ab20740b0077df26, type: 2}
+  - {fileID: 11400000, guid: b60e23ad0755c6e48aacf61962cf71da, type: 2}
+  - {fileID: 11400000, guid: e566e12bdb7f7e3478861b5f6910018a, type: 2}
 --- !u!1 &2094686647
 GameObject:
   m_ObjectHideFlags: 0
