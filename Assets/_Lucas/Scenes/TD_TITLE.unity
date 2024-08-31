@@ -546,6 +546,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3344444269745112637, guid: 8413ae0e977d76646925643f51ffe44a, type: 3}
   m_PrefabInstance: {fileID: 765171819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &768999681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2391078316538875344, guid: 8413ae0e977d76646925643f51ffe44a, type: 3}
+  m_PrefabInstance: {fileID: 765171819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6685127d371b5d49a50ec0b5c8da4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790779659
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,8 +806,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493188945}
-        m_TargetAssemblyTypeName: LGDP.SceneSwitcher, Assembly-CSharp
+      - m_Target: {fileID: 768999681}
+        m_TargetAssemblyTypeName: Lucas.TransitionManager, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
@@ -1235,7 +1246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1493188948}
   - component: {fileID: 1493188947}
-  - component: {fileID: 1493188945}
   - component: {fileID: 1493188946}
   m_Layer: 0
   m_Name: Main Scripts
@@ -1244,18 +1254,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1493188945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493188944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: accac459555103c40a36b6519e8d798b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1493188946
 MonoBehaviour:
   m_ObjectHideFlags: 0

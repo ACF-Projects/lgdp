@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Lucas
 {
@@ -36,6 +37,18 @@ namespace Lucas
             {
                 TransitionFadeOut();
             }
+        }
+
+        /// <summary>
+        /// Given the name of a scene, plays the transition animation and goes to that
+        /// scene.
+        /// </summary>
+        public void GoToScene(string sceneName)
+        {
+            TransitionManager.Instance.TransitionAndCall(() =>
+            {
+                SceneManager.LoadScene(sceneName);
+            });
         }
 
         /// <summary>
