@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6948676325792716710}
   - component: {fileID: 6091352775172332683}
   m_Layer: 0
-  m_Name: ProjTestLucas
+  m_Name: POC_ProjTestLucas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

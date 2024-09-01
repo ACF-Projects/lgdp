@@ -46,6 +46,8 @@ namespace RushHour
                     AllTowerData.Add(obj);
                 }
             }
+
+            AllTowerData.Sort((a, b) => (int)a.Cost - (int)b.Cost);  // Sort by cost
         }
 #endif
 

@@ -486,6 +486,7 @@ MonoBehaviour:
   _slotImage: {fileID: 5797617323023747195}
   _effectPreviewImage: {fileID: 7736383995704636599}
   _costText: {fileID: 9137002320570833134}
+  _placedUnitSFX: {fileID: 8300000, guid: b7fa9116a2c4e814cae56e29ebf99773, type: 3}
 --- !u!114 &3906118805444091771
 MonoBehaviour:
   m_ObjectHideFlags: 0

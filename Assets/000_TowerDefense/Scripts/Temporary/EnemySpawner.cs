@@ -1,9 +1,11 @@
 using RushHour.Data;
 using RushHour.POC;
+using RushHour;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RushHour
 {
@@ -30,7 +32,7 @@ namespace RushHour
         [Header("Wave Information")]
         public List<Wave> Waves = new();  // All wave information for this level
         public static int EnemiesRemaining  // If set to 0, invokes OnAllEnemiesDead action
-        { 
+        {
             get => _enemiesRemaining;
             set
             {
@@ -42,7 +44,8 @@ namespace RushHour
             }
         }
 
-        [HideInInspector] public int CurrentWaveNumber  // Current wave number, increments every wave
+        [HideInInspector]
+        public int CurrentWaveNumber  // Current wave number, increments every wave
         {
             get; private set;
         }
@@ -58,6 +61,7 @@ namespace RushHour
             OnWavesCompleted += () =>  // TODO: This is for testing purposes; can remove
             {
                 Debug.Log("All waves are done!");
+                TransitionManager.Instance.GoToScene("TD_TITLE");
             };
         }
 

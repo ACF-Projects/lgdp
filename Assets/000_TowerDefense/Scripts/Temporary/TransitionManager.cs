@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Lucas
+namespace RushHour
 {
     public class TransitionManager : MonoBehaviour
     {
