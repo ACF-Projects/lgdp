@@ -61,10 +61,7 @@ namespace Lucas
             OnWavesCompleted += () =>  // TODO: This is for testing purposes; can remove
             {
                 Debug.Log("All waves are done!");
-                TransitionManager.Instance.TransitionAndCall(() =>
-                {
-                    SceneManager.LoadScene("TD_TITLE");
-                });
+                TransitionManager.Instance.GoToScene("TD_TITLE");
             };
         }
 
