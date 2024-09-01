@@ -1211,7 +1211,7 @@ GameObject:
   - component: {fileID: 1325847044}
   - component: {fileID: 1325847043}
   - component: {fileID: 1325847047}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: towertest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
