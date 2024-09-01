@@ -1,3 +1,4 @@
+using RushHour.Data;
 using RushHour.UserInterface;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace RushHour
             {
                 slider.SlideOut();
             }
+
+            var towerData = obj as TowerData;
         }
     }
 }

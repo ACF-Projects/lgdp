@@ -11,6 +11,7 @@ namespace RushHour.InputHandling
         public static MouseReceiver instance;
 
         public static event Action OnLeftClicked;
+        public static event Action OnLeftReleased;
         public static event Action OnRightClicked;
         public static event Action<Vector2> OnMouseMoved;
 
@@ -31,6 +32,10 @@ namespace RushHour.InputHandling
             {
                 OnLeftClicked?.Invoke();
             }
+            else if(context.canceled)
+            {
+                OnLeftReleased?.Invoke();
+            }
         }
 
         public void OnRightClick(InputAction.CallbackContext context)
@@ -46,6 +51,5 @@ namespace RushHour.InputHandling
             if (context.canceled) return;
             OnMouseMoved?.Invoke(context.ReadValue<Vector2>());
         }
-
     }
 }
