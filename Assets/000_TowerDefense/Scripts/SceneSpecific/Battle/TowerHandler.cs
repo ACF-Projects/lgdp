@@ -112,22 +112,6 @@ namespace RushHour
                 currentTimer = cooldown;
             }
         }
-
-        public void OnMouseEnter()
-        {
-            if (IsActivated)
-            {
-                ShowEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
-            }
-        }
-
-        public void OnMouseExit()
-        {
-            if (IsActivated)
-            {
-                HideEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
-            }
-        }
         
         public void ShowEffectRadius()
         {
