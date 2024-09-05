@@ -23,7 +23,7 @@ namespace RushHour
 
         private float currentTimer;
 
-        public bool IsActivated = true;  // No tower logic renders if `false`
+        [HideInInspector] public bool IsActivated = false;  // No tower logic renders if `false`
 
         private const float EFFECT_ALPHA_ON_HOVER = 0.3f;  // Opacity of effect circle when shown
 
