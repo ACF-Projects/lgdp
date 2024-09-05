@@ -23,6 +23,8 @@ namespace RushHour
 
         private float currentTimer;
 
+        [HideInInspector] public bool IsActivated = false;  // No tower logic renders if `false`
+
         private const float EFFECT_ALPHA_ON_HOVER = 0.3f;  // Opacity of effect circle when shown
 
         private void Awake()
@@ -54,16 +56,16 @@ namespace RushHour
             float scaleFactor = towerData.EffectRadius * 2f / spriteDiameter;
             effectPreview.localScale = new Vector3(scaleFactor, scaleFactor);
             effectTrigger.radius = towerData.EffectRadius;
-
-            // Log salary per hour
-            Globals.SalaryPerHour += towerData.SalaryPerHour;
         }
 
         private void Update()
         {
-            TargetEnemy();
-            FaceEnemy();
-            TryAttack();
+            if (IsActivated)
+            {
+                TargetEnemy();
+                FaceEnemy();
+                TryAttack();
+            }
         }
 
         /// <summary>
@@ -114,20 +116,26 @@ namespace RushHour
 
         public void OnMouseEnter()
         {
-            ShowEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+            if (IsActivated)
+            {
+                ShowEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+            }
         }
 
         public void OnMouseExit()
         {
-            HideEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+            if (IsActivated)
+            {
+                HideEffectRadius();  // TODO: This is for dev purposes. Not necessarily what we want to do
+            }
         }
-
+        
         public void ShowEffectRadius()
         {
             SpriteRenderer previewRenderer = effectPreview.GetComponent<SpriteRenderer>();
             DOTween.To(() => previewRenderer.color.a, 
                 x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x), 
-                EFFECT_ALPHA_ON_HOVER, 0.2f).SetEase(Ease.OutSine);
+                EFFECT_ALPHA_ON_HOVER, 0.1f).SetEase(Ease.OutSine);
         }
 
         public void HideEffectRadius()
@@ -135,7 +143,16 @@ namespace RushHour
             SpriteRenderer previewRenderer = effectPreview.GetComponent<SpriteRenderer>();
             DOTween.To(() => previewRenderer.color.a,
                 x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x),
-                0, 0.2f).SetEase(Ease.OutSine);
+                0, 0.1f).SetEase(Ease.OutSine);
+        }
+
+        /// <summary>
+        /// Given a color, tints the effect radius to view as that color.
+        /// Maintains the same alpha value defined by the alpha constant.
+        /// </summary>
+        public void TintEffectRadius(Color c)
+        {
+            effectPreview.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, EFFECT_ALPHA_ON_HOVER);
         }
 
     }

@@ -11,19 +11,19 @@ namespace RushHour
 
         [Header("Level Properties")]
         public string LevelSceneName;
-        
+
         /// <summary>
-        /// Go to a specified scene, finding a SceneSwitcher
+        /// Go to a specified scene, finding a TransitionManager
         /// singleton if one exists.
         /// </summary>
         public void GoToScene()
         {
-            if (SceneSwitcher.Instance == null)
+            if (TransitionManager.Instance == null)
             {
                 Debug.LogError("No SceneSwitcher object found!", this);
                 return;
             }
-            SceneSwitcher.Instance.GoToScene(LevelSceneName);
+            TransitionManager.Instance.GoToScene(LevelSceneName);
         }
 
     }
