@@ -85,9 +85,9 @@ namespace RushHour.UserInterface
 
                 _spawnedTowerHandler.transform.position = worldPosition;  // Tower follows mouse
 
-                // Collision check with blocked objects or UI
+                // Collision check with blocked objects or UI; check for 1 collision (with itself)
                 Collider2D[] col = Physics2D.OverlapCircleAll(worldPosition, _cachedData.SpriteRadius, LayerMask.GetMask("Blocked", "Obstacle"));
-                _isPlaceable = col.Length == 0 && EventSystem.current.currentSelectedGameObject == null;
+                _isPlaceable = col.Length == 1 && EventSystem.current.currentSelectedGameObject == null;
 
                 if (_isPlaceable)
                 {

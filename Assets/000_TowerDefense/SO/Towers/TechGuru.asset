@@ -18,10 +18,9 @@ MonoBehaviour:
   <Name>k__BackingField: Tech Guru
   <UIIcon>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
   <TowerSprite>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
-  <EffectPreviewSprite>k__BackingField: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   <SpriteScale>k__BackingField: {x: 0.3, y: 0.3}
   <Description>k__BackingField: 
   PlacementSFX: {fileID: 8300000, guid: 78307393aca91014682336d5c24ecab4, type: 3}
   PlacementSFXVolume: 0.8
-  towerPrefab: {fileID: 5109559896989353768, guid: 50a8649e16e05544eb4f80727a4b42d3, type: 3}
+  towerPrefab: {fileID: 7902186723997441952, guid: 5b876747b4cca6048893dc3f7c70eb6d, type: 3}
   _projectileShootSFX: {fileID: 0}
