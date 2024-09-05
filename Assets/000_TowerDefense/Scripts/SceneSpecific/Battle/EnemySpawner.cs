@@ -68,18 +68,18 @@ namespace RushHour
         private void OnEnable()
         {
             OnAllEnemiesDead += SpawnNextWave;
-            EnemyPOCLucas.OnEndReached += DecrementEnemiesRemaining;
-            EnemyPOCLucas.OnEnemyKilled += DecrementEnemiesRemaining;
+            EnemyHandler.OnEndReached += DecrementEnemiesRemaining;
+            EnemyHandler.OnEnemyKilled += DecrementEnemiesRemaining;
         }
 
         private void OnDisable()
         {
             OnAllEnemiesDead -= SpawnNextWave;
-            EnemyPOCLucas.OnEndReached -= DecrementEnemiesRemaining;
-            EnemyPOCLucas.OnEnemyKilled -= DecrementEnemiesRemaining;
+            EnemyHandler.OnEndReached -= DecrementEnemiesRemaining;
+            EnemyHandler.OnEnemyKilled -= DecrementEnemiesRemaining;
         }
 
-        private void DecrementEnemiesRemaining(EnemyPOCLucas enemy) => EnemiesRemaining--;
+        private void DecrementEnemiesRemaining(EnemyHandler enemy) => EnemiesRemaining--;
 
         /// <summary>
         /// Increments the current wave number and begins spawning the
@@ -111,7 +111,7 @@ namespace RushHour
             yield return new WaitForSeconds(burst.TimeBeforeSpawn);
             for (int i = 0; i < burst.EnemyCount; i++)
             {
-                var enemyObj = Instantiate(burst.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyPOCLucas>();
+                var enemyObj = Instantiate(burst.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyHandler>();
                 enemyObj.Init(_waypoint, burst.EnemyData);
                 _enemiesRemaining++;
                 yield return new WaitForSeconds(burst.TimeBetweenSpawns);

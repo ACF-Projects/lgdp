@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 namespace RushHour
 {
-    public class EnemyPOCAnimLucas : MonoBehaviour
+    public class EnemyAnim : MonoBehaviour
     {
-        [SerializeField] private EnemyPOCLucas enemy;
+        [SerializeField] private EnemyHandler enemy;
         [SerializeField] private Image hpBar;
 
         private void OnEnable()
         {
-            EnemyPOCLucas.OnEnemyHit += EnemyPOC_OnEnemyHit;
+            EnemyHandler.OnEnemyHit += EnemyPOC_OnEnemyHit;
         }
 
-        private void EnemyPOC_OnEnemyHit(EnemyPOCLucas enemy)
+        private void EnemyPOC_OnEnemyHit(EnemyHandler enemy)
         {
             if (this.enemy != enemy || hpBar == null) return;
 
@@ -23,7 +23,7 @@ namespace RushHour
 
         private void OnDisable()
         {
-            EnemyPOCLucas.OnEnemyHit -= EnemyPOC_OnEnemyHit;
+            EnemyHandler.OnEnemyHit -= EnemyPOC_OnEnemyHit;
         }
     }
 }

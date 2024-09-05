@@ -17,9 +17,9 @@ namespace RushHour
 
         [SerializeField] private ProjectilePOCLucas projectile;
 
-        private List<EnemyPOCLucas> enemyList;
+        private List<EnemyHandler> enemyList;
 
-        private EnemyPOCLucas currentEnemy;
+        private EnemyHandler currentEnemy;
 
         private float currentTimer;
 
@@ -34,12 +34,12 @@ namespace RushHour
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<EnemyPOCLucas>(out var enemy)) enemyList.Add(enemy);
+            if (collision.TryGetComponent<EnemyHandler>(out var enemy)) enemyList.Add(enemy);
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<EnemyPOCLucas>(out var enemy) && enemyList.Contains(enemy)) enemyList.Remove(enemy);
+            if (collision.TryGetComponent<EnemyHandler>(out var enemy) && enemyList.Contains(enemy)) enemyList.Remove(enemy);
         }
 
         /// <summary>

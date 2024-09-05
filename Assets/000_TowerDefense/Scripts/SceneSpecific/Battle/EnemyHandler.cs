@@ -4,14 +4,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 namespace RushHour
 {
-    public class EnemyPOCLucas : MonoBehaviour
+    public class EnemyHandler : MonoBehaviour
     {
-        public static event Action<EnemyPOCLucas> OnEnemyHit;
-        public static event Action<EnemyPOCLucas> OnEnemyKilled;
-        public static event Action<EnemyPOCLucas> OnEndReached;
+        public static event Action<EnemyHandler> OnEnemyHit;
+        public static event Action<EnemyHandler> OnEnemyKilled;
+        public static event Action<EnemyHandler> OnEndReached;
 
         [SerializeField] private SpriteRenderer sprite;
 
@@ -63,14 +64,9 @@ namespace RushHour
 
         private void Rotate()
         {
-            if (waypoint.waypoints[currentWaypoint].position.x >= transform.position.x)
-            {
-                sprite.flipX = false;
-            }
-            else
-            {
-                sprite.flipX = true;
-            }
+            Vector3 relativeTarget = (waypoint.waypoints[currentWaypoint].position - transform.position).normalized;
+            Quaternion toQuaternion = Quaternion.FromToRotation(Vector3.down, relativeTarget);
+            sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, toQuaternion, 3 * Time.deltaTime);
         }
 
         public void TakeDamage(float damage)
@@ -85,6 +81,7 @@ namespace RushHour
                 // If this enemy should go to the store, make them do that
                 if (TryGetComponent(out EnemyGoToStore enemyGoToStore))
                 {
+                    sprite.flipX = true;  // Flip so sprite correctly tracks store
                     enemyGoToStore.TrackStore();
                     // Then, disable this sprite (no longer trackable by towers)
                     enabled = false;

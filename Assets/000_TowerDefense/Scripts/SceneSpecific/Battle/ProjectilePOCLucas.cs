@@ -4,10 +4,10 @@ namespace RushHour
 {
     public class ProjectilePOCLucas : MonoBehaviour
     {
-        private EnemyPOCLucas enemy;
+        private EnemyHandler enemy;
         private float speed;
         private float damage;
-        public void Init(EnemyPOCLucas enemy, float speed, float damage)
+        public void Init(EnemyHandler enemy, float speed, float damage)
         {
             this.enemy = enemy;
             this.speed = speed;
