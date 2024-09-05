@@ -21,7 +21,6 @@ namespace RushHour.Data
         /// </summary>
         [field:SerializeField, ShowAssetPreview] public Sprite UIIcon { get; protected set; }
         [field: SerializeField, ShowAssetPreview] public Sprite TowerSprite { get; protected set; }
-        [field: SerializeField] public Sprite EffectPreviewSprite { get; protected set; }
         [field: SerializeField] public Vector2 SpriteScale { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
         [Header("Audio Data (Optional)")]
