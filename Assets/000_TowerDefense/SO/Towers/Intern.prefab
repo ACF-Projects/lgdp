@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462784778167538399}
-  - component: {fileID: 9137598409111377406}
+  - component: {fileID: 5519102108233725242}
   - component: {fileID: 8892607354952460005}
   m_Layer: 0
   m_Name: Intern
@@ -187,7 +187,7 @@ Transform:
   - {fileID: 7961654977203632823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9137598409111377406
+--- !u!114 &5519102108233725242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,17 +196,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5411480932579001962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f9e0a25da09834aa251244af9d0327, type: 3}
+  m_Script: {fileID: 11500000, guid: 84292747a1e651f44b11af13888c8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visual: {fileID: 9193514491456168541}
-  effectPreview: {fileID: 3392857682549462894}
-  effectTrigger: {fileID: 4927153104395466649}
-  cooldown: 0.5
+  Visual: {fileID: 9193514491456168541}
+  EffectPreview: {fileID: 3392857682549462894}
+  EffectTrigger: {fileID: 4927153104395466649}
+  IsActivated: 0
+  cooldown: 0.8
   damage: 1
   projectileSpeed: 4
   projectile: {fileID: 5848030480314584596, guid: 84943040fee81b6479b06622c5b69c13, type: 3}
-  IsActivated: 0
 --- !u!50 &8892607354952460005
 Rigidbody2D:
   serializedVersion: 4

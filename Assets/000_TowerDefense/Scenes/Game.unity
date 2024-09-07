@@ -1017,9 +1017,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllTowerData:
-  - {fileID: 11400000, guid: 49ea12b2056c4474ab20740b0077df26, type: 2}
-  - {fileID: 11400000, guid: b60e23ad0755c6e48aacf61962cf71da, type: 2}
-  - {fileID: 11400000, guid: e566e12bdb7f7e3478861b5f6910018a, type: 2}
+  - {fileID: 11400000, guid: ec969ea1d3b4d024aaa229930a0b08f2, type: 2}
+  - {fileID: 11400000, guid: f1a1bb2a0df251b42bf8e0f143f1d648, type: 2}
+  - {fileID: 11400000, guid: 97f12fd0bfbc8744982890877f6dc0ee, type: 2}
 --- !u!4 &681709509
 Transform:
   m_ObjectHideFlags: 0

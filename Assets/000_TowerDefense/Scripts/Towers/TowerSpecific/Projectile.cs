@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RushHour
 {
-    public class ProjectilePOCLucas : MonoBehaviour
+    public class Projectile : MonoBehaviour
     {
         private EnemyHandler enemy;
         private float speed;

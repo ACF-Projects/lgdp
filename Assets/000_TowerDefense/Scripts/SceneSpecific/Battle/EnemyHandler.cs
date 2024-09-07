@@ -81,7 +81,8 @@ namespace RushHour
                 // If this enemy should go to the store, make them do that
                 if (TryGetComponent(out EnemyGoToStore enemyGoToStore))
                 {
-                    sprite.flipX = true;  // Flip so sprite correctly tracks store
+                    transform.rotation = Quaternion.Euler(0, 0, -sprite.transform.rotation.eulerAngles.z);
+                    sprite.transform.localRotation = Quaternion.Euler(0, 0, 180);  // Rotate so correctly tracks store
                     enemyGoToStore.TrackStore();
                     // Then, disable this sprite (no longer trackable by towers)
                     enabled = false;
