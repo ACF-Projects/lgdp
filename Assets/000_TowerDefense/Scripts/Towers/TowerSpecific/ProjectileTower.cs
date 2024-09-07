@@ -12,6 +12,8 @@ namespace RushHour
         [SerializeField] private float damage;
         [SerializeField] private float projectileSpeed;
         [SerializeField] private Projectile projectile;
+        [SerializeField] private AudioClip projectileShootSFX;
+        [SerializeField] private float projectileSFXVolume;
 
         private List<EnemyHandler> enemyList = new();
         private EnemyHandler currentEnemy;
@@ -80,6 +82,11 @@ namespace RushHour
                 var proj = Instantiate(projectile, transform.position, Quaternion.identity);
                 proj.Init(currentEnemy, projectileSpeed, damage);
                 currentTimer = cooldown;
+                // Play sound effect
+                if (projectileShootSFX != null)
+                {
+                    AudioManager.Instance.PlayOneShot(projectileShootSFX, projectileSFXVolume);
+                }
             }
         }
 
