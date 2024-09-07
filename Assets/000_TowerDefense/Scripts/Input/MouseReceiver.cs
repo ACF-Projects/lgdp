@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace RushHour.InputHandling
@@ -14,6 +15,8 @@ namespace RushHour.InputHandling
         public static event Action OnLeftReleased;
         public static event Action OnRightClicked;
         public static event Action<Vector2> OnMouseMoved;
+
+        public bool isPointerOverGameObject;
 
         private void Awake()
         {
@@ -50,6 +53,11 @@ namespace RushHour.InputHandling
         {
             if (context.canceled) return;
             OnMouseMoved?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        private void Update()
+        {
+            isPointerOverGameObject = EventSystem.current.IsPointerOverGameObject();
         }
     }
 }

@@ -3,9 +3,8 @@ using RushHour.InputHandling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace RushHour
+namespace RushHour.CameraControls
 {
     public class CameraPanning : MonoBehaviour
     {
@@ -40,7 +39,11 @@ namespace RushHour
         {
             direction = Vector2.zero;
 
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+            if (MouseReceiver.instance.isPointerOverGameObject)
+            {
+                followTarget.velocity = Vector2.zero;
+                return;
+            }
 
             GetPanDirection(pos.x, pos.y);
 

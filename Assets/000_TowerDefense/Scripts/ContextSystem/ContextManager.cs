@@ -56,7 +56,7 @@ namespace RushHour
 
         private void CheckContext()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (MouseReceiver.instance.isPointerOverGameObject)
             {
                 // Is UI Element
             }
