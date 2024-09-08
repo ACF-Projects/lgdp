@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ecde8e0d1eca84b9dad963ba9e638b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9671ae6c7230a479b5da8cbc3d4292, type: 3}
   m_Name: Businessman
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 8
