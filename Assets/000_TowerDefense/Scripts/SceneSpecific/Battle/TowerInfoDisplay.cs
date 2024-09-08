@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace RushHour
@@ -8,29 +9,41 @@ namespace RushHour
     {
         [SerializeField] private CanvasGroup towerInfoGroup;
 
+        [SerializeField] private TextMeshProUGUI nameText;
+        [SerializeField] private TextMeshProUGUI descriptionText;
+
         private TowerEntity towerEntity;
 
         private void Awake()
         {
-            towerInfoGroup.alpha = 0f;
-            towerInfoGroup.blocksRaycasts = false;
-            towerEntity = null;
+            ResetDisplay();
         }
 
         protected override void ProcessContext(object obj, ContextType contextType)
         {
             if(!allowedTypes.HasFlag(contextType))
             {
-                towerInfoGroup.alpha = 0f;
-                towerInfoGroup.blocksRaycasts = false;
-                towerEntity = null;
+                ResetDisplay();
             }
             else
             {
                 towerInfoGroup.alpha = 1f;
                 towerInfoGroup.blocksRaycasts = true;
+
                 towerEntity = obj as TowerEntity;
+
+                nameText.text = towerEntity.towerData.Name;
+                descriptionText.text = towerEntity.towerData.Description;
             }
+        }
+
+        private void ResetDisplay()
+        {
+            towerInfoGroup.alpha = 0f;
+            towerInfoGroup.blocksRaycasts = false;
+            towerEntity = null;
+            nameText.text = "";
+            descriptionText.text = "";
         }
 
         public void SellUnit()
