@@ -360,7 +360,7 @@ MonoBehaviour:
   projectileSpeed: 4
   projectile: {fileID: 5848030480314584596, guid: 84943040fee81b6479b06622c5b69c13, type: 3}
   projectileShootSFX: {fileID: 8300000, guid: 24b66f816a3a32e46a1a1044cbf3248e, type: 3}
-  projectileSFXVolume: 0.8
+  projectileSFXVolume: 0.6
 --- !u!50 &5673648843983425254
 Rigidbody2D:
   serializedVersion: 4
