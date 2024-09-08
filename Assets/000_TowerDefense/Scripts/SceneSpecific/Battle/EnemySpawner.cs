@@ -9,19 +9,14 @@ using UnityEngine.SceneManagement;
 
 namespace RushHour
 {
+
     [System.Serializable]
-    public struct BurstInfo
+    public struct Wave
     {
         public EnemyData EnemyData;
         public float TimeBeforeSpawn;
         public float TimeBetweenSpawns;
         public int EnemyCount;
-    }
-
-    [System.Serializable]
-    public struct Wave
-    {
-        public List<BurstInfo> WaveBurstInfo;
     }
 
     public class EnemySpawner : MonoBehaviour
@@ -44,37 +39,32 @@ namespace RushHour
             }
         }
 
-        [HideInInspector]
-        public int CurrentWaveNumber  // Current wave number, increments every wave
-        {
-            get; private set;
-        }
-
         [HideInInspector] public static Action OnAllEnemiesDead = null;  // When enemies are dead for curr wave
-        [HideInInspector] public static Action OnWavesCompleted = null;  // When next wave is attempted to be spawned but all waves are finished
 
         private static int _enemiesRemaining = 0;
+        private static int _coroutinesWaiting = 0;
 
         private void Start()
         {
-            SpawnNextWave();
-            OnWavesCompleted += () =>  // TODO: This is for testing purposes; can remove
+            OnAllEnemiesDead += () =>  // TODO: This is for testing purposes; can remove
             {
-                Debug.Log("All waves are done!");
-                TransitionManager.Instance.GoToScene("TD_TITLE");
+                if (_coroutinesWaiting == 0)
+                {
+                    Debug.Log("All waves are done!");
+                    TransitionManager.Instance.GoToScene("Title");
+                }
             };
+            StartWaves();
         }
 
         private void OnEnable()
         {
-            OnAllEnemiesDead += SpawnNextWave;
             EnemyHandler.OnEndReached += DecrementEnemiesRemaining;
             EnemyHandler.OnEnemyKilled += DecrementEnemiesRemaining;
         }
 
         private void OnDisable()
         {
-            OnAllEnemiesDead -= SpawnNextWave;
             EnemyHandler.OnEndReached -= DecrementEnemiesRemaining;
             EnemyHandler.OnEnemyKilled -= DecrementEnemiesRemaining;
         }
@@ -87,18 +77,11 @@ namespace RushHour
         /// 
         /// Invokes `OnWavesCompleted` if no more waves (index out of bounds).
         /// </summary>
-        private void SpawnNextWave()
+        private void StartWaves()
         {
-            CurrentWaveNumber++;
-            if (CurrentWaveNumber - 1 >= Waves.Count)
+            for (int i = 0; i < Waves.Count; i++)
             {
-                OnWavesCompleted?.Invoke();
-                return;
-            }
-            Wave currWave = Waves[CurrentWaveNumber - 1];
-            foreach (BurstInfo burst in currWave.WaveBurstInfo)
-            {
-                StartCoroutine(SpawnBursts(burst));
+                StartCoroutine(SpawnWave(Waves[i]));
             }
         }
 
@@ -106,16 +89,18 @@ namespace RushHour
         /// Given data for a burst of enemies, spawns the entire burst
         /// of enemies over a duration.
         /// </summary>
-        private IEnumerator SpawnBursts(BurstInfo burst)
+        private IEnumerator SpawnWave(Wave wave)
         {
-            yield return new WaitForSeconds(burst.TimeBeforeSpawn);
-            for (int i = 0; i < burst.EnemyCount; i++)
+            _coroutinesWaiting++;
+            yield return new WaitForSeconds(wave.TimeBeforeSpawn);
+            for (int i = 0; i < wave.EnemyCount; i++)
             {
-                var enemyObj = Instantiate(burst.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyHandler>();
-                enemyObj.Init(_waypoint, burst.EnemyData);
+                var enemyObj = Instantiate(wave.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyHandler>();
+                enemyObj.Init(_waypoint, wave.EnemyData);
                 _enemiesRemaining++;
-                yield return new WaitForSeconds(burst.TimeBetweenSpawns);
+                yield return new WaitForSeconds(wave.TimeBetweenSpawns);
             }
+            _coroutinesWaiting--;
         }
 
     }

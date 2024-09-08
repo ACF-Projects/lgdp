@@ -980,16 +980,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waypoint: {fileID: 1907249979}
   Waves:
-  - WaveBurstInfo:
-    - EnemyData: {fileID: 11400000, guid: 63999147731b1704a895bc8c10233ab8, type: 2}
-      TimeBeforeSpawn: 3
-      TimeBetweenSpawns: 1
-      EnemyCount: 5
-  - WaveBurstInfo:
-    - EnemyData: {fileID: 11400000, guid: 8fd0a79f469cf5043b7a3dd1b4ec5aa9, type: 2}
-      TimeBeforeSpawn: 1
-      TimeBetweenSpawns: 0.2
-      EnemyCount: 15
+  - EnemyData: {fileID: 11400000, guid: 4acc9f8ad9c9e9d4db3c793a740d5098, type: 2}
+    TimeBeforeSpawn: 0
+    TimeBetweenSpawns: 2
+    EnemyCount: 2
+  - EnemyData: {fileID: 11400000, guid: 63999147731b1704a895bc8c10233ab8, type: 2}
+    TimeBeforeSpawn: 5
+    TimeBetweenSpawns: 1
+    EnemyCount: 5
+  - EnemyData: {fileID: 11400000, guid: 8fd0a79f469cf5043b7a3dd1b4ec5aa9, type: 2}
+    TimeBeforeSpawn: 10
+    TimeBetweenSpawns: 0
+    EnemyCount: 1
 --- !u!114 &681709507
 MonoBehaviour:
   m_ObjectHideFlags: 0
