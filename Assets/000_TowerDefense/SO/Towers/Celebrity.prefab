@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7608183994318509487}
   - component: {fileID: 4540109675458444442}
+  - component: {fileID: 792590571308323872}
   m_Layer: 0
   m_Name: ActualTower
   m_TagString: Untagged
@@ -68,6 +69,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &792590571308323872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659856208794150039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa9229f6662ed14c9625d8dc9f0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  towerCollider: {fileID: 9076583540150694458}
+  blockedLayers:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!1 &4272330007343554794
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +97,7 @@ GameObject:
   - component: {fileID: 3524877292544158931}
   - component: {fileID: 4296580666548699636}
   - component: {fileID: 9076583540150694458}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,6 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3075063129798386130}
+  - component: {fileID: 666294689475238437}
   m_Layer: 0
   m_Name: Preview
   m_TagString: Untagged
@@ -304,6 +323,21 @@ Transform:
   - {fileID: 2431412441225408367}
   m_Father: {fileID: 2835361303147212445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666294689475238437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738089811182270166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0ca1367a8331c4fb4d0832d3a300a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  effectPreview: {fileID: 2431412441225408367}
+  effectTrigger: {fileID: 4540109675458444442}
 --- !u!1 &8018462193866847556
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,9 +385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84292747a1e651f44b11af13888c8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Visual: {fileID: 3524877292544158931}
-  EffectPreview: {fileID: 2431412441225408367}
-  EffectTrigger: {fileID: 4540109675458444442}
+  _towerComponents:
+  - {fileID: 792590571308323872}
+  - {fileID: 666294689475238437}
+  visual: {fileID: 3524877292544158931}
   IsActivated: 0
   cooldown: 0.5
   damage: 1

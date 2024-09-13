@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2770553270333588841}
+  - component: {fileID: 5873465895252256169}
   m_Layer: 0
   m_Name: Preview
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 2734942251105075750}
   m_Father: {fileID: 1942693445342892025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5873465895252256169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919245310269382827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0ca1367a8331c4fb4d0832d3a300a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 6129227209559330968}
+  effectPreview: {fileID: 2734942251105075750}
+  effectTrigger: {fileID: 5372657359574794314}
 --- !u!1 &2013162990886600402
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3150051377714905289}
   - component: {fileID: 5372657359574794314}
+  - component: {fileID: 4658062272702868317}
   m_Layer: 0
   m_Name: ActualTower
   m_TagString: Untagged
@@ -100,6 +117,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4658062272702868317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013162990886600402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa9229f6662ed14c9625d8dc9f0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 6129227209559330968}
+  towerCollider: {fileID: 7665425221075152126}
+  blockedLayers:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!1 &4017702744800037047
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +229,7 @@ GameObject:
   - component: {fileID: 4023616950359154348}
   - component: {fileID: 5592197203887416378}
   - component: {fileID: 7665425221075152126}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,9 +385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84292747a1e651f44b11af13888c8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Visual: {fileID: 4023616950359154348}
-  EffectPreview: {fileID: 2734942251105075750}
-  EffectTrigger: {fileID: 5372657359574794314}
+  _towerComponents:
+  - {fileID: 4658062272702868317}
+  - {fileID: 5873465895252256169}
+  visual: {fileID: 4023616950359154348}
   IsActivated: 0
   cooldown: 0.6
   damage: 1
