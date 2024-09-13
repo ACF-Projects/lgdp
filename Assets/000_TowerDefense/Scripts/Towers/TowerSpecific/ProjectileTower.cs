@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RushHour
+namespace RushHour.Tower
 {
     public class ProjectileTower : TowerHandler
     {
@@ -64,9 +64,9 @@ namespace RushHour
             Vector3 targetPos = currentEnemy.transform.position - transform.position;
 
             // Add 180 to the angle to account for offset (unit will be facing opposite way otherwise)
-            float angle = Vector3.SignedAngle(Visual.up, targetPos, Visual.forward) + 180f;
+            float angle = Vector3.SignedAngle(visual.up, targetPos, visual.forward) + 180f;
 
-            Visual.Rotate(0, 0, angle);
+            visual.Rotate(0, 0, angle);
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720556633589050885}
   - component: {fileID: 4927153104395466649}
+  - component: {fileID: 6161874849926295771}
   m_Layer: 0
   m_Name: ActualTower
   m_TagString: Untagged
@@ -68,6 +69,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6161874849926295771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675072692659000607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa9229f6662ed14c9625d8dc9f0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5519102108233725242}
+  towerCollider: {fileID: 945761609658860599}
+  blockedLayers:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!1 &3492690402400894834
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,9 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84292747a1e651f44b11af13888c8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Visual: {fileID: 9193514491456168541}
-  EffectPreview: {fileID: 3392857682549462894}
-  EffectTrigger: {fileID: 4927153104395466649}
+  _towerComponents:
+  - {fileID: 6161874849926295771}
+  - {fileID: 1431510909732462000}
+  visual: {fileID: 9193514491456168541}
   IsActivated: 0
   cooldown: 0.8
   damage: 1
@@ -245,6 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7961654977203632823}
+  - component: {fileID: 1431510909732462000}
   m_Layer: 0
   m_Name: Preview
   m_TagString: Untagged
@@ -268,6 +288,21 @@ Transform:
   - {fileID: 3392857682549462894}
   m_Father: {fileID: 462784778167538399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431510909732462000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452661447086381376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0ca1367a8331c4fb4d0832d3a300a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5519102108233725242}
+  effectPreview: {fileID: 3392857682549462894}
+  effectTrigger: {fileID: 4927153104395466649}
 --- !u!1 &8577254777704959631
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +314,7 @@ GameObject:
   - component: {fileID: 9193514491456168541}
   - component: {fileID: 5702450723591575525}
   - component: {fileID: 945761609658860599}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

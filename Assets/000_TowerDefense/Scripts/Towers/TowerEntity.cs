@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RushHour
+namespace RushHour.Tower
 {
-    public class TowerEntity : MonoBehaviour, IClickableEntity
+    public class TowerEntity : TowerComponent, IClickableEntity
     {
-        public TowerData towerData;
-
         public void Interact()
         {
-            ContextManager.instance.ChangeContext(ContextType.Tower, this);
+            ContextManager.instance.ChangeContext(ContextType.Tower, TowerHandler);
         }
     }
 }

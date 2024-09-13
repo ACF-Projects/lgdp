@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace RushHour
+namespace RushHour.Tower
 {
     public class TowerInfoDisplay : ContextElement
     {
@@ -12,7 +12,7 @@ namespace RushHour
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI descriptionText;
 
-        private TowerEntity towerEntity;
+        private TowerHandler towerHandler;
 
         private void Awake()
         {
@@ -30,10 +30,10 @@ namespace RushHour
                 towerInfoGroup.alpha = 1f;
                 towerInfoGroup.blocksRaycasts = true;
 
-                towerEntity = obj as TowerEntity;
+                towerHandler = obj as TowerHandler;
 
-                nameText.text = towerEntity.towerData.Name;
-                descriptionText.text = towerEntity.towerData.Description;
+                nameText.text = towerHandler.TowerData.Name;
+                descriptionText.text = towerHandler.TowerData.Description;
             }
         }
 
@@ -41,14 +41,15 @@ namespace RushHour
         {
             towerInfoGroup.alpha = 0f;
             towerInfoGroup.blocksRaycasts = false;
-            towerEntity = null;
+            towerHandler = null;
             nameText.text = "";
             descriptionText.text = "";
         }
 
+        // Temporary Function
         public void SellUnit()
         {
-            Destroy(towerEntity.gameObject);
+            Destroy(towerHandler.gameObject);
             ContextManager.instance.ChangeContext();
         }
     }
