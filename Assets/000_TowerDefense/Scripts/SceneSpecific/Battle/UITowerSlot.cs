@@ -11,7 +11,7 @@ using RushHour.Tower.Components;
 
 namespace RushHour.UserInterface
 {
-    public class UITowerSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class UITowerSlot : MonoBehaviour, IPointerDownHandler
     {
 
         [Header("Object Assignments")]
@@ -24,7 +24,7 @@ namespace RushHour.UserInterface
         private bool _isPlaceable = false;  // True if hovering over placeable area, else False
         private TowerData _cachedData;  // Set by other script when initialized
 
-        private TowerHandler _spawnedTowerHandler = null;  // World object tower spawned when dragging
+        //private TowerHandler _spawnedTowerHandler = null;  // World object tower spawned when dragging
 
         public void Initialize(TowerData data)
         {
@@ -106,44 +106,43 @@ namespace RushHour.UserInterface
         /// <summary>
         /// When a drag end, attempt to place currently selected tower at the mouse.
         /// </summary>
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            if (_spawnedTowerHandler == null) { return; }
+        //public void OnPointerUp(PointerEventData eventData)
+        //{
+        //    if (_spawnedTowerHandler == null) { return; }
+        //    ContextManager.instance.ChangeContext(ContextType.Shop);  // Re-show menu after dragging
 
-            ContextManager.instance.ChangeContext(ContextType.Shop);  // Re-show menu after dragging
+        //    // If we are hovering over an invalid spot, then we cannot place
+        //    if (!_isPlaceable)
+        //    {
+        //        Destroy(_spawnedTowerHandler.gameObject);
+        //        _spawnedTowerHandler = null;
+        //        AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
+        //        return;
+        //    }
 
-            // If we are hovering over an invalid spot, then we cannot place
-            if (!_isPlaceable)
-            {
-                Destroy(_spawnedTowerHandler.gameObject);
-                _spawnedTowerHandler = null;
-                AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
-                return;
-            }
+        //    // If we don't have sufficient funds, then we also cannot place
+        //    if (Globals.Money < _cachedData.Cost)
+        //    {
+        //        Destroy(_spawnedTowerHandler.gameObject);
+        //        _spawnedTowerHandler = null;
+        //        AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
+        //        return;
+        //    }
 
-            // If we don't have sufficient funds, then we also cannot place
-            if (Globals.Money < _cachedData.Cost)
-            {
-                Destroy(_spawnedTowerHandler.gameObject);
-                _spawnedTowerHandler = null;
-                AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
-                return;
-            }
+        //    _spawnedTowerHandler.IsActivated = true;  // Activate the tower after its placed
+        //    _spawnedTowerHandler = null;
 
-            _spawnedTowerHandler.IsActivated = true;  // Activate the tower after its placed
-            _spawnedTowerHandler = null;
+        //    Globals.Money -= _cachedData.Cost;  // Decrease current funds
+        //    Globals.SalaryPerHour += _cachedData.SalaryPerHour;
 
-            Globals.Money -= _cachedData.Cost;  // Decrease current funds
-            Globals.SalaryPerHour += _cachedData.SalaryPerHour;
+        //    AudioManager.Instance.PlayOneShot(_placedUnitSFX, 0.6f);  // Play sound effect when placed
 
-            AudioManager.Instance.PlayOneShot(_placedUnitSFX, 0.6f);  // Play sound effect when placed
-
-            // If the unit has a unique placement sound effect, also play that too
-            if (_cachedData.PlacementSFX != null)
-            {
-                AudioManager.Instance.PlayOneShot(_cachedData.PlacementSFX, _cachedData.PlacementSFXVolume);
-            }
-        }
+        //    // If the unit has a unique placement sound effect, also play that too
+        //    if (_cachedData.PlacementSFX != null)
+        //    {
+        //        AudioManager.Instance.PlayOneShot(_cachedData.PlacementSFX, _cachedData.PlacementSFXVolume);
+        //    }
+        //}
 
     }
 }
