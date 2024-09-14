@@ -12,6 +12,7 @@ namespace RushHour
         [SerializeField] private GameObject _modalObject;
         [SerializeField] private TextMeshProUGUI _levelText;
         [SerializeField] private TMP_InputField _passwordInput;
+        [SerializeField] private TextMeshProUGUI _feedbackText;
 
         private UILevelHandler _storedLevel;
 
@@ -20,6 +21,7 @@ namespace RushHour
 
         private void Awake()
         {
+            Hide();  // Hide modal when game starts
             _passwordInput.onValueChanged.AddListener((string text) =>
             {
                 if (text.Length == 4)
@@ -37,6 +39,7 @@ namespace RushHour
         {
             _levelText.text = level.LevelName;
             _storedLevel = level;
+            RenderFeedbackText("", Color.black);  // Render no text initially
         }
 
         /// <summary>
@@ -48,12 +51,21 @@ namespace RushHour
             // If we type a wrong password, reject and reset input
             if (password != _storedLevel.LevelPassword)
             {
-                Debug.Log("Wrong password!");
+                RenderFeedbackText("Incorrect password: " + password + ".", Color.red);
                 _passwordInput.text = "";
                 return;
             }
-            Debug.Log("Password accepted!");
             _storedLevel.GoToScene();  // Go to the scene pointed at by level
+        }
+
+        /// <summary>
+        /// Updates miniature text to allow the user to see what is happening
+        /// regarding their password input.
+        /// </summary>
+        public void RenderFeedbackText(string text, Color color)
+        {
+            _feedbackText.text = text;
+            _feedbackText.color = color;
         }
 
     }
