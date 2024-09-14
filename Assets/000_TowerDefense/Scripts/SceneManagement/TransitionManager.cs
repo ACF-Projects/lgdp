@@ -95,7 +95,10 @@ namespace RushHour
             while (currTime < timeToWait)
             {
                 currTime += Time.deltaTime;
-                AudioManager.Instance.SetVolume(Mathf.Lerp(fromVolume, toVolume, currTime / timeToWait));
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.SetVolume(Mathf.Lerp(fromVolume, toVolume, currTime / timeToWait));
+                }
                 yield return null;
             }
         }
