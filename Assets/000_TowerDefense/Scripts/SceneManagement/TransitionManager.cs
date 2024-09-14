@@ -45,7 +45,7 @@ namespace RushHour
         /// </summary>
         public void GoToScene(string sceneName)
         {
-            TransitionManager.Instance.TransitionAndCall(() =>
+            TransitionAndCall(() =>
             {
                 SceneManager.LoadScene(sceneName);
             });

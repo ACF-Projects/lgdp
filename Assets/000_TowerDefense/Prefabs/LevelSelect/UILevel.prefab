@@ -49,7 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752015e5fefe8464198a4197357f3e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelSceneName: TD_POC
+  LevelName: 
+  SceneNameToLoad: 
+  IsLocked: 1
+  LevelPassword: 
 --- !u!1 &4285369514461390818
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,8 +175,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6734071415383865339}
-        m_TargetAssemblyTypeName: LGDP.UILevelHandler, Assembly-CSharp
-        m_MethodName: GoToScene
+        m_TargetAssemblyTypeName: RushHour.UILevelHandler, Assembly-CSharp
+        m_MethodName: OnClick_TryStartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
