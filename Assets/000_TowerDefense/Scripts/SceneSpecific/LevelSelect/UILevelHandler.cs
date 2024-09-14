@@ -20,7 +20,7 @@ namespace RushHour
         {
             if (TransitionManager.Instance == null)
             {
-                Debug.LogError("No SceneSwitcher object found!", this);
+                Debug.LogError("No TransitionManager object found!", this);
                 return;
             }
             TransitionManager.Instance.GoToScene(LevelSceneName);
