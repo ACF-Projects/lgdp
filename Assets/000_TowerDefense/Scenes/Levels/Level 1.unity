@@ -8533,7 +8533,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1072522849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8547,8 +8547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vCam: {fileID: 863874829}
-  panSpeed: 3
-  panBorderWidth: 150
+  panSpeed: 5
+  panBorderWidth: 50
 --- !u!4 &1072522850
 Transform:
   m_ObjectHideFlags: 0

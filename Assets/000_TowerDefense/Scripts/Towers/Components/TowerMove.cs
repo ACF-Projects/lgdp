@@ -64,8 +64,11 @@ namespace RushHour.Tower.Components
         private void MouseReceiver_OnLeftClicked()
         {
             if (MouseReceiver.instance.isPointerOverGameObject) return;
+            Physics2D.queriesHitTriggers = false;
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Camera")));
+            Physics2D.queriesHitTriggers = true;
             if (hit.collider != towerCollider) return;
+            
             dragging = true;
             originalPosition = TowerHandler.transform.position;
             towerCollider.gameObject.layer = 0;
