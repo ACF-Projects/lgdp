@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 129992779742668088}
   - component: {fileID: 4976835703324248943}
   - component: {fileID: 3802250647260201470}
+  - component: {fileID: 2903655101633182146}
   m_Layer: 5
   m_Name: UITowerSlot
   m_TagString: Untagged
@@ -451,3 +452,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2903655101633182146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017385417608212896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f366941eef534488a20def5607b573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

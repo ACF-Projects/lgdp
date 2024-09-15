@@ -6831,6 +6831,7 @@ GameObject:
   - component: {fileID: 681709506}
   - component: {fileID: 681709505}
   - component: {fileID: 681709510}
+  - component: {fileID: 681709511}
   m_Layer: 0
   m_Name: Main Scripts
   m_TagString: Untagged
@@ -6934,6 +6935,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContext: 0
+--- !u!114 &681709511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681709504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b349101d949b434aa0474f398b1c8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasicCursorSprite: {fileID: 2800000, guid: fd05b6b4806176043955299cfab13615, type: 3}
+  SelectCursorSprite: {fileID: 2800000, guid: eb4015d4896da7d4692d53ee30865682, type: 3}
 --- !u!1 &689983412
 GameObject:
   m_ObjectHideFlags: 0
@@ -12615,6 +12630,7 @@ GameObject:
   - component: {fileID: 1933452374}
   - component: {fileID: 1933452373}
   - component: {fileID: 1933452376}
+  - component: {fileID: 1933452377}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -12737,6 +12753,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   context: 2
   button: {fileID: 1933452373}
+--- !u!114 &1933452377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933452371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f366941eef534488a20def5607b573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1965109151
 GameObject:
   m_ObjectHideFlags: 0

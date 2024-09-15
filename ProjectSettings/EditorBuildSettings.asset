@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/000_TowerDefense/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Lucas/Scenes/TD_TITLE.unity
     guid: 773bac3aa50e45d40a8b2e4347efdad2
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Lucas/Scenes/TD_GAME.unity
     guid: 0d45cfefc04f76b41858a3036cb4d8a0
   m_configObjects: {}
