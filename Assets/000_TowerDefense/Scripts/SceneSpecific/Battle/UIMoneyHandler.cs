@@ -10,6 +10,8 @@ namespace RushHour.UserInterface
 
         [Header("Object Assignments")]
         [SerializeField] private TextMeshProUGUI _moneyText;
+        [Header("Text Properties")]
+        [SerializeField] private string _moneyFormatString;
 
         private void OnEnable()
         {
@@ -24,7 +26,7 @@ namespace RushHour.UserInterface
 
         private void UpdateMoney()
         {
-            _moneyText.text = "Money: $" + Globals.Money.ToString();
+            _moneyText.text = _moneyFormatString.Replace("%d", Globals.Money.ToString());
         }
 
     }

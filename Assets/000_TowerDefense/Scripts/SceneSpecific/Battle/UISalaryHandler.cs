@@ -10,6 +10,8 @@ namespace RushHour.UserInterface
 
         [Header("Object Assignments")]
         [SerializeField] private TextMeshProUGUI _salaryText;
+        [Header("Text Properties")]
+        [SerializeField] private string _moneyFormatString;
 
         private void OnEnable()
         {
@@ -24,7 +26,7 @@ namespace RushHour.UserInterface
 
         private void UpdateSalary()
         {
-            _salaryText.text = "Salary/hr: $" + Globals.SalaryPerHour.ToString();
+            _salaryText.text = _moneyFormatString.Replace("%d", Globals.SalaryPerHour.ToString());
         }
 
     }
