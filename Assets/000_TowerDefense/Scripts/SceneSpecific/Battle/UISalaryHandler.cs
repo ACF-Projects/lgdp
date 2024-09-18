@@ -16,17 +16,20 @@ namespace RushHour.UserInterface
         private void OnEnable()
         {
             UpdateSalary();
-            Globals.OnSalaryChanged += UpdateSalary;
+            BattleManager.Instance.OnSalaryChanged += UpdateSalary;
         }
 
         private void OnDisable()
         {
-            Globals.OnSalaryChanged -= UpdateSalary;
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnSalaryChanged -= UpdateSalary;
+            }
         }
 
         private void UpdateSalary()
         {
-            _salaryText.text = _moneyFormatString.Replace("%d", Globals.SalaryPerHour.ToString());
+            _salaryText.text = _moneyFormatString.Replace("%d", BattleManager.Instance.SalaryPerHour.ToString());
         }
 
     }

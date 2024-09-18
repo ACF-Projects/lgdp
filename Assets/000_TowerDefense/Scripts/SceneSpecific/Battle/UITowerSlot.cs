@@ -36,12 +36,15 @@ namespace RushHour.UserInterface
 
         public void OnEnable()
         {
-            Globals.OnMoneyChanged += DisableDragIfTooPoor;
+            BattleManager.Instance.OnMoneyChanged += DisableDragIfTooPoor;
         }
 
         public void OnDisable()
         {
-            Globals.OnMoneyChanged -= DisableDragIfTooPoor;
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnMoneyChanged -= DisableDragIfTooPoor;
+            }
         }
 
         /// <summary>
@@ -50,8 +53,8 @@ namespace RushHour.UserInterface
         /// </summary>
         public void DisableDragIfTooPoor()
         {
-            _isDraggable = Globals.Money >= _cachedData.Cost;
-            _costText.color = Globals.Money >= _cachedData.Cost ? Color.black : Color.red;
+            _isDraggable = BattleManager.Instance.Money >= _cachedData.Cost;
+            _costText.color = BattleManager.Instance.Money >= _cachedData.Cost ? Color.black : Color.red;
         }
 
         /// <summary>
@@ -121,7 +124,7 @@ namespace RushHour.UserInterface
         //    }
 
         //    // If we don't have sufficient funds, then we also cannot place
-        //    if (Globals.Money < _cachedData.Cost)
+        //    if (BattleManager.Instance.Money < _cachedData.Cost)
         //    {
         //        Destroy(_spawnedTowerHandler.gameObject);
         //        _spawnedTowerHandler = null;
@@ -132,8 +135,8 @@ namespace RushHour.UserInterface
         //    _spawnedTowerHandler.IsActivated = true;  // Activate the tower after its placed
         //    _spawnedTowerHandler = null;
 
-        //    Globals.Money -= _cachedData.Cost;  // Decrease current funds
-        //    Globals.SalaryPerHour += _cachedData.SalaryPerHour;
+        //    BattleManager.Instance.Money -= _cachedData.Cost;  // Decrease current funds
+        //    BattleManager.Instance.SalaryPerHour += _cachedData.SalaryPerHour;
 
         //    AudioManager.Instance.PlayOneShot(_placedUnitSFX, 0.6f);  // Play sound effect when placed
 

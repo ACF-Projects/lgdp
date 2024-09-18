@@ -8,7 +8,7 @@ using UnityEngine;
 namespace RushHour.UserInterface
 {
     /// <summary>
-    /// Updates some fields based on the Globals timer variable.
+    /// Updates some fields based on the BattleManager.Instance.timer variable.
     /// </summary>
     public class UITimer : MonoBehaviour
     {
@@ -18,12 +18,15 @@ namespace RushHour.UserInterface
 
         private void OnEnable()
         {
-            Globals.OnTimerChanged += UpdateTimerValue;
+            BattleManager.Instance.OnTimerChanged += UpdateTimerValue;
         }
 
         private void OnDisable()
         {
-            Globals.OnTimerChanged -= UpdateTimerValue;
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnTimerChanged -= UpdateTimerValue;
+            }
         }
 
         private void Start()

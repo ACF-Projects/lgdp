@@ -22,7 +22,7 @@ namespace RushHour
         /// </summary>
         public void TickTimer()
         {
-            Globals.Timer++;
+            BattleManager.Instance.Timer++;
         }
 
     }

@@ -16,17 +16,17 @@ namespace RushHour
         private void OnEnable()
         {
             UpdateQuota();
-            // Globals.OnMoneyChanged += UpdateQuota;
+            // BattleManager.Instance.OnMoneyChanged += UpdateQuota;
         }
 
         private void OnDisable()
         {
-            // Globals.OnMoneyChanged -= UpdateQuota;
+            // BattleManager.Instance.OnMoneyChanged -= UpdateQuota;
         }
 
         private void UpdateQuota()
         {
-            // _quotaText.text = _quotaFormatString.Replace("%d", Globals.Money.ToString());
+            // _quotaText.text = _quotaFormatString.Replace("%d", BattleManager.Instance.Money.ToString());
         }
 
     }

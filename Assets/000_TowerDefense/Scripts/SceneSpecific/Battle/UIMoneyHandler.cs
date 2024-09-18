@@ -16,17 +16,20 @@ namespace RushHour.UserInterface
         private void OnEnable()
         {
             UpdateMoney();
-            Globals.OnMoneyChanged += UpdateMoney;
+            BattleManager.Instance.OnMoneyChanged += UpdateMoney;
         }
 
         private void OnDisable()
         {
-            Globals.OnMoneyChanged -= UpdateMoney;
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnMoneyChanged -= UpdateMoney;
+            }
         }
 
         private void UpdateMoney()
         {
-            _moneyText.text = _moneyFormatString.Replace("%d", Globals.Money.ToString());
+            _moneyText.text = _moneyFormatString.Replace("%d", BattleManager.Instance.Money.ToString());
         }
 
     }

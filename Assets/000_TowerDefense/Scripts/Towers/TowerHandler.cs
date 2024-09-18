@@ -24,7 +24,7 @@ namespace RushHour.Tower
         /// <summary>
         /// Initializes this tower's data.
         /// 
-        /// Also logs this unit's salary into Globals.
+        /// Also logs this unit's salary into BattleManager.Instance.
         /// </summary>
         public void Init(TowerData towerData)
         {
