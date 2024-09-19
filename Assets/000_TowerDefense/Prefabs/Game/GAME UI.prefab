@@ -455,8 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cbb2e6934ff4543bf194f788f0b13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _quotaText: {fileID: 0}
-  _quotaFormatString: $%d/$%d
+  _quotaText: {fileID: 7527292402239477004}
+  _quotaFormatString: $%earn/$%total
 --- !u!1 &2196011292777926651
 GameObject:
   m_ObjectHideFlags: 0

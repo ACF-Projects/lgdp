@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -16,17 +17,21 @@ namespace RushHour
         private void OnEnable()
         {
             UpdateQuota();
-            // BattleManager.Instance.OnMoneyChanged += UpdateQuota;
+            BattleManager.Instance.OnMoneyChanged += UpdateQuota;
         }
 
         private void OnDisable()
         {
-            // BattleManager.Instance.OnMoneyChanged -= UpdateQuota;
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnMoneyChanged -= UpdateQuota;
+            }
         }
 
         private void UpdateQuota()
         {
-            // _quotaText.text = _quotaFormatString.Replace("%d", BattleManager.Instance.Money.ToString());
+            _quotaText.text = _quotaFormatString.Replace("%earn", BattleManager.Instance.EarnedMoney.ToString())
+                                     .Replace("%total", BattleManager.Instance.RequiredQuota.ToString());
         }
 
     }

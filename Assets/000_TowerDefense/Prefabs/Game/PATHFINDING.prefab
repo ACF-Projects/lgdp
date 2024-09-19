@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7759577476363090131}
   - component: {fileID: -9115048667930337284}
   m_Layer: 0
-  m_Name: PATHFINDING
+  m_Name: Pathfinding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,11 +55,11 @@ MonoBehaviour:
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
-  debugRoof: 20000
+  debugRoof: 1
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:

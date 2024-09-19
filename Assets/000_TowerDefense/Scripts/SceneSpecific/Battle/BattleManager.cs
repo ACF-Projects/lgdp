@@ -21,16 +21,20 @@ namespace RushHour
             }
         }
 
+        public static int TIME_IN_DAY = 120;  // Number of seconds in a day until day ends
+
         private float _money = 500;
+        private float _earnedMoney = 0;
         public float Money
         {
             get => _money;
-            set
+            private set
             {
                 _money = value;
                 OnMoneyChanged?.Invoke();
             }
         }
+        public float EarnedMoney => _earnedMoney;
 
         private float _salaryPerHour = 0;
         public float SalaryPerHour
@@ -66,7 +70,9 @@ namespace RushHour
             }
         }
 
-        public static int TIME_IN_DAY = 120;  // Number of seconds in a day until day ends
+        [Header("Battle Properties")]
+        [SerializeField] private int _requiredQuota = 100;  // How much is needed to win level
+        public int RequiredQuota => _requiredQuota;
 
         public Action OnMoneyChanged = null;
         public Action OnSalaryChanged = null;
@@ -105,6 +111,16 @@ namespace RushHour
         private void ChargeSalary()
         {
             Money -= SalaryPerHour;
+        }
+
+        /// <summary>
+        /// Whenever the player earns money (e.g., acquires a customer), tracks the
+        /// earned money for the quota and updates total money.
+        /// </summary>
+        public void EarnMoney(int earnedMoney)
+        {
+            Money += earnedMoney;
+            _earnedMoney += earnedMoney;
         }
 
     }
