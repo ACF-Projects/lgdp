@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 5417570820415670219}
   - component: {fileID: 5086475552001445668}
   - component: {fileID: 18667587976005198}
+  - component: {fileID: 5718174600394190210}
   m_Layer: 5
   m_Name: TowerDefenseUI
   m_TagString: Untagged
@@ -262,6 +263,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5718174600394190210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470742929945169071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9941cfe01a7ee4b985cb8c7a8a9483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiTowerSlotPrefab: {fileID: 9017385417608212896, guid: f260f0d838bd87640a95b037543c1f7f, type: 3}
+  _slotParentTransform: {fileID: 7129446633730604813}
 --- !u!1 &1596721771691897558
 GameObject:
   m_ObjectHideFlags: 0
