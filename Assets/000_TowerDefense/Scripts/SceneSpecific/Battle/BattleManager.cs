@@ -66,7 +66,7 @@ namespace RushHour
             }
         }
 
-        public static int TIME_IN_DAY = 60;  // Number of seconds in a day until day ends
+        public static int TIME_IN_DAY = 120;  // Number of seconds in a day until day ends
 
         public Action OnMoneyChanged = null;
         public Action OnSalaryChanged = null;

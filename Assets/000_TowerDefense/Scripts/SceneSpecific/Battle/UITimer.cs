@@ -57,6 +57,7 @@ namespace RushHour.UserInterface
             double timeFraction = (double)currTime / maxTime;
             int interpolatedTimeMinutes = startTimeMinutes + (int)(timeFraction * totalDuration);
             int hours = interpolatedTimeMinutes / 60;
+            int minutes = interpolatedTimeMinutes % 60;
 
             // Determine AM/PM
             string period = hours < 12 ? "AM" : "PM";
@@ -72,7 +73,7 @@ namespace RushHour.UserInterface
             }
 
             // Format the time string to show only hours
-            string timeString = $"{hours}:00 {period}";
+            string timeString = $"{hours}:{minutes:D2} {period}";
 
             return timeString;
         }
