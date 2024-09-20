@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1720556633589050885}
   - component: {fileID: 6161874849926295771}
+  - component: {fileID: 1433024948699047563}
+  - component: {fileID: 2373769213171647176}
   m_Layer: 0
   m_Name: ActualTower
   m_TagString: Untagged
@@ -50,6 +52,32 @@ MonoBehaviour:
   blockedLayers:
     serializedVersion: 2
     m_Bits: 72
+--- !u!114 &1433024948699047563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675072692659000607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9097d3903e34d5488f778a9160b1ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5519102108233725242}
+--- !u!114 &2373769213171647176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675072692659000607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f422cc88a8bcc842be8d3803763bb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5519102108233725242}
 --- !u!1 &3492690402400894834
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerComponents:
   - {fileID: 6161874849926295771}
+  - {fileID: 1433024948699047563}
+  - {fileID: 2373769213171647176}
   - {fileID: 1431510909732462000}
   visual: {fileID: 9193514491456168541}
   IsActivated: 0

@@ -115,13 +115,21 @@ namespace RushHour
 
         /// <summary>
         /// Whenever the player earns money (e.g., acquires a customer), tracks the
-        /// earned money for the quota and updates total money.
+        /// earned money for the quota and updates total money. Earned money only increases if the change amount is positive.
         /// </summary>
-        public void EarnMoney(int earnedMoney)
+        public void ChangeMoney(float changeAmount)
         {
-            Money += earnedMoney;
-            _earnedMoney += earnedMoney;
+            Money += changeAmount;
+            if(changeAmount > 0) _earnedMoney += changeAmount;
         }
 
+        /// <summary>
+        /// Changes the salary by the specified amount.
+        /// </summary>
+        /// <param name="changeAmount"></param>
+        public void ChangeSalary(float changeAmount)
+        {
+            SalaryPerHour += changeAmount;
+        }
     }
 }

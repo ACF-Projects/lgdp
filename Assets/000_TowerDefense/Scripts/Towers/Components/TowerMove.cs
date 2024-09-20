@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using RushHour.Global;
 using RushHour.InputHandling;
 using System;
 using System.Collections;
@@ -18,11 +19,12 @@ namespace RushHour.Tower.Components
         [SerializeField] private LayerMask blockedLayers;
 
         private bool dragging;
-        private Vector3 originalPosition;
+        private Vector3? originalPosition = null;
         private Vector2 mousePosition;
 
         public static event EventHandler OnTowerGrabbed;
         public static event EventHandler<bool> OnTowerDropped;
+        public static event EventHandler OnTowerBought;
 
         private void Awake()
         {
@@ -38,6 +40,7 @@ namespace RushHour.Tower.Components
             MouseReceiver.OnMouseMoved += MouseReceiver_OnMouseMoved;
 
             dragging = true;
+            originalPosition = null;
         }
 
         private void OnDestroy()
@@ -93,24 +96,27 @@ namespace RushHour.Tower.Components
                 AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
             }
 
-            if (TowerHandler.IsActivated)
+            if (originalPosition is Vector3 position)
             {
                 if (!valid)
                 {
-                    TowerHandler.transform.position = originalPosition;
+                    TowerHandler.transform.position = position;
                 }
                 towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
             }
             else
             {
-                // if tower has never been placed, place tower if possible
-                if (!valid)
+                // if tower has never been placed or not enough funds, place tower if possible
+                if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
                 {
                     Destroy(TowerHandler.gameObject);
                     return;
                 }
-                TowerHandler.IsActivated = true;
+                 
                 towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
+                originalPosition = TowerHandler.transform.position;
+
+                OnTowerBought?.Invoke(TowerHandler, EventArgs.Empty);
             }
 
         }
@@ -126,6 +132,11 @@ namespace RushHour.Tower.Components
             {
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePosition);
                 TowerHandler.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
+
+                var col = Physics2D.OverlapCircle(TowerHandler.transform.position, TowerHandler.TowerData.SpriteRadius, blockedLayers);
+                bool valid = col == null;
+
+                TowerHandler.GetTowerComponent<TowerRadius>().TintEffectRadius(valid ? Constants.VALID_PLACEMENT_COLOR : Constants.INVALID_PLACEMENT_COLOR);
             }
         }
     }
