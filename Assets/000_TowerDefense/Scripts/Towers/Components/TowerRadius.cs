@@ -25,6 +25,20 @@ namespace RushHour.Tower.Components
             effectPreview.localScale = new Vector3(scaleFactor, scaleFactor);
             effectTrigger.radius = TowerHandler.TowerData.EffectRadius;
             previewRenderer = effectPreview.GetComponent<SpriteRenderer>();
+
+            ShowEffectRadius();
+
+            TowerMove.OnTowerGrabbed += (sender, e) =>
+            {
+                if (sender is not Tower.TowerHandler || (sender as TowerHandler) != TowerHandler) return;
+                ShowEffectRadius();
+            };
+
+            TowerMove.OnTowerDropped += (sender, e) =>
+            {
+                if (sender is not Tower.TowerHandler || (sender as TowerHandler) != TowerHandler) return;
+                HideEffectRadius();
+            };
         }
 
         /// <summary>

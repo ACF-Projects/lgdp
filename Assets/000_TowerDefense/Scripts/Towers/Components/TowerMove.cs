@@ -87,14 +87,15 @@ namespace RushHour.Tower.Components
 
             OnTowerDropped?.Invoke(TowerHandler, valid);
 
-            if (valid)
-            {
+            // Commented this out because this actually should be in a separate component
+            //if (valid)
+            //{
 
-            }
-            else
-            {
-                AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
-            }
+            //}
+            //else
+            //{
+            //    AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
+            //}
 
             if (originalPosition is Vector3 position)
             {
