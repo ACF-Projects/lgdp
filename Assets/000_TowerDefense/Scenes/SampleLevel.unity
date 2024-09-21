@@ -6525,7 +6525,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 3}
+  m_Size: {x: 4, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &843755624
 GameObject:
@@ -7720,7 +7720,7 @@ GameObject:
   - component: {fileID: 1236295888}
   - component: {fileID: 1236295887}
   - component: {fileID: 1236295889}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
