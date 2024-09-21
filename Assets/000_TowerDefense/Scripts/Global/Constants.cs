@@ -9,5 +9,7 @@ namespace RushHour.Global
         public const float EFFECT_ALPHA_ON_HOVER = 0.3f; // Opacity of effect circle when shown
         public static readonly Color INVALID_PLACEMENT_COLOR = Color.red;
         public static readonly Color VALID_PLACEMENT_COLOR = Color.white;
+
+        public static readonly LayerMask LAYERS_ALL_EXCEPT_CAMERA = ~(1 << LayerMask.NameToLayer("Camera"));
     }
 }

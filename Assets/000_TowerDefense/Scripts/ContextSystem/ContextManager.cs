@@ -1,3 +1,4 @@
+using RushHour.Global;
 using RushHour.InputHandling;
 using System;
 using System.Collections;
@@ -63,7 +64,9 @@ namespace RushHour
             else
             {
                 // Check for actual object
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Camera")));
+                Physics2D.queriesHitTriggers = false;
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, Constants.LAYERS_ALL_EXCEPT_CAMERA);
+                Physics2D.queriesHitTriggers = true;
 
                 if (hit.collider == null)
                 {
