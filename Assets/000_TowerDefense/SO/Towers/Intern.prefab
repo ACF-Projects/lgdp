@@ -51,7 +51,7 @@ MonoBehaviour:
   towerCollider: {fileID: 945761609658860599}
   blockedLayers:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 328
 --- !u!114 &1433024948699047563
 MonoBehaviour:
   m_ObjectHideFlags: 0
