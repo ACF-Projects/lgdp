@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 4023616950359154348}
   - component: {fileID: 5592197203887416378}
   - component: {fileID: 7665425221075152126}
+  - component: {fileID: 6122298303080775984}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -330,6 +331,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &6122298303080775984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297869023182646702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf373f02341eb5a4f98fae8564ca4019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 6129227209559330968}
 --- !u!1 &7902186723997441952
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +395,7 @@ MonoBehaviour:
   - {fileID: 4658062272702868317}
   - {fileID: 4614779716742480596}
   - {fileID: 2006057095221947982}
+  - {fileID: 6122298303080775984}
   - {fileID: 5873465895252256169}
   visual: {fileID: 4023616950359154348}
   IsActivated: 0

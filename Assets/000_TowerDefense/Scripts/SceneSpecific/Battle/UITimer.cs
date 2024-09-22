@@ -1,3 +1,4 @@
+using RushHour.Global;
 using System;
 using TMPro;
 using UnityEngine;
@@ -39,10 +40,10 @@ namespace RushHour.UserInterface
         /// </summary>
         private void UpdateTimerValue(int timeElapsed)
         {
-            _timerDayText.text = CalculateTimeString(timeElapsed, BattleManager.TIME_IN_DAY);
+            _timerDayText.text = CalculateTimeString(timeElapsed, Constants.TIME_IN_DAY);
 
-            _timerFillImage.fillAmount = (float)timeElapsed / BattleManager.TIME_IN_DAY;
-            _timerDayText.text = CalculateTimeString(timeElapsed, BattleManager.TIME_IN_DAY);
+            _timerFillImage.fillAmount = (float)timeElapsed / Constants.TIME_IN_DAY;
+            _timerDayText.text = CalculateTimeString(timeElapsed, Constants.TIME_IN_DAY);
         }
 
         /// <summary>

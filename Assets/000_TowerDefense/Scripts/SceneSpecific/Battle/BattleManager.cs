@@ -21,8 +21,6 @@ namespace RushHour
             }
         }
 
-        public static int TIME_IN_DAY = 120;  // Number of seconds in a day until day ends
-
         private float _money = 500;
         private float _earnedMoney = 0;
         public float Money
@@ -57,6 +55,8 @@ namespace RushHour
                 _timer = value;
                 OnTimerChanged?.Invoke(value);
 
+                print($"{_timer} {_lastTimeTracked}");
+
                 // If many hours have passed, call OnNewHour() for each hour passed
                 int hoursPassed = (_timer - _lastTimeTracked) / 60;
                 if (hoursPassed > 0)
@@ -65,6 +65,7 @@ namespace RushHour
                 }
                 for (int i = 0; i < hoursPassed; i++)
                 {
+                    print("OnNewHour");
                     OnNewHour?.Invoke();
                 }
             }
@@ -110,6 +111,7 @@ namespace RushHour
         /// </summary>
         private void ChargeSalary()
         {
+            print("Charged Salary");
             Money -= SalaryPerHour;
         }
 
