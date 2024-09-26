@@ -104,13 +104,11 @@ namespace RushHour
         private void OnEnable()
         {
             OnNewHour += ChargeSalary;
-            OnDayEnd += DayEnd;
         }
 
         private void OnDisable()
         {
             OnNewHour -= ChargeSalary;
-            OnDayEnd -= DayEnd;
         }
 
         /// <summary>

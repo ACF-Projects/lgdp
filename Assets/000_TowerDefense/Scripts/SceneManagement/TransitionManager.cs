@@ -33,6 +33,10 @@ namespace RushHour
             {
                 Destroy(this);
             }
+        }
+
+        private void Start()
+        {
             if (HasFadedInFromPrevScene)
             {
                 TransitionFadeOut();
