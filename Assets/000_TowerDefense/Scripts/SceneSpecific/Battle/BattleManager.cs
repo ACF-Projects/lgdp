@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RushHour.Global;
 
 namespace RushHour
 {
@@ -55,8 +56,6 @@ namespace RushHour
                 _timer = value;
                 OnTimerChanged?.Invoke(value);
 
-                print($"{_timer} {_lastTimeTracked}");
-
                 // If many hours have passed, call OnNewHour() for each hour passed
                 int hoursPassed = (_timer - _lastTimeTracked) / 60;
                 if (hoursPassed > 0)
@@ -65,7 +64,6 @@ namespace RushHour
                 }
                 for (int i = 0; i < hoursPassed; i++)
                 {
-                    print("OnNewHour");
                     OnNewHour?.Invoke();
                 }
             }
@@ -111,7 +109,6 @@ namespace RushHour
         /// </summary>
         private void ChargeSalary()
         {
-            print("Charged Salary");
             Money -= SalaryPerHour;
         }
 
