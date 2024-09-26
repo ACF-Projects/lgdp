@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5161964674835847636
 CanvasRenderer:
@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.71834576, b: 0.390566, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4383c64fe56dd22439f6f870dce40ebf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8808585517042774681}
+  - component: {fileID: 3852270317550299345}
   m_Layer: 0
   m_Name: UITitlePerson
   m_TagString: Untagged
@@ -107,3 +108,20 @@ Transform:
   - {fileID: 7234079548838581226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3852270317550299345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005822643715318976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526e3da7da5cfd1469f7bdeed43234ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _personSprites:
+  - {fileID: 21300000, guid: 4383c64fe56dd22439f6f870dce40ebf, type: 3}
+  - {fileID: 21300000, guid: 50e7c14e71273b948ae6742b73bd1a38, type: 3}
+  - {fileID: 21300000, guid: a525c058f1f1c0a4aa34bb71cad8cf27, type: 3}
+  _personImage: {fileID: 214123507507205572}
