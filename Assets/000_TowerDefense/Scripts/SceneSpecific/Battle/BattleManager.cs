@@ -56,6 +56,12 @@ namespace RushHour
                 _timer = Mathf.Min(value, Constants.TIME_IN_DAY);  // Cannot go over max time
                 OnTimerChanged?.Invoke(_timer);
 
+                // Check to see if the game is over
+                if (_timer == Constants.TIME_IN_DAY)
+                {
+                    OnDayEnd?.Invoke();
+                }
+
                 // If many hours have passed, call OnNewHour() for each hour passed
                 int hoursPassed = (_timer - _lastTimeTracked) / Constants.TIME_IN_HOUR;
                 if (hoursPassed > 0)
@@ -65,12 +71,6 @@ namespace RushHour
                 for (int i = 0; i < hoursPassed; i++)
                 {
                     OnNewHour?.Invoke();
-
-                    // When we call a new hour, check to see if game is over
-                    if (_timer == Constants.TIME_IN_DAY)
-                    {
-                        OnDayEnd?.Invoke();
-                    }
                 }
             }
         }
@@ -104,11 +104,13 @@ namespace RushHour
         private void OnEnable()
         {
             OnNewHour += ChargeSalary;
+            OnDayEnd += DayEnd;
         }
 
         private void OnDisable()
         {
             OnNewHour -= ChargeSalary;
+            OnDayEnd -= DayEnd;
         }
 
         /// <summary>
@@ -137,5 +139,14 @@ namespace RushHour
         {
             SalaryPerHour += changeAmount;
         }
+
+        /// <summary>
+        /// Stops all game logic and animates the day end scene.
+        /// </summary>
+        public void DayEnd()
+        {
+            TransitionManager.Instance.GoToScene("LevelSelect");
+        }
+
     }
 }
