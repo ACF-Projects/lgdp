@@ -53,8 +53,8 @@ namespace RushHour
             get => _timer;
             set
             {
-                _timer = value;
-                OnTimerChanged?.Invoke(value);
+                _timer = Mathf.Min(value, Constants.TIME_IN_DAY);  // Cannot go over max time
+                OnTimerChanged?.Invoke(_timer);
 
                 // If many hours have passed, call OnNewHour() for each hour passed
                 int hoursPassed = (_timer - _lastTimeTracked) / Constants.TIME_IN_HOUR;
@@ -65,6 +65,12 @@ namespace RushHour
                 for (int i = 0; i < hoursPassed; i++)
                 {
                     OnNewHour?.Invoke();
+
+                    // When we call a new hour, check to see if game is over
+                    if (_timer == Constants.TIME_IN_DAY)
+                    {
+                        OnDayEnd?.Invoke();
+                    }
                 }
             }
         }
@@ -78,6 +84,7 @@ namespace RushHour
 
         public Action<int> OnTimerChanged = null;  // Param is current time
         public Action OnNewHour = null;  // Called whenever 60 minutes in-game has passed
+        public Action OnDayEnd = null;  // Called when the day is over
 
         private void Awake()
         {
