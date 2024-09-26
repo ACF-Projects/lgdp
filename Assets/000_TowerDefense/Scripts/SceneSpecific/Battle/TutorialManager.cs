@@ -12,11 +12,12 @@ namespace RushHour
         [SerializeField] private GameObject _welcomePopup;
         [SerializeField] private Button _welcomePopupButton;
 
-        private void Start()
+        private void Awake()
         {
             _welcomePopup.SetActive(true);
-            // Initially disable all timer tickers
+            // Initially disable all timer tickers and enemy spawners
             ToggleTimerTickers();
+            ToggleEnemySpawners();
         }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace RushHour
         {
             // When the welcome button is clicked, re-enable timer tickers
             _welcomePopupButton.onClick.AddListener(ToggleTimerTickers);
+            _welcomePopupButton.onClick.AddListener(ToggleEnemySpawners);
         }
 
         /// <summary>
@@ -34,6 +36,7 @@ namespace RushHour
         private void OnDisable()
         {
             _welcomePopupButton.onClick.RemoveListener(ToggleTimerTickers);
+            _welcomePopupButton.onClick.RemoveListener(ToggleEnemySpawners);
         }
 
         /// <summary>
@@ -46,6 +49,19 @@ namespace RushHour
             foreach (TimerTicker timerTicker in timerTickers)
             {
                 timerTicker.CanTick = !timerTicker.CanTick;
+            }
+        }
+
+        /// <summary>
+        /// Finds all enemy spawners and toggles them from active to inactive,
+        /// or vice versa.
+        /// </summary>
+        private void ToggleEnemySpawners()
+        {
+            EnemySpawner[] enemySpawners = FindObjectsOfType<EnemySpawner>(true);
+            foreach (EnemySpawner enemySpawner in enemySpawners)
+            {
+                enemySpawner.CanSpawnEnemies = !enemySpawner.CanSpawnEnemies;
             }
         }
 

@@ -39,22 +39,15 @@ namespace RushHour
             }
         }
 
+        public bool CanSpawnEnemies = true;
+
         [HideInInspector] public static Action OnAllEnemiesDead = null;  // When enemies are dead for curr wave
 
         private static int _enemiesRemaining = 0;
-        private static int _coroutinesWaiting = 0;
 
         private void Start()
         {
-            OnAllEnemiesDead += () =>  // TODO: This is for testing purposes; can remove
-            {
-                if (_coroutinesWaiting == 0)
-                {
-                    Debug.Log("All waves are done!");
-                    TransitionManager.Instance.GoToScene("Title");
-                }
-            };
-            StartWaves();
+            StartWaves();  // Start waves of enemies
         }
 
         private void OnEnable()
@@ -91,16 +84,16 @@ namespace RushHour
         /// </summary>
         private IEnumerator SpawnWave(Wave wave)
         {
-            _coroutinesWaiting++;
+            yield return new WaitUntil(() => CanSpawnEnemies);  // If can't spawn enemies, wait
             yield return new WaitForSeconds(wave.TimeBeforeSpawn);
             for (int i = 0; i < wave.EnemyCount; i++)
             {
+                yield return new WaitUntil(() => CanSpawnEnemies);  // If can't spawn enemies, wait
                 var enemyObj = Instantiate(wave.EnemyData.enemyPrefab, _waypoint.waypoints[0].position, Quaternion.identity).GetComponent<EnemyHandler>();
                 enemyObj.Init(_waypoint, wave.EnemyData);
                 _enemiesRemaining++;
                 yield return new WaitForSeconds(wave.TimeBetweenSpawns);
             }
-            _coroutinesWaiting--;
         }
 
     }
