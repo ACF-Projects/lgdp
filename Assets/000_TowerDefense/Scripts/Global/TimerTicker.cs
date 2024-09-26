@@ -11,6 +11,8 @@ namespace RushHour
     public class TimerTicker : MonoBehaviour
     {
 
+        public bool CanTick = true;
+
         private void Start()
         {
             InvokeRepeating(nameof(TickTimer), 1, 1);
@@ -18,10 +20,11 @@ namespace RushHour
         }
 
         /// <summary>
-        /// Ticks the timer up by one second.
+        /// Ticks the timer up by one second if this timer can tick.
         /// </summary>
         public void TickTimer()
         {
+            if (!CanTick) { return; }
             BattleManager.Instance.Timer++;
         }
 
