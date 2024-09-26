@@ -533,7 +533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449, y: -262}
+  m_AnchoredPosition: {x: -449, y: -175}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &474489155
@@ -1085,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1038, y: -262}
+  m_AnchoredPosition: {x: 1038, y: -175}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1206168268
@@ -6358,7 +6358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _endpoint1: {fileID: 384174328}
   _endpoint2: {fileID: 1101289005}
-  _spawnPosYVariation: 80
+  _spawnPosYVariation: 120
   _personContainer: {fileID: 1803428629}
   _personPrefab: {fileID: 3852270317550299345, guid: cab289bbe0d5aeb41907967d2843dcf7, type: 3}
 --- !u!114 &1636120182
