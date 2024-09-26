@@ -57,7 +57,7 @@ namespace RushHour
                 OnTimerChanged?.Invoke(value);
 
                 // If many hours have passed, call OnNewHour() for each hour passed
-                int hoursPassed = (_timer - _lastTimeTracked) / 60;
+                int hoursPassed = (_timer - _lastTimeTracked) / Constants.TIME_IN_HOUR;
                 if (hoursPassed > 0)
                 {
                     _lastTimeTracked = _timer;

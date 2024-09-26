@@ -55,10 +55,15 @@ namespace RushHour.UserInterface
             int startTimeMinutes = 9 * 60;  // 9:00am in minutes
             int endTimeMinutes = 18 * 60;   // 6:00pm in minutes
             int totalDuration = endTimeMinutes - startTimeMinutes;
-            double timeFraction = (double)currTime / maxTime;
-            int interpolatedTimeMinutes = startTimeMinutes + (int)(timeFraction * totalDuration);
-            int hours = interpolatedTimeMinutes / 60;
-            int minutes = interpolatedTimeMinutes % 60;
+
+            // Calculate how many of these "hours" have passed
+            int elapsedHours = currTime / Constants.TIME_IN_HOUR;
+            int elapsedMinutes = (currTime % Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
+
+            // Calculate the current time
+            int currentTimeMinutes = startTimeMinutes + (elapsedHours * 60) + elapsedMinutes;
+            int hours = currentTimeMinutes / 60;
+            int minutes = currentTimeMinutes % 60;
 
             // Determine AM/PM
             string period = hours < 12 ? "AM" : "PM";
