@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using RushHour.Tower;
-using RushHour.Tower.Components;
 
 namespace RushHour.UserInterface
 {
@@ -21,7 +20,6 @@ namespace RushHour.UserInterface
         [SerializeField] private AudioClip _placedUnitSFX;
 
         private bool _isDraggable = false;  // True if player can pay for this unit, else False
-        private bool _isPlaceable = false;  // True if hovering over placeable area, else False
         private TowerData _cachedData;  // Set by other script when initialized
 
         //private TowerHandler _spawnedTowerHandler = null;  // World object tower spawned when dragging
