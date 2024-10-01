@@ -1,3 +1,4 @@
+using RushHour.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,14 @@ namespace RushHour.Tower
         private List<EnemyHandler> enemyList = new();
         private EnemyHandler currentEnemy;
         private float currentTimer;
+
+        public override TowerStats GetStats()
+        {
+            var stats = base.GetStats();
+            stats.mainValue = new("Damage", damage);
+            stats.hitSpeed = new("Speed", 1f / cooldown);
+            return stats;
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

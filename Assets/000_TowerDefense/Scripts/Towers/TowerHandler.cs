@@ -52,6 +52,18 @@ namespace RushHour.Tower
             return component as T;
         }
 
+        /// <summary>
+        /// Used to provide stats to display via the info bar
+        /// </summary>
+        /// <returns>TowerStats object containing this tower's stats</returns>
+        public virtual TowerStats GetStats(){
+            var stats = new TowerStats();
+            stats.cost = new("Salary", TowerData.SalaryPerHour);
+            stats.range = new("Range", TowerData.EffectRadius);
+            stats.targetType = new("Target", "");
+            return stats;
+        }
+
 #if UNITY_EDITOR
         protected virtual void OnValidate()
         {

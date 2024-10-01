@@ -1,13 +1,15 @@
+using RushHour.Tower;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace RushHour.Tower
+namespace RushHour.UserInterface
 {
     public class TowerInfoDisplay : ContextElement
     {
         [SerializeField] private CanvasGroup towerInfoGroup;
+        [SerializeField] private StatsDisplay statsDisplay;
 
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI descriptionText;
