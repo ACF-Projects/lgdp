@@ -3,6 +3,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace RushHour
 {
@@ -17,7 +18,6 @@ namespace RushHour
     [RequireComponent(typeof(AIDestinationSetter))]
     public class EnemyGoToStore : MonoBehaviour
     {
-
         private GameObject _storeObject;  // Locates at the beginning of the game
         private AIPath _path;
         private AIDestinationSetter _destinationSetter;
@@ -57,21 +57,22 @@ namespace RushHour
         /// 
         /// Deletes this sprite when it is close enough to the store.
         /// </summary>
-        public void TrackStore()
+        public void TrackStore(EnemyHandler handler)
         {
             _path.enabled = true;
             _destinationSetter.target = _storeObject.transform;
-            StartCoroutine(DeleteWhenCloseCoroutine());
+            StartCoroutine(DeleteWhenCloseCoroutine(handler));
         }
 
         /// <summary>
         /// When this object is close to the store, delete it.
         /// (Like the enemy has entered the store)
         /// </summary>
-        private IEnumerator DeleteWhenCloseCoroutine()
+        private IEnumerator DeleteWhenCloseCoroutine(EnemyHandler handler)
         {
             yield return new WaitForEndOfFrame();
             yield return new WaitUntil(() => Vector2.Distance(transform.position, _storeObject.transform.position) < DIST_FROM_STORE_UNTIL_DISAPPEAR);
+            handler.ReachedStore();
             Destroy(gameObject);
         }
 

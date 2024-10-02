@@ -104,11 +104,18 @@ namespace RushHour
         private void OnEnable()
         {
             OnNewHour += ChargeSalary;
+            EnemyHandler.OnStoreReached += EnemyStoreReached;
         }
 
         private void OnDisable()
         {
             OnNewHour -= ChargeSalary;
+            EnemyHandler.OnStoreReached -= EnemyStoreReached;
+        }
+
+        private void EnemyStoreReached(EnemyHandler handler)
+        {
+            ChangeMoney(handler.EnemyData.Reward);
         }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace RushHour
         public static event Action<EnemyHandler> OnEnemyHit;
         public static event Action<EnemyHandler> OnEnemyKilled;
         public static event Action<EnemyHandler> OnEndReached;
+        public static event Action<EnemyHandler> OnStoreReached;
 
         [SerializeField] private SpriteRenderer sprite;
 
@@ -83,7 +84,7 @@ namespace RushHour
                 {
                     transform.rotation = Quaternion.Euler(0, 0, -sprite.transform.rotation.eulerAngles.z);
                     sprite.transform.localRotation = Quaternion.Euler(0, 0, 180);  // Rotate so correctly tracks store
-                    enemyGoToStore.TrackStore();
+                    enemyGoToStore.TrackStore(this);
                     // Then, disable this sprite (no longer trackable by towers)
                     enabled = false;
                 }
@@ -92,6 +93,11 @@ namespace RushHour
             {
                 OnEnemyHit?.Invoke(this);
             }
+        }
+
+        public void ReachedStore()
+        {
+            OnStoreReached?.Invoke(this);
         }
 
     }
