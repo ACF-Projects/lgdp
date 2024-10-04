@@ -26,7 +26,7 @@ namespace RushHour
         {
             if (this.enemy != enemy || hpBar == null) return;
             float percentage = enemy.CurrentHealth / enemy.EnemyData.Health;
-            DOTween.To(() => hpBar.fillAmount, x => hpBar.fillAmount = x, percentage, 0.1f).SetEase(Ease.InOutQuad);
+            DOTween.To(() => hpBar.fillAmount, x => hpBar.fillAmount = x, percentage, 0.15f).SetEase(Ease.InOutQuad);
         }
 
         private void OnDisable()
