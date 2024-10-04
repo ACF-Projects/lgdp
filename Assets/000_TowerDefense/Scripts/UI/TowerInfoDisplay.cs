@@ -36,6 +36,7 @@ namespace RushHour.UserInterface
 
                 nameText.text = towerHandler.TowerData.Name;
                 descriptionText.text = towerHandler.TowerData.Description;
+                statsDisplay.SetStats(towerHandler.GetStats());
             }
         }
 
@@ -46,6 +47,7 @@ namespace RushHour.UserInterface
             towerHandler = null;
             nameText.text = "";
             descriptionText.text = "";
+            statsDisplay.ClearStats();
         }
 
         // Temporary Function
