@@ -77,6 +77,7 @@ namespace RushHour
             if (_currentHealth <= 0 && !IsDead)
             {
                 _currentHealth = 0;
+                OnEnemyHit?.Invoke(this);
                 OnEnemyKilled?.Invoke(this);
                 IsDead = true;
                 // If this enemy should go to the store, make them do that

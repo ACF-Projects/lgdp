@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8392599712957048019}
+  healthDisplay: {fileID: 5490797195978987508}
   hpBar: {fileID: 7711811410545191621}
 --- !u!114 &761947841529129275
 MonoBehaviour:
@@ -412,6 +413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HP Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 8962760663228245674, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -420,6 +425,11 @@ PrefabInstance:
 --- !u!224 &2497165718079156246 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4282894898912919578, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
+  m_PrefabInstance: {fileID: 1857823655332786188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &5490797195978987508 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 6195662467430115320, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
   m_PrefabInstance: {fileID: 1857823655332786188}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7711811410545191621 stripped

@@ -8,9 +8,9 @@ namespace RushHour.Tower.Components
     {
         public void PlayPlacementSound(bool validPlacement)
         {
-            if (validPlacement)
+            if (validPlacement && TowerHandler.TowerData.PlacementSFX != null)
             {
-                AudioManager.Instance.PlayOneShot(TowerHandler.TowerData.PlacementSFX);
+                AudioManager.Instance.PlayOneShot(TowerHandler.TowerData.PlacementSFX, TowerHandler.TowerData.PlacementSFXVolume);
             }
             else
             {

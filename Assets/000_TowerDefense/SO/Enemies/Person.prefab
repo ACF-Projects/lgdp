@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 9026949866273335961}
+  healthDisplay: {fileID: 279374213373535114}
   hpBar: {fileID: 2654423615006105275}
 --- !u!114 &9161008008922067680
 MonoBehaviour:
@@ -417,6 +418,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
+--- !u!225 &279374213373535114 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 6195662467430115320, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
+  m_PrefabInstance: {fileID: 6204802972361999474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2654423615006105275 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8272421313561500361, guid: 3ac0fef1ebffc6843b12b50dad990b5a, type: 3}
