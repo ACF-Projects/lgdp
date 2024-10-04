@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 792590571308323872}
   - component: {fileID: 7652597786586047568}
   - component: {fileID: 2485069966160991282}
+  - component: {fileID: 4822401550543081111}
   m_Layer: 0
   m_Name: ActualTower
   m_TagString: Untagged
@@ -75,6 +76,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f422cc88a8bcc842be8d3803763bb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+--- !u!114 &4822401550543081111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659856208794150039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ca75f2d27310c4587fa20f6d35b878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
@@ -395,6 +409,7 @@ MonoBehaviour:
   - {fileID: 792590571308323872}
   - {fileID: 7652597786586047568}
   - {fileID: 2485069966160991282}
+  - {fileID: 4822401550543081111}
   - {fileID: 6921662943163534791}
   - {fileID: 666294689475238437}
   visual: {fileID: 3524877292544158931}

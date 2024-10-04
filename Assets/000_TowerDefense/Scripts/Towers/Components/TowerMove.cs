@@ -85,15 +85,7 @@ namespace RushHour.Tower.Components
 
             OnTowerDropped?.Invoke(TowerHandler, valid);
 
-            // Commented this out because this actually should be in a separate component
-            //if (valid)
-            //{
-
-            //}
-            //else
-            //{
-            //    AudioManager.Instance.PlayOneShot(SoundEffect.InvalidPlacement);
-            //}
+            TowerHandler.GetTowerComponent<TowerAudio>().PlayPlacementSound(valid);
 
             if (originalPosition is Vector3 position)
             {
@@ -108,6 +100,7 @@ namespace RushHour.Tower.Components
                 // if tower has never been placed or not enough funds, place tower if possible
                 if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
                 {
+                    if(valid) AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
                     Destroy(TowerHandler.gameObject);
                     return;
                 }
