@@ -1,4 +1,5 @@
 using RushHour.Tower;
+using RushHour.Tower.Components;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -53,7 +54,7 @@ namespace RushHour.UserInterface
         // Temporary Function
         public void SellUnit()
         {
-            Destroy(towerHandler.gameObject);
+            towerHandler.GetTowerComponent<TowerMoney>().SellTower();
             ContextManager.instance.ChangeContext();
         }
     }

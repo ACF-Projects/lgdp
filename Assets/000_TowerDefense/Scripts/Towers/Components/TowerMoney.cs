@@ -25,5 +25,11 @@ namespace RushHour.Tower.Components
             BattleManager.Instance.ChangeMoney(-TowerHandler.TowerData.Cost);
             BattleManager.Instance.ChangeSalary(TowerHandler.TowerData.SalaryPerHour);
         }
+
+        public void SellTower()
+        {
+            BattleManager.Instance.ChangeSalary(-TowerHandler.TowerData.SalaryPerHour);
+            Destroy(TowerHandler.gameObject);
+        }
     }
 }
