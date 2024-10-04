@@ -14,6 +14,7 @@ namespace RushHour.InputHandling
         public static event Action OnLeftClicked;
         public static event Action OnLeftReleased;
         public static event Action OnRightClicked;
+        public static event Action OnGrabbed;
         public static event Action<Vector2> OnMouseMoved;
 
         public bool isPointerOverGameObject;
@@ -53,6 +54,14 @@ namespace RushHour.InputHandling
         {
             if (context.canceled) return;
             OnMouseMoved?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnGrab(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnGrabbed?.Invoke();
+            }
         }
 
         private void Update()

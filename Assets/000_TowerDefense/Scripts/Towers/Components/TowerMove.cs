@@ -33,7 +33,7 @@ namespace RushHour.Tower.Components
         {
             base.Init(handler);
 
-            MouseReceiver.OnLeftClicked += MouseReceiver_OnLeftClicked;
+            MouseReceiver.OnGrabbed += MouseReceiver_OnGrabbed;
             MouseReceiver.OnLeftReleased += MouseReceiver_OnLeftReleased;
             MouseReceiver.OnMouseMoved += MouseReceiver_OnMouseMoved;
 
@@ -43,7 +43,7 @@ namespace RushHour.Tower.Components
 
         private void OnDestroy()
         {
-            MouseReceiver.OnLeftClicked -= MouseReceiver_OnLeftClicked;
+            MouseReceiver.OnGrabbed -= MouseReceiver_OnGrabbed;
             MouseReceiver.OnLeftReleased -= MouseReceiver_OnLeftReleased;
             MouseReceiver.OnMouseMoved -= MouseReceiver_OnMouseMoved;
         }
@@ -62,7 +62,7 @@ namespace RushHour.Tower.Components
         //    MouseReceiver.OnMouseMoved -= MouseReceiver_OnMouseMoved;
         //}
 
-        private void MouseReceiver_OnLeftClicked()
+        private void MouseReceiver_OnGrabbed()
         {
             if (MouseReceiver.instance.isPointerOverGameObject) return;
             Physics2D.queriesHitTriggers = false;

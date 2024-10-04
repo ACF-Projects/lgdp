@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaaa6851362edc48ab7b19d7be9e447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPointerOverGameObject: 0
 --- !u!114 &8975739772553555665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +119,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 67cd99d8-d700-4c57-b25a-e16eb991086f
     m_ActionName: Game/Pan[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3729115104498359294}
+        m_TargetAssemblyTypeName: RushHour.InputHandling.MouseReceiver, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 88247dde-cce6-4343-a335-d2005ad26939
+    m_ActionName: Game/Grab[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
