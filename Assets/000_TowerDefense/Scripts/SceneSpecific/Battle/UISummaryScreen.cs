@@ -11,7 +11,9 @@ namespace RushHour
         [Header("Object Assignments")]
         [SerializeField] private Animator _transitionAnimator;
         [SerializeField] private TextMeshProUGUI _feedbackText;  // Success or Fail text
+        [SerializeField] private TextMeshProUGUI _moneyMadeText;
         [SerializeField] private TextMeshProUGUI _customersConvertedText;
+        [SerializeField] private TextMeshProUGUI _salarySpentText;
 
         private void OnEnable()
         {
@@ -37,8 +39,12 @@ namespace RushHour
         private IEnumerator ShowSummaryCoroutine()
         {
             // First, update text
-            _feedbackText.text = "You succeeded";  // TODO: Make this vary
-            _customersConvertedText.text = "100 customers converted";
+            bool metQuota = BattleManager.Instance.EarnedMoney >= BattleManager.Instance.RequiredQuota;
+            _feedbackText.text = metQuota ? "You met the quota!" : "Better luck next time...";
+            _feedbackText.color = metQuota ? Color.green : Color.red;
+            _moneyMadeText.text = "$" + BattleManager.Instance.EarnedMoney + " raised!";
+            _salarySpentText.text = "$" + BattleManager.Instance.TotalSalaryPaid + " spent on employees.";
+            _customersConvertedText.text = BattleManager.Instance.ConvertedCustomers + " customers converted!";
 
             // Then play animator
             _transitionAnimator.Play("Show");

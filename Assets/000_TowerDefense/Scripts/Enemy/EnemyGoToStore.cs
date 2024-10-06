@@ -70,6 +70,7 @@ namespace RushHour
         /// </summary>
         private IEnumerator DeleteWhenCloseCoroutine(EnemyHandler handler)
         {
+            BattleManager.Instance.ConvertedCustomers++;  // Converted!
             yield return new WaitForEndOfFrame();
             yield return new WaitUntil(() => Vector2.Distance(transform.position, _storeObject.transform.position) < DIST_FROM_STORE_UNTIL_DISAPPEAR);
             handler.ReachedStore();

@@ -53,6 +53,8 @@ namespace RushHour
             get => _timer;
             set
             {
+                if (value > Constants.TIME_IN_DAY) { return; }  // Stop if over max time
+
                 _timer = Mathf.Min(value, Constants.TIME_IN_DAY);  // Cannot go over max time
                 OnTimerChanged?.Invoke(_timer);
 
@@ -74,6 +76,9 @@ namespace RushHour
                 }
             }
         }
+
+        public int ConvertedCustomers = 0;
+        public float TotalSalaryPaid = 0;
 
         [Header("Battle Properties")]
         [SerializeField] private int _requiredQuota = 100;  // How much is needed to win level
@@ -123,6 +128,7 @@ namespace RushHour
         /// </summary>
         private void ChargeSalary()
         {
+            TotalSalaryPaid += SalaryPerHour;  // Keep track of total salary paid for summary screen
             Money -= SalaryPerHour;
         }
 
