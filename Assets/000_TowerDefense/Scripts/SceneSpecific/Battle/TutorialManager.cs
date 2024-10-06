@@ -1,3 +1,5 @@
+using RushHour.Tower.Components;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +10,21 @@ namespace RushHour
     public class TutorialManager : MonoBehaviour
     {
 
-        [Header("Popups and Tooltips")]
+        [Header("Tutorial Assignments")]
+        [SerializeField] private GameObject _uiHireButtonParent;
+        [SerializeField] private GameObject _uiQuotaParent;
         [SerializeField] private GameObject _welcomePopup;
         [SerializeField] private Button _welcomePopupButton;
+        [SerializeField] private GameObject _enemyIntroPopup;
+        [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
 
         private void Awake()
         {
             Time.timeScale = 0;
             _welcomePopup.SetActive(true);
+            _uiHireButtonParent.SetActive(false);
+            _uiQuotaParent.SetActive(false);
+            _blockedUnitDropMask.SetActive(false);
         }
 
         /// <summary>
@@ -24,6 +33,7 @@ namespace RushHour
         private void OnEnable()
         {
             _welcomePopupButton.onClick.AddListener(ToggleTimeScale);
+            BattleManager.Instance.OnTimerChanged += TutorialManager_OnTimerChanged;
         }
 
         /// <summary>
@@ -32,12 +42,55 @@ namespace RushHour
         private void OnDisable()
         {
             _welcomePopupButton.onClick.RemoveListener(ToggleTimeScale);
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnTimerChanged -= TutorialManager_OnTimerChanged;
+            }
         }
 
+        private void TutorialManager_OnTimerChanged(int secs)
+        {
+            // First, let player see enemy and place unit
+            if (secs == 9)
+            {
+                Time.timeScale = 0;
+                _enemyIntroPopup.SetActive(true);
+                _uiHireButtonParent.SetActive(true);
+                _blockedUnitDropMask.SetActive(true);
+                // Unpause after tower is placed
+                TowerMove.OnTowerDropped += TutorialManager_OnTowerBought;
+            }
+            // Then, wait until the enemy has been converted
+            if (secs == 10)
+            {
+                TowerMove.OnTowerDropped -= TutorialManager_OnTowerBought;
+                EnemyHandler.OnEnemyKilled += TutorialManager_OnEnemyKilled;
+            }
+            // Then, unsubscribe after enemy converted
+            if (secs == 11)
+            {
+                EnemyHandler.OnEnemyKilled -= TutorialManager_OnEnemyKilled;
+            }
+        }
+
+        #region Toggle time scale functions
         private void ToggleTimeScale()
         {
             Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
         }
+
+        private void TutorialManager_OnTowerBought(object sender, bool b)
+        {
+            Time.timeScale = 1;
+            _enemyIntroPopup.SetActive(false);
+            _blockedUnitDropMask.SetActive(false);
+        }
+
+        private void TutorialManager_OnEnemyKilled(EnemyHandler e)
+        {
+            Time.timeScale = 1;
+        }
+        #endregion
 
     }
 }

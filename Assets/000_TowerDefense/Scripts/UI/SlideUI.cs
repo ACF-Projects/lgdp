@@ -31,12 +31,12 @@ namespace RushHour.UserInterface
 
         public void SlideIn()
         {
-            DOVirtual.Float(Position, inPosition, duration, v => Position = v).SetEase(easeType);
+            DOVirtual.Float(Position, inPosition, duration, v => Position = v).SetEase(easeType).SetUpdate(true);
         }
 
         public void SlideOut()
         {
-            DOVirtual.Float(Position, outPosition, duration, v => Position = v).SetEase(easeType);
+            DOVirtual.Float(Position, outPosition, duration, v => Position = v).SetEase(easeType).SetUpdate(true);
         }
 
 #if UNITY_EDITOR
