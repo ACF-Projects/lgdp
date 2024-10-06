@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 150
   <SalaryPerHour>k__BackingField: 50
-  <EffectRadius>k__BackingField: 3
+  <EffectRadius>k__BackingField: 3.5
   <Name>k__BackingField: Tech Guru
   <Description>k__BackingField: Tech-savvy nerd who sends out Google Forms. More
     influence over technology users.
