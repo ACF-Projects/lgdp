@@ -14,10 +14,8 @@ namespace RushHour
 
         private void Awake()
         {
+            Time.timeScale = 0;
             _welcomePopup.SetActive(true);
-            // Initially disable all timer tickers and enemy spawners
-            ToggleTimerTickers();
-            ToggleEnemySpawners();
         }
 
         /// <summary>
@@ -25,9 +23,7 @@ namespace RushHour
         /// </summary>
         private void OnEnable()
         {
-            // When the welcome button is clicked, re-enable timer tickers
-            _welcomePopupButton.onClick.AddListener(ToggleTimerTickers);
-            _welcomePopupButton.onClick.AddListener(ToggleEnemySpawners);
+            _welcomePopupButton.onClick.AddListener(ToggleTimeScale);
         }
 
         /// <summary>
@@ -35,34 +31,12 @@ namespace RushHour
         /// </summary>
         private void OnDisable()
         {
-            _welcomePopupButton.onClick.RemoveListener(ToggleTimerTickers);
-            _welcomePopupButton.onClick.RemoveListener(ToggleEnemySpawners);
+            _welcomePopupButton.onClick.RemoveListener(ToggleTimeScale);
         }
 
-        /// <summary>
-        /// Finds all timer tickers in the scene and toggles them from
-        /// active to inactive, or vice versa.
-        /// </summary>
-        private void ToggleTimerTickers()
+        private void ToggleTimeScale()
         {
-            TimerTicker[] timerTickers = FindObjectsOfType<TimerTicker>();
-            foreach (TimerTicker timerTicker in timerTickers)
-            {
-                timerTicker.CanTick = !timerTicker.CanTick;
-            }
-        }
-
-        /// <summary>
-        /// Finds all enemy spawners and toggles them from active to inactive,
-        /// or vice versa.
-        /// </summary>
-        private void ToggleEnemySpawners()
-        {
-            EnemySpawner[] enemySpawners = FindObjectsOfType<EnemySpawner>(true);
-            foreach (EnemySpawner enemySpawner in enemySpawners)
-            {
-                enemySpawner.CanSpawnEnemies = !enemySpawner.CanSpawnEnemies;
-            }
+            Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
         }
 
     }

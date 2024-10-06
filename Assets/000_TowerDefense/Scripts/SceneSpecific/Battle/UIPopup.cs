@@ -24,7 +24,7 @@ namespace RushHour
             float timeToHide = 0.5f;
             while (currTime < timeToHide)
             {
-                currTime += Time.deltaTime;
+                currTime += Time.unscaledDeltaTime;
                 _canvasGroup.alpha = Mathf.Lerp(1, 0, currTime / timeToHide);
                 yield return null;
             }
