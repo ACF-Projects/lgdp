@@ -12,7 +12,7 @@ namespace RushHour.Global
 
         public static readonly LayerMask LAYERS_ALL_EXCEPT_CAMERA = ~(1 << LayerMask.NameToLayer("Camera"));
 
-        public const int TIME_IN_DAY = 20;  // Number of seconds in a day until day ends
+        public const int TIME_IN_DAY = 60;  // Number of seconds in a day until day ends
         public const int TIME_IN_HOUR = 10;  // How many seconds must pass for an in-game hour
     }
 }
