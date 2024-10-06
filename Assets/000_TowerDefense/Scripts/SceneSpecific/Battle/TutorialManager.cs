@@ -17,6 +17,7 @@ namespace RushHour
         [SerializeField] private Button _welcomePopupButton;
         [SerializeField] private GameObject _enemyIntroPopup;
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
+        [SerializeField] private GameObject _quotaIntroPopup;
 
         private void Awake()
         {
@@ -25,6 +26,7 @@ namespace RushHour
             _uiHireButtonParent.SetActive(false);
             _uiQuotaParent.SetActive(false);
             _blockedUnitDropMask.SetActive(false);
+            _quotaIntroPopup.SetActive(false);
         }
 
         /// <summary>
@@ -69,7 +71,13 @@ namespace RushHour
             // Then, unsubscribe after enemy converted
             if (secs == 11)
             {
+                BattleManager.Instance.OnMoneyChanged += TutorialManager_OnGainedMoney;
                 EnemyHandler.OnEnemyKilled -= TutorialManager_OnEnemyKilled;
+            }
+            if (secs == 20)
+            {
+                BattleManager.Instance.OnMoneyChanged -= TutorialManager_OnGainedMoney;
+                _quotaIntroPopup.SetActive(false);
             }
         }
 
@@ -89,6 +97,12 @@ namespace RushHour
         private void TutorialManager_OnEnemyKilled(EnemyHandler e)
         {
             Time.timeScale = 1;
+        }
+
+        private void TutorialManager_OnGainedMoney()
+        {
+            _uiQuotaParent.SetActive(true);
+            _quotaIntroPopup.SetActive(true);
         }
         #endregion
 
