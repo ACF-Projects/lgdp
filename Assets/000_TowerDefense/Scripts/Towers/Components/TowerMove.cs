@@ -87,25 +87,25 @@ namespace RushHour.Tower.Components
 
             TowerHandler.GetTowerComponent<TowerAudio>().PlayPlacementSound(valid);
 
+            // If tower isn't placeable, destroy it now
+            if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
+            {
+                if (valid) AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
+                Destroy(TowerHandler.gameObject);
+                return;
+            }
+
+            towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
+
             if (originalPosition is Vector3 position)
             {
                 if (!valid)
                 {
                     TowerHandler.transform.position = position;
                 }
-                towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
             }
             else
             {
-                // if tower has never been placed or not enough funds, place tower if possible
-                if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
-                {
-                    if(valid) AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
-                    Destroy(TowerHandler.gameObject);
-                    return;
-                }
-                 
-                towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
                 originalPosition = TowerHandler.transform.position;
 
                 OnTowerBought?.Invoke(TowerHandler, EventArgs.Empty);
