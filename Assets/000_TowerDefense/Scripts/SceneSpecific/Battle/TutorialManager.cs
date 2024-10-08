@@ -18,6 +18,8 @@ namespace RushHour
         [SerializeField] private GameObject _enemyIntroPopup;
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
         [SerializeField] private GameObject _quotaIntroPopup;
+        [SerializeField] private GameObject _cameraController;  // To pan the camera
+        [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
 
         private void Awake()
         {
@@ -59,6 +61,7 @@ namespace RushHour
                 _enemyIntroPopup.SetActive(true);
                 _uiHireButtonParent.SetActive(true);
                 _blockedUnitDropMask.SetActive(true);
+                _cameraController.transform.position = _customerIntroCameraTransform.position;
                 // Unpause after tower is placed
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerBought;
             }
