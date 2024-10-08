@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Celebrity
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 200
-  <SalaryPerHour>k__BackingField: 150
+  <SalaryPerHour>k__BackingField: 50
   <EffectRadius>k__BackingField: 4
   <Name>k__BackingField: Celebrity
   <Description>k__BackingField: Everyone wants an autograph! More influence over

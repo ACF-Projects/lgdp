@@ -12340,7 +12340,7 @@ PrefabInstance:
       objectReference: {fileID: 1907249979}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[0].EnemyData
@@ -12352,6 +12352,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4acc9f8ad9c9e9d4db3c793a740d5098, type: 2}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[3].EnemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fd0a79f469cf5043b7a3dd1b4ec5aa9, type: 2}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[4].EnemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 63999147731b1704a895bc8c10233ab8, type: 2}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[5].EnemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4acc9f8ad9c9e9d4db3c793a740d5098, type: 2}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[6].EnemyData
       value: 
       objectReference: {fileID: 11400000, guid: 8fd0a79f469cf5043b7a3dd1b4ec5aa9, type: 2}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
@@ -12367,6 +12379,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[4].EnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[5].EnemyCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[6].EnemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[1].TimeBeforeSpawn
       value: 15
       objectReference: {fileID: 0}
@@ -12379,12 +12403,36 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[4].TimeBeforeSpawn
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[5].TimeBeforeSpawn
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[6].TimeBeforeSpawn
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[1].TimeBetweenSpawns
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[2].TimeBetweenSpawns
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[4].TimeBetweenSpawns
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[5].TimeBetweenSpawns
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[6].TimeBetweenSpawns
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2295882667406485090, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: _requiredQuota

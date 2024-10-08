@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intern
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 100
-  <SalaryPerHour>k__BackingField: 25
+  <SalaryPerHour>k__BackingField: 10
   <EffectRadius>k__BackingField: 3
   <Name>k__BackingField: Intern
   <Description>k__BackingField: Not the best, but tries his hardest. Passes out fliers.
