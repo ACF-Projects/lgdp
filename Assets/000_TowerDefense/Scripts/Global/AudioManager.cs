@@ -69,7 +69,7 @@ namespace RushHour
                     _audioSource.PlayOneShot(_invalidPlacementSFX, 0.6f * volumeScale);
                     break;
                 case SoundEffect.Chaching:
-                    _audioSource.PlayOneShot(_chachingSFX, 0.6f * volumeScale);
+                    _audioSource.PlayOneShot(_chachingSFX, 0.4f * volumeScale);
                     break;
             }
         }
