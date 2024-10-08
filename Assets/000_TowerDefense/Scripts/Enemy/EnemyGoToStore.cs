@@ -77,6 +77,7 @@ namespace RushHour
             {
                 pSystem.Emit(6);
             }
+            AudioManager.Instance.PlayOneShot(SoundEffect.Chaching);  // Play earned money sound
             handler.ReachedStore();
             Destroy(gameObject);
         }
