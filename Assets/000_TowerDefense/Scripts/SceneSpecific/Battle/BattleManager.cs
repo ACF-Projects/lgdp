@@ -138,8 +138,8 @@ namespace RushHour
         /// </summary>
         public void ChangeMoney(float changeAmount)
         {
+            if (changeAmount > 0) _earnedMoney += changeAmount;
             Money += changeAmount;
-            if(changeAmount > 0) _earnedMoney += changeAmount;
         }
 
         /// <summary>
