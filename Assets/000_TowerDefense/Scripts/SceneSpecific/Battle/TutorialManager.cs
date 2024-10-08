@@ -20,6 +20,7 @@ namespace RushHour
         [SerializeField] private GameObject _quotaIntroPopup;
         [SerializeField] private GameObject _cameraController;  // To pan the camera
         [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
+        [SerializeField] private Transform _moneyIntroCameraTransform;  // Camera will go here during money earned intro
 
         private void Awake()
         {
@@ -61,7 +62,7 @@ namespace RushHour
                 _enemyIntroPopup.SetActive(true);
                 _uiHireButtonParent.SetActive(true);
                 _blockedUnitDropMask.SetActive(true);
-                _cameraController.transform.position = _customerIntroCameraTransform.position;
+                MoveCameraTo(_customerIntroCameraTransform.position);
                 // Unpause after tower is placed
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerBought;
             }
@@ -77,14 +78,13 @@ namespace RushHour
                 BattleManager.Instance.OnMoneyChanged += TutorialManager_OnGainedMoney;
                 EnemyHandler.OnEnemyKilled -= TutorialManager_OnEnemyKilled;
             }
-            if (secs == 20)
+            if (secs == 25)
             {
                 BattleManager.Instance.OnMoneyChanged -= TutorialManager_OnGainedMoney;
                 _quotaIntroPopup.SetActive(false);
             }
         }
 
-        #region Toggle time scale functions
         private void ToggleTimeScale()
         {
             Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
@@ -106,8 +106,18 @@ namespace RushHour
         {
             _uiQuotaParent.SetActive(true);
             _quotaIntroPopup.SetActive(true);
+            MoveCameraTo(_moneyIntroCameraTransform.position);
         }
-        #endregion
+
+        /// <summary>
+        /// Pans the camera to a specific position because of the target of
+        /// the Cinemachine.
+        /// </summary>
+        /// <param name="position"></param>
+        private void MoveCameraTo(Vector3 position)
+        {
+            _cameraController.transform.position = position;
+        }
 
     }
 }
