@@ -64,7 +64,7 @@ namespace RushHour.Tower.Components
 
         private void MouseReceiver_OnGrabbed()
         {
-            if (MouseReceiver.instance.isPointerOverGameObject) return;
+            if (MouseReceiver.instance.isPointerOverGameObject || originalPosition == null) return;
             Physics2D.queriesHitTriggers = false;
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, Constants.LAYERS_ALL_EXCEPT_CAMERA);
             Physics2D.queriesHitTriggers = true;
@@ -87,14 +87,6 @@ namespace RushHour.Tower.Components
 
             TowerHandler.GetTowerComponent<TowerAudio>().PlayPlacementSound(valid);
 
-            // If tower isn't placeable, destroy it now
-            if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
-            {
-                if (valid) AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
-                Destroy(TowerHandler.gameObject);
-                return;
-            }
-
             towerCollider.gameObject.layer = LayerMask.NameToLayer("Blocked");
 
             if (originalPosition is Vector3 position)
@@ -106,6 +98,14 @@ namespace RushHour.Tower.Components
             }
             else
             {
+                // If tower isn't placeable, destroy it now
+                if (!valid || BattleManager.Instance.Money < TowerHandler.TowerData.Cost)
+                {
+                    if (valid) AudioManager.Instance.PlayOneShot(SoundEffect.InsufficientFunds);
+                    Destroy(TowerHandler.gameObject);
+                    return;
+                }
+
                 originalPosition = TowerHandler.transform.position;
 
                 OnTowerBought?.Invoke(TowerHandler, EventArgs.Empty);
