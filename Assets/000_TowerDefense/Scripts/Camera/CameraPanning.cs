@@ -16,6 +16,8 @@ namespace RushHour.CameraControls
         [Header("Settings")]
         [SerializeField] private float panSpeed;
         [SerializeField] private float panBorderWidth;
+        
+        public bool EnablePanning { get; set; }
 
         private Vector2 direction;
 
@@ -23,6 +25,7 @@ namespace RushHour.CameraControls
         {
             followTarget = vCam.Follow.GetComponent<Rigidbody2D>();
             direction = Vector2.zero;
+            EnablePanning = true;
         }
 
         private void OnEnable()
@@ -37,6 +40,11 @@ namespace RushHour.CameraControls
 
         private void TryPanCamera(Vector2 pos)
         {
+            if(!EnablePanning)
+            {
+                followTarget.velocity = Vector2.zero;
+                return;
+            }
             direction = Vector2.zero;
 
             if (MouseReceiver.instance.isPointerOverGameObject)

@@ -27,6 +27,7 @@ namespace RushHour.Tower.Components
         private void Awake()
         {
             dragging = false;
+            originalPosition = null;
         }
 
         public override void Init(TowerHandler handler)
@@ -39,6 +40,7 @@ namespace RushHour.Tower.Components
 
             dragging = true;
             originalPosition = null;
+            mousePosition = Input.mousePosition;
         }
 
         private void OnDestroy()

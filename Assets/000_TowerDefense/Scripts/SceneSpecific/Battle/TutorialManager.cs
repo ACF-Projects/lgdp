@@ -1,3 +1,5 @@
+using DG.Tweening;
+using RushHour.CameraControls;
 using RushHour.Tower.Components;
 using System;
 using System.Collections;
@@ -18,7 +20,7 @@ namespace RushHour
         [SerializeField] private GameObject _enemyIntroPopup;
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
         [SerializeField] private GameObject _quotaIntroPopup;
-        [SerializeField] private GameObject _cameraController;  // To pan the camera
+        [SerializeField] private CameraPanning _cameraController;  // To pan the camera
         [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
         [SerializeField] private Transform _moneyIntroCameraTransform;  // Camera will go here during money earned intro
 
@@ -117,9 +119,11 @@ namespace RushHour
         /// the Cinemachine.
         /// </summary>
         /// <param name="position"></param>
-        private void MoveCameraTo(Vector3 position)
+        private async void MoveCameraTo(Vector3 position)
         {
-            _cameraController.transform.position = position;
+            _cameraController.EnablePanning = false;
+            await _cameraController.transform.DOMove(position, 1f).SetEase(Ease.InOutSine).SetUpdate(true).AsyncWaitForCompletion();
+            _cameraController.EnablePanning = true;
         }
 
     }
