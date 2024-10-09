@@ -90,11 +90,14 @@ namespace RushHour
             Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
         }
 
-        private void TutorialManager_OnTowerBought(object sender, bool b)
+        private void TutorialManager_OnTowerBought(object sender, bool isValid)
         {
-            Time.timeScale = 1;
-            _enemyIntroPopup.SetActive(false);
-            _blockedUnitDropMask.SetActive(false);
+            if (isValid)
+            {
+                Time.timeScale = 1;
+                _enemyIntroPopup.SetActive(false);
+                _blockedUnitDropMask.SetActive(false);
+            }
         }
 
         private void TutorialManager_OnEnemyKilled(EnemyHandler e)
