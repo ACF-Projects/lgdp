@@ -33,6 +33,8 @@ namespace RushHour
 
         private Vector3 _storedCamPosition;  // Stored camera position, check to see how much camera moved
 
+        private const float DIST_TO_UNPAUSE_TUTORIAL = 3;  // Distance (in unity units) needed to move until camera movement portion of tutorial is done
+
         private void Awake()
         {
             Time.timeScale = 0;
@@ -46,6 +48,7 @@ namespace RushHour
             _salaryPopup.SetActive(false);
             _blockedUnitMoveDropMask.SetActive(false);
             _moveUnitIntroPopup.SetActive(false);
+            EnemySpawner.CanSpawnEnemies = false;
         }
 
         /// <summary>
@@ -74,11 +77,12 @@ namespace RushHour
             // First, let player learn how to pan the camera
             if (secs == 1)
             {
+                TimerTicker.CanTick = false;  // Freeze all timers initially for camera movement part
+                EnemySpawner.CanSpawnEnemies = true;
                 _uiMoneyParent.SetActive(false);
                 _uiCameraPanGuide.SetActive(true);
                 _storedCamPosition = Camera.main.transform.position;
-                Time.timeScale = 0;
-                StartCoroutine(UnfreezeTimeAfterCameraMovementCoroutine());
+                StartCoroutine(UnfreezeTimersAfterCameraMovementCoroutine());
             }
             // Then, let player see enemy and place unit
             if (secs == 9)
@@ -152,11 +156,12 @@ namespace RushHour
             MoveCameraTo(_moneyIntroCameraTransform.position);
         }
 
-        private IEnumerator UnfreezeTimeAfterCameraMovementCoroutine()
+        private IEnumerator UnfreezeTimersAfterCameraMovementCoroutine()
         {
             yield return new WaitForEndOfFrame();
-            yield return new WaitUntil(() => Vector2.Distance(Camera.main.transform.position, _storedCamPosition) > 3);
-            Time.timeScale = 1;
+            yield return new WaitUntil(() => Vector2.Distance(Camera.main.transform.position, _storedCamPosition) > DIST_TO_UNPAUSE_TUTORIAL);
+            TimerTicker.CanTick = true;
+            EnemySpawner.CanSpawnEnemies = true;
             _uiTimerParent.SetActive(true);
             _uiCameraPanGuide.SetActive(false);
         }

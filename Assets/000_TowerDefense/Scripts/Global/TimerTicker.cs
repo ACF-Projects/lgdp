@@ -11,7 +11,7 @@ namespace RushHour
     public class TimerTicker : MonoBehaviour
     {
 
-        public bool CanTick = true;
+        public static bool CanTick = true;
 
         private void Start()
         {

@@ -39,7 +39,7 @@ namespace RushHour
             }
         }
 
-        public bool CanSpawnEnemies = true;
+        public static bool CanSpawnEnemies = true;
 
         [HideInInspector] public static Action OnAllEnemiesDead = null;  // When enemies are dead for curr wave
 
@@ -84,6 +84,8 @@ namespace RushHour
         /// </summary>
         private IEnumerator SpawnWave(Wave wave)
         {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => TimerTicker.CanTick);  // Wait until timers are activated
             yield return new WaitUntil(() => CanSpawnEnemies);  // If can't spawn enemies, wait
             yield return new WaitForSeconds(wave.TimeBeforeSpawn);
             for (int i = 0; i < wave.EnemyCount; i++)
