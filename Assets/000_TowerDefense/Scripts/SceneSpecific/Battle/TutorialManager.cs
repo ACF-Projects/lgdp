@@ -75,7 +75,6 @@ namespace RushHour
             if (secs == 1)
             {
                 _uiMoneyParent.SetActive(false);
-                _uiTimerParent.SetActive(false);
                 _uiCameraPanGuide.SetActive(true);
                 _storedCamPosition = Camera.main.transform.position;
                 Time.timeScale = 0;
@@ -103,7 +102,7 @@ namespace RushHour
             {
                 BattleManager.Instance.OnMoneyChanged += TutorialManager_OnGainedMoney;
             }
-            if (secs == 27)
+            if (secs == 26)
             {
                 BattleManager.Instance.OnMoneyChanged -= TutorialManager_OnGainedMoney;
                 _quotaIntroPopup.SetActive(false);
@@ -158,6 +157,7 @@ namespace RushHour
             yield return new WaitForEndOfFrame();
             yield return new WaitUntil(() => Vector2.Distance(Camera.main.transform.position, _storedCamPosition) > 3);
             Time.timeScale = 1;
+            _uiTimerParent.SetActive(true);
             _uiCameraPanGuide.SetActive(false);
         }
 
