@@ -14,9 +14,12 @@ namespace RushHour
 
         [Header("Tutorial Assignments")]
         [SerializeField] private GameObject _uiHireButtonParent;
+        [SerializeField] private GameObject _uiMoneyParent;
+        [SerializeField] private GameObject _uiTimerParent;
         [SerializeField] private GameObject _uiQuotaParent;
         [SerializeField] private GameObject _welcomePopup;
         [SerializeField] private Button _welcomePopupButton;
+        [SerializeField] private GameObject _uiCameraPanGuide;
         [SerializeField] private GameObject _enemyIntroPopup;
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
         [SerializeField] private GameObject _quotaIntroPopup;
@@ -24,9 +27,13 @@ namespace RushHour
         [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
         [SerializeField] private Transform _moneyIntroCameraTransform;  // Camera will go here during money earned intro
 
+        private Vector3 _storedCamPosition;  // Stored camera position, check to see how much camera moved
+
         private void Awake()
         {
             Time.timeScale = 0;
+            _uiMoneyParent.SetActive(false);
+            _uiTimerParent.SetActive(false);
             _welcomePopup.SetActive(true);
             _uiHireButtonParent.SetActive(false);
             _uiQuotaParent.SetActive(false);
@@ -57,13 +64,24 @@ namespace RushHour
 
         private void TutorialManager_OnTimerChanged(int secs)
         {
-            // First, let player see enemy and place unit
+            // First, let player learn how to pan the camera
+            if (secs == 1)
+            {
+                _uiMoneyParent.SetActive(false);
+                _uiTimerParent.SetActive(false);
+                _uiCameraPanGuide.SetActive(true);
+                _storedCamPosition = Camera.main.transform.position;
+                Time.timeScale = 0;
+                StartCoroutine(UnfreezeTimeAfterCameraMovementCoroutine());
+            }
+            // Then, let player see enemy and place unit
             if (secs == 9)
             {
                 Time.timeScale = 0;
                 _enemyIntroPopup.SetActive(true);
                 _uiHireButtonParent.SetActive(true);
                 _blockedUnitDropMask.SetActive(true);
+                _uiMoneyParent.SetActive(true);
                 MoveCameraTo(_customerIntroCameraTransform.position);
                 // Unpause after tower is placed
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerBought;
@@ -112,6 +130,14 @@ namespace RushHour
             _uiQuotaParent.SetActive(true);
             _quotaIntroPopup.SetActive(true);
             MoveCameraTo(_moneyIntroCameraTransform.position);
+        }
+
+        private IEnumerator UnfreezeTimeAfterCameraMovementCoroutine()
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => Vector2.Distance(Camera.main.transform.position, _storedCamPosition) > 3);
+            Time.timeScale = 1;
+            _uiCameraPanGuide.SetActive(false);
         }
 
         /// <summary>
