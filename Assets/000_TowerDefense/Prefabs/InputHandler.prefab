@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4425196284660937684}
   - component: {fileID: 3729115104498359294}
+  - component: {fileID: 5833108281187981971}
   - component: {fileID: 8975739772553555665}
   m_Layer: 0
   m_Name: InputHandler
@@ -46,6 +47,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPointerOverGameObject: 0
+--- !u!114 &5833108281187981971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587202372717006285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1a3367d20c27f49bd51ee0715fffaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8975739772553555665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +148,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 88247dde-cce6-4343-a335-d2005ad26939
     m_ActionName: Game/Grab[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5833108281187981971}
+        m_TargetAssemblyTypeName: RushHour.InputHandling.KeyboardReceiver, Assembly-CSharp
+        m_MethodName: OnEscape
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e52a6023-eab8-427f-b961-3f9796f79d8d
+    m_ActionName: Game/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
