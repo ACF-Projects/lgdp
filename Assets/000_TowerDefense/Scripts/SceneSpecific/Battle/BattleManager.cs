@@ -22,7 +22,7 @@ namespace RushHour
             }
         }
 
-        private float _money = 500;
+        private float _money = 100;
         private float _earnedMoney = 0;
         public float Money
         {

@@ -15,5 +15,5 @@ MonoBehaviour:
   <Health>k__BackingField: 20
   <Damage>k__BackingField: 1
   <MoveSpeed>k__BackingField: 0.4
-  <Reward>k__BackingField: 25
+  <Reward>k__BackingField: 60
   enemyPrefab: {fileID: 8700903697523382289, guid: b9378450a031a184abacae8db1f795ba, type: 3}
