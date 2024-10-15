@@ -22,10 +22,14 @@ namespace RushHour
         [SerializeField] private GameObject _uiCameraPanGuide;
         [SerializeField] private GameObject _enemyIntroPopup;
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
+        [SerializeField] private GameObject _salaryPopup;
         [SerializeField] private GameObject _quotaIntroPopup;
         [SerializeField] private CameraPanning _cameraController;  // To pan the camera
         [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
         [SerializeField] private Transform _moneyIntroCameraTransform;  // Camera will go here during money earned intro
+        [SerializeField] private GameObject _moveUnitIntroPopup;
+        [SerializeField] private Transform _moveUnitIntroCameraTransform;
+        [SerializeField] private GameObject _blockedUnitMoveDropMask;  // To force the player to put a unit in one spot
 
         private Vector3 _storedCamPosition;  // Stored camera position, check to see how much camera moved
 
@@ -39,6 +43,9 @@ namespace RushHour
             _uiQuotaParent.SetActive(false);
             _blockedUnitDropMask.SetActive(false);
             _quotaIntroPopup.SetActive(false);
+            _salaryPopup.SetActive(false);
+            _blockedUnitMoveDropMask.SetActive(false);
+            _moveUnitIntroPopup.SetActive(false);
         }
 
         /// <summary>
@@ -90,18 +97,25 @@ namespace RushHour
             if (secs == 10)
             {
                 TowerMove.OnTowerDropped -= TutorialManager_OnTowerBought;
-                EnemyHandler.OnEnemyKilled += TutorialManager_OnEnemyKilled;
             }
             // Then, unsubscribe after enemy converted
             if (secs == 11)
             {
                 BattleManager.Instance.OnMoneyChanged += TutorialManager_OnGainedMoney;
-                EnemyHandler.OnEnemyKilled -= TutorialManager_OnEnemyKilled;
             }
-            if (secs == 25)
+            if (secs == 27)
             {
                 BattleManager.Instance.OnMoneyChanged -= TutorialManager_OnGainedMoney;
                 _quotaIntroPopup.SetActive(false);
+                _moveUnitIntroPopup.SetActive(true);
+                _blockedUnitMoveDropMask.SetActive(true);
+                Time.timeScale = 0;
+                MoveCameraTo(_moveUnitIntroCameraTransform.position);
+                TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
+            }
+            if (secs == 31)
+            {
+                TowerMove.OnTowerDropped -= TutorialManager_OnTowerMoved;
             }
         }
 
@@ -117,16 +131,23 @@ namespace RushHour
                 Time.timeScale = 1;
                 _enemyIntroPopup.SetActive(false);
                 _blockedUnitDropMask.SetActive(false);
+                _salaryPopup.SetActive(true);
             }
         }
 
-        private void TutorialManager_OnEnemyKilled(EnemyHandler e)
+        private void TutorialManager_OnTowerMoved(object sender, bool isValid)
         {
-            Time.timeScale = 1;
+            if (isValid)
+            {
+                Time.timeScale = 1;
+                _moveUnitIntroPopup.SetActive(false);
+                _blockedUnitMoveDropMask.SetActive(false);
+            }
         }
 
         private void TutorialManager_OnGainedMoney()
         {
+            _salaryPopup.SetActive(false);
             _uiQuotaParent.SetActive(true);
             _quotaIntroPopup.SetActive(true);
             MoveCameraTo(_moneyIntroCameraTransform.position);
