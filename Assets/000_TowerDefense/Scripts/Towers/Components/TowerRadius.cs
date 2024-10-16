@@ -48,7 +48,7 @@ namespace RushHour.Tower.Components
         {
             DOTween.To(() => previewRenderer.color.a,
                 x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x),
-                Constants.EFFECT_ALPHA_ON_HOVER, 0.1f).SetEase(Ease.OutSine);
+                Constants.EFFECT_ALPHA_ON_HOVER, 0.1f).SetEase(Ease.OutSine).SetUpdate(true);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace RushHour.Tower.Components
         {
             DOTween.To(() => previewRenderer.color.a,
                 x => previewRenderer.color = new Color(previewRenderer.color.r, previewRenderer.color.g, previewRenderer.color.b, x),
-                0, 0.1f).SetEase(Ease.OutSine);
+                0, 0.1f).SetEase(Ease.OutSine).SetUpdate(true);
         }
 
         /// <summary>
