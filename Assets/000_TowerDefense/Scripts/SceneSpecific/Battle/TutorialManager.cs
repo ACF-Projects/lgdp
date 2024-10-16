@@ -78,7 +78,6 @@ namespace RushHour
             if (secs == 1)
             {
                 TimerTicker.CanTick = false;  // Freeze all timers initially for camera movement part
-                EnemySpawner.CanSpawnEnemies = true;
                 _uiMoneyParent.SetActive(false);
                 _uiCameraPanGuide.SetActive(true);
                 _storedCamPosition = Camera.main.transform.position;
