@@ -23,7 +23,7 @@ namespace RushHour.Tower
         public override TowerStats GetStats()
         {
             var stats = base.GetStats();
-            stats.mainValue = new("Damage", damage);
+            stats.mainValue = new("Power", damage);
             stats.hitSpeed = new("Speed", 1f / cooldown);
             return stats;
         }
