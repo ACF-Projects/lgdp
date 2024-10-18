@@ -112,6 +112,7 @@ namespace RushHour
                 _moveUnitIntroPopup.SetActive(true);
                 _blockedUnitMoveDropMask.SetActive(true);
                 Time.timeScale = 0;
+                FindObjectOfType<TowerMove>().IsGrabbable = true;  // Allow player to move unit now
                 MoveCameraTo(_moveUnitIntroCameraTransform.position);
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
             }
@@ -134,6 +135,7 @@ namespace RushHour
                 _enemyIntroPopup.SetActive(false);
                 _blockedUnitDropMask.SetActive(false);
                 _salaryPopup.SetActive(true);
+                FindObjectOfType<TowerMove>().IsGrabbable = false;
             }
         }
 

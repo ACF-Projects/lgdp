@@ -20,6 +20,8 @@ namespace RushHour.Tower.Components
         private Vector3? originalPosition = null;
         private Vector2 mousePosition;
 
+        public bool IsGrabbable = true;  // If false, cannot move around this unit
+
         public static event EventHandler OnTowerGrabbed;
         public static event EventHandler<bool> OnTowerDropped;
         public static event EventHandler OnTowerBought;
@@ -66,6 +68,7 @@ namespace RushHour.Tower.Components
 
         private void MouseReceiver_OnGrabbed()
         {
+            if (!IsGrabbable) { return; }
             if (MouseReceiver.instance.isPointerOverGameObject || originalPosition == null) return;
             Physics2D.queriesHitTriggers = false;
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, Constants.LAYERS_ALL_EXCEPT_CAMERA);
