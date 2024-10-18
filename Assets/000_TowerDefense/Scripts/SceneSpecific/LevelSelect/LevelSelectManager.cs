@@ -78,7 +78,7 @@ namespace RushHour
         protected virtual void OnValidate()
         {
             List<LevelAreaSection> sections = new(FindObjectsOfType<LevelAreaSection>(true));
-            sections = sections.FindAll((sec) => !_areas.Contains(sec)); 
+            sections = sections.FindAll((sec) => !_areas.Contains(sec) && sec.IsNavigable); 
             foreach (LevelAreaSection section in sections)
             {
                 _areas.Add(section);

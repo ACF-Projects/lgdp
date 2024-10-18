@@ -12,6 +12,11 @@ namespace RushHour
         /// Will update the text that labels the current section's name.
         /// </summary>
         public string AreaName;
+        /// <summary>
+        /// If this level section is navigable to.
+        /// If true, shows up in the "slideshow" view. Else it doesn't.
+        /// </summary>
+        public bool IsNavigable = false;
 
     }
 }

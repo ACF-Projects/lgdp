@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaName: Airport
+  IsActive: 1
 --- !u!1 &377605942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,6 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaName: School
+  IsActive: 0
 --- !u!1001 &1422296570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3570,7 +3572,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _areas:
   - {fileID: 349832899}
-  - {fileID: 1408997090}
   _areaNameText: {fileID: 377605944}
   _prevButton: {fileID: 317484721}
   _nextButton: {fileID: 26955829}
