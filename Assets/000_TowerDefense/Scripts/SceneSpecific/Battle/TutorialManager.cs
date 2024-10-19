@@ -14,6 +14,7 @@ namespace RushHour
 
         [Header("Tutorial Assignments")]
         [SerializeField] private GameObject _uiHireButtonParent;
+        [SerializeField] private GameObject _uiHireButtonArrow;
         [SerializeField] private GameObject _uiMoneyParent;
         [SerializeField] private GameObject _uiTimerParent;
         [SerializeField] private GameObject _uiQuotaParent;
@@ -47,6 +48,7 @@ namespace RushHour
             _quotaIntroPopup.SetActive(false);
             _salaryPopup.SetActive(false);
             _blockedUnitMoveDropMask.SetActive(false);
+            _uiHireButtonArrow.SetActive(false);
             _moveUnitIntroPopup.SetActive(false);
             EnemySpawner.CanSpawnEnemies = false;
         }
@@ -89,6 +91,7 @@ namespace RushHour
                 Time.timeScale = 0;
                 _enemyIntroPopup.SetActive(true);
                 _uiHireButtonParent.SetActive(true);
+                _uiHireButtonArrow.SetActive(true);
                 _blockedUnitDropMask.SetActive(true);
                 _uiMoneyParent.SetActive(true);
                 MoveCameraTo(_customerIntroCameraTransform.position);
@@ -135,6 +138,7 @@ namespace RushHour
                 _enemyIntroPopup.SetActive(false);
                 _blockedUnitDropMask.SetActive(false);
                 _salaryPopup.SetActive(true);
+                _uiHireButtonArrow.SetActive(false);
                 FindObjectOfType<TowerMove>().IsGrabbable = false;
             }
         }
