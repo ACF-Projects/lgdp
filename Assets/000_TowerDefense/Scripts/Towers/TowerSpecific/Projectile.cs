@@ -1,17 +1,20 @@
+using RushHour.Data;
 using UnityEngine;
 
-namespace RushHour
+namespace RushHour.Tower
 {
     public class Projectile : MonoBehaviour
     {
         private EnemyHandler enemy;
+        private TowerData data;
         private float speed;
         private float damage;
-        public void Init(EnemyHandler enemy, float speed, float damage)
+        public void Init(EnemyHandler enemy, float speed, float damage, TowerData towerData)
         {
             this.enemy = enemy;
             this.speed = speed;
             this.damage = damage;
+            this.data = towerData;
         }
 
         private void Update()
@@ -30,7 +33,7 @@ namespace RushHour
             transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, enemy.transform.position) <= 0.1f)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, data.StrongAgainst, data.WeakAgainst);
                 Destroy(gameObject);
             }
         }

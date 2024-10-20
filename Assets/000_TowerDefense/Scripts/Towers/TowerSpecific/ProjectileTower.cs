@@ -1,5 +1,4 @@
 using RushHour.Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -89,7 +88,7 @@ namespace RushHour.Tower
             else
             {
                 var proj = Instantiate(projectile, transform.position, Quaternion.identity);
-                proj.Init(currentEnemy, projectileSpeed, damage);
+                proj.Init(currentEnemy, projectileSpeed, damage, TowerData);
                 currentTimer = cooldown;
                 // Play sound effect
                 if (projectileShootSFX != null)
