@@ -9,7 +9,7 @@ namespace RushHour
     public class TransitionManager : MonoBehaviour
     {
 
-        public static bool HasFadedInFromPrevScene = false;
+        public static bool HasFadedInFromPrevScene = true;
 
         private static TransitionManager _instance;
         public static TransitionManager Instance
@@ -31,7 +31,8 @@ namespace RushHour
         {
             if (Instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
+                return;
             }
         }
 
@@ -98,7 +99,7 @@ namespace RushHour
             float timeToWait = 0.2f;
             while (currTime < timeToWait)
             {
-                currTime += Time.deltaTime;
+                currTime += Time.unscaledDeltaTime;
                 if (AudioManager.Instance != null)
                 {
                     AudioManager.Instance.SetVolume(Mathf.Lerp(fromVolume, toVolume, currTime / timeToWait));

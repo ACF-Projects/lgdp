@@ -16,6 +16,9 @@ namespace RushHour.UserInterface
         [SerializeField] private TextMeshProUGUI _timerDayText;
         [SerializeField] private Image _timerFillImage;
 
+        private float currentElapsedTime;
+        private float elapsedTime;
+
         private void OnEnable()
         {
             BattleManager.Instance.OnTimerChanged += UpdateTimerValue;
@@ -40,25 +43,29 @@ namespace RushHour.UserInterface
         /// </summary>
         private void UpdateTimerValue(int timeElapsed)
         {
-            _timerDayText.text = CalculateTimeString(timeElapsed, Constants.TIME_IN_DAY);
+            elapsedTime = timeElapsed;
+            //_timerFillImage.fillAmount = elapsedTime / Constants.TIME_IN_DAY;
+            //_timerDayText.text = CalculateTimeString(elapsedTime);
+        }
 
-            _timerFillImage.fillAmount = (float)timeElapsed / Constants.TIME_IN_DAY;
-            _timerDayText.text = CalculateTimeString(timeElapsed, Constants.TIME_IN_DAY);
+        private void Update()
+        {
+            currentElapsedTime = Mathf.Lerp(currentElapsedTime, elapsedTime, Time.deltaTime);
+            _timerFillImage.fillAmount = currentElapsedTime / Constants.TIME_IN_DAY;
+            _timerDayText.text = CalculateTimeString(currentElapsedTime);
         }
 
         /// <summary>
-        /// Retrieve a string between 9am and 6pm depending on the amount of time
-        /// that has elapsed, determined by currTime and maxTime.
+        /// Returns the calculated time of day given the current elapsed time
         /// </summary>
-        public static string CalculateTimeString(int currTime, int maxTime)
+        public static string CalculateTimeString(float currTime)
         {
             int startTimeMinutes = 9 * 60;  // 9:00am in minutes
-            int endTimeMinutes = 18 * 60;   // 6:00pm in minutes
-            int totalDuration = endTimeMinutes - startTimeMinutes;
 
             // Calculate how many of these "hours" have passed
-            int elapsedHours = currTime / Constants.TIME_IN_HOUR;
-            int elapsedMinutes = (currTime % Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
+            int elapsedHours = (int)currTime / Constants.TIME_IN_HOUR;
+            //int elapsedMinutes = ((int)currTime % Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
+            int elapsedMinutes = (int)(currTime - elapsedHours * Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
 
             // Calculate the current time
             int currentTimeMinutes = startTimeMinutes + (elapsedHours * 60) + elapsedMinutes;

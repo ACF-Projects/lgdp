@@ -15,7 +15,7 @@ namespace RushHour.Global
         public const int TIME_IN_DAY = 120;  // Number of seconds in a day until day ends
         public const int TIME_IN_HOUR = 20;  // How many seconds must pass for an in-game hour
 
-        public const float WEAKNESS_DAMAGE_MULTIPLIER = 1.5f;
-        public const float RESISTANCE_DAMAGE_MULTIPLIER = 0.75f;
+        public const float WEAKNESS_DAMAGE_MULTIPLIER = 1.5f; // Enemies with a weakness to the tower will receive damage scaled by WEAKNESS_DAMAGE_MULTIPLIER 
+        public const float RESISTANCE_DAMAGE_MULTIPLIER = 0.75f; // Enemies with a resistance to the tower will receive damage scaled by WEAKNESS_DAMAGE_MULTIPLIER
     }
 }
