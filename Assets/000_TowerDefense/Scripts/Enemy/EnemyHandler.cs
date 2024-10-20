@@ -1,4 +1,5 @@
 using RushHour.Data;
+using RushHour.Global;
 using RushHour.POC;
 using System;
 using System.Collections;
@@ -70,9 +71,19 @@ namespace RushHour
             sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, toQuaternion, 3 * Time.deltaTime);
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(float damage, EnemyType weaknesses = 0, EnemyType resistances = 0)
         {
             if (IsDead) return;
+
+            if (weaknesses.HasFlag(EnemyData.Type))
+            {
+                damage *= Constants.WEAKNESS_DAMAGE_MULTIPLIER;
+            }
+            else if(resistances.HasFlag(EnemyData.Type))
+            {
+                damage *= Constants.RESISTANCE_DAMAGE_MULTIPLIER;
+            }
+
             _currentHealth -= damage;
             if (_currentHealth <= 0 && !IsDead)
             {

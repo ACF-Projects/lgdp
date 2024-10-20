@@ -37,7 +37,7 @@ namespace RushHour.Data
         public TowerStat<float> cost;
         public TowerStat<string> targetType;
         public TowerStat<float> hitSpeed;
-        public TowerStat<string> strongAgainst;
-        public TowerStat<string> weakAgainst;
+        public TowerStat<EnemyType> strongAgainst;
+        public TowerStat<EnemyType> weakAgainst;
     }
 }

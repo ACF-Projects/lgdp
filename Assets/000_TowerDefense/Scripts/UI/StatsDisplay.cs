@@ -27,8 +27,8 @@ namespace RushHour.UserInterface
             SetStat(StatType.Cost, TowerStat<float>.ConvertToString(stats.cost));
             SetStat(StatType.HitSpeed, TowerStat<float>.ConvertToString(stats.hitSpeed));
             SetStat(StatType.TargetType, stats.targetType);
-            SetStat(StatType.StrongAgainst, stats.strongAgainst);
-            SetStat(StatType.WeakAgainst, stats.weakAgainst);
+            SetStat(StatType.StrongAgainst, TowerStat<EnemyType>.ConvertToString(stats.strongAgainst));
+            SetStat(StatType.WeakAgainst, TowerStat<EnemyType>.ConvertToString(stats.weakAgainst));
         }
 
         private void SetStat(StatType type, TowerStat<string> towerStat)

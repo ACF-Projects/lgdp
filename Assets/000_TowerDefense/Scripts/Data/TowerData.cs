@@ -2,7 +2,6 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 
 namespace RushHour.Data
 {
@@ -14,19 +13,23 @@ namespace RushHour.Data
         [field: SerializeField] public float Cost { get; protected set; }
         [field: SerializeField] public float SalaryPerHour { get; protected set; }
         [field: SerializeField] public float EffectRadius { get; protected set; }
+        [field: SerializeField] public EnemyType StrongAgainst { get; protected set; }
+        [field: SerializeField] public EnemyType WeakAgainst { get; protected set; }
 
         [field: Header("Other Tower Data")]
         [field: SerializeField] public string Name { get; protected set; }
         [field: SerializeField, ResizableTextArea] public string Description { get; protected set; }
+        
         /// <summary>
         /// Tower Icon for UI -- should be square
         /// </summary>
         [field:SerializeField, ShowAssetPreview] public Sprite UIIcon { get; protected set; }
         [field: SerializeField, ShowAssetPreview] public Sprite TowerSprite { get; protected set; }
         [field: SerializeField] public Vector2 SpriteScale { get; protected set; }
+
         [Header("Audio Data (Optional)")]
-        [field: SerializeField] public AudioClip PlacementSFX;  // Sound to play after placing
-        [field: SerializeField] public float PlacementSFXVolume = 1;
+        public AudioClip PlacementSFX;  // Sound to play after placing
+        public float PlacementSFXVolume = 1;
 
         public GameObject towerPrefab;
 

@@ -61,8 +61,8 @@ namespace RushHour.Tower
             stats.cost = new("Salary", TowerData.SalaryPerHour);
             stats.range = new("Range", TowerData.EffectRadius);
             stats.targetType = new("Target", "");
-            stats.strongAgainst = new("", "");
-            stats.weakAgainst = new("", "");
+            stats.strongAgainst = new("", TowerData.StrongAgainst);
+            stats.weakAgainst = new("", TowerData.WeakAgainst);
             return stats;
         }
 
