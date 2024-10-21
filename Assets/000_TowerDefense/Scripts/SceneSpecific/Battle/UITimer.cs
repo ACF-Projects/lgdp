@@ -18,6 +18,7 @@ namespace RushHour.UserInterface
 
         [Header("Settings")]
         [SerializeField] private bool lerpTimerText;
+        [SerializeField] private float lerpSpeed = 1f;
 
         private float currentElapsedTime;
         private float elapsedTime;
@@ -53,7 +54,7 @@ namespace RushHour.UserInterface
 
         private void Update()
         {
-            currentElapsedTime = Mathf.Lerp(currentElapsedTime, elapsedTime, Time.deltaTime * 1.05f);
+            currentElapsedTime = Mathf.Lerp(currentElapsedTime, elapsedTime, Time.deltaTime * lerpSpeed);
             _timerFillImage.fillAmount = currentElapsedTime / Constants.TIME_IN_DAY;
             _timerDayText.text = CalculateTimeString(currentElapsedTime);
         }
