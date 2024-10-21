@@ -16,6 +16,9 @@ namespace RushHour.UserInterface
         [SerializeField] private TextMeshProUGUI _timerDayText;
         [SerializeField] private Image _timerFillImage;
 
+        [Header("Settings")]
+        [SerializeField] private bool lerpTimerText;
+
         private float currentElapsedTime;
         private float elapsedTime;
 
@@ -50,7 +53,7 @@ namespace RushHour.UserInterface
 
         private void Update()
         {
-            currentElapsedTime = Mathf.Lerp(currentElapsedTime, elapsedTime, Time.deltaTime);
+            currentElapsedTime = Mathf.Lerp(currentElapsedTime, elapsedTime, Time.deltaTime * 1.05f);
             _timerFillImage.fillAmount = currentElapsedTime / Constants.TIME_IN_DAY;
             _timerDayText.text = CalculateTimeString(currentElapsedTime);
         }
@@ -58,14 +61,13 @@ namespace RushHour.UserInterface
         /// <summary>
         /// Returns the calculated time of day given the current elapsed time
         /// </summary>
-        public static string CalculateTimeString(float currTime)
+        public string CalculateTimeString(float currTime)
         {
             int startTimeMinutes = 9 * 60;  // 9:00am in minutes
 
             // Calculate how many of these "hours" have passed
             int elapsedHours = (int)currTime / Constants.TIME_IN_HOUR;
-            //int elapsedMinutes = ((int)currTime % Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
-            int elapsedMinutes = (int)(currTime - elapsedHours * Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
+            int elapsedMinutes = lerpTimerText ? (int)((currTime - elapsedHours * Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR)) : ((int)currTime % Constants.TIME_IN_HOUR) * (60 / Constants.TIME_IN_HOUR);
 
             // Calculate the current time
             int currentTimeMinutes = startTimeMinutes + (elapsedHours * 60) + elapsedMinutes;
