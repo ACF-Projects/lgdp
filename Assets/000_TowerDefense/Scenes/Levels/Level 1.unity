@@ -6950,7 +6950,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 2
@@ -8672,7 +8672,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -8794,7 +8794,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 53}
-  m_SizeDelta: {x: 800, y: 369.8523}
+  m_SizeDelta: {x: 850, y: 369.8523}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743439128
 MonoBehaviour:
@@ -8819,9 +8819,9 @@ MonoBehaviour:
   m_text: 'Welcome to <b>Rush Hour</b>.
 
 
-    You only have <color="red">5 hours</color>
-    to sell your idea to customers and meet the <color=#008800>quota</color> or you''ll
-    lose it all.
+    You only have <color="red">5 hours
+    (in the game)</color> to sell your idea to customers and meet the <color=#008800>quota</color>
+    or you''ll lose it all.
 
 
     Good luck!'
