@@ -123,13 +123,13 @@ namespace RushHour
                 _moveUnitIntroPopup.SetActive(true);
                 _blockedUnitMoveDropMask.SetActive(true);
                 Time.timeScale = 0;
-                FindObjectOfType<TowerEntity>().CanInteract = true;
                 FindObjectOfType<TowerMove>().IsGrabbable = true;  // Allow player to move unit now
                 MoveCameraTo(_moveUnitIntroCameraTransform.position);
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
             }
             if (secs == 31)
             {
+                FindObjectOfType<TowerEntity>().CanInteract = true;
                 TowerMove.OnTowerDropped -= TutorialManager_OnTowerMoved;
             }
         }
