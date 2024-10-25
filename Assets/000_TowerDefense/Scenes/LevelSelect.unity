@@ -1106,7 +1106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734071415383865339, guid: c97bf8e97083c4c4e934bca60b0524d6, type: 3}
       propertyPath: LevelPassword
-      value: 1234
+      value: 9090
       objectReference: {fileID: 0}
     - target: {fileID: 6734071415383865339, guid: c97bf8e97083c4c4e934bca60b0524d6, type: 3}
       propertyPath: LevelSceneName
@@ -2328,7 +2328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734071415383865339, guid: c97bf8e97083c4c4e934bca60b0524d6, type: 3}
       propertyPath: LevelPassword
-      value: 1234
+      value: 1738
       objectReference: {fileID: 0}
     - target: {fileID: 6734071415383865339, guid: c97bf8e97083c4c4e934bca60b0524d6, type: 3}
       propertyPath: LevelSceneName
