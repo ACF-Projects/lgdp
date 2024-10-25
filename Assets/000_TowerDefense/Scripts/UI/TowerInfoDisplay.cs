@@ -15,6 +15,8 @@ namespace RushHour.UserInterface
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI descriptionText;
 
+        [SerializeField] private TextMeshProUGUI sellAmountText;
+
         private TowerHandler towerHandler;
 
         private void Awake()
@@ -37,6 +39,10 @@ namespace RushHour.UserInterface
 
                 nameText.text = towerHandler.TowerData.Name;
                 descriptionText.text = towerHandler.TowerData.Description;
+
+                int cost = Mathf.FloorToInt(towerHandler.TowerData.Cost / 2);
+                sellAmountText.text = "Fire\r\n<size=18>+$" + cost.ToString() + "</size>";
+
                 statsDisplay.SetStats(towerHandler.GetStats());
             }
         }

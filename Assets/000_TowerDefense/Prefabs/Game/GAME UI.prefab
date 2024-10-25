@@ -3669,6 +3669,7 @@ MonoBehaviour:
   statsDisplay: {fileID: 1878452244839193645}
   nameText: {fileID: 4089068711994651834}
   descriptionText: {fileID: 1053227299775703851}
+  sellAmountText: {fileID: 8552256302775976905}
 --- !u!225 &4823145113350236630
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6513,7 +6514,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fire
+  m_text: 'Fire
+
+    <size=18>+$0</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5b19a1de8c0a934f9141e9be5e7be95, type: 2}
   m_sharedMaterial: {fileID: 2796200270803607271, guid: b5b19a1de8c0a934f9141e9be5e7be95, type: 2}
@@ -6540,8 +6543,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

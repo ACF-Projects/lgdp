@@ -133,10 +133,11 @@ namespace RushHour
         }
 
         /// <summary>
-        /// Whenever the player earns money (e.g., acquires a customer), tracks the
-        /// earned money for the quota and updates total money. Earned money only increases if the change amount is positive.
+        /// Adds to the player's balance.
+        /// 
+        /// Optional `shouldAffectQuota` parameter to see if money counts towards quota.
         /// </summary>
-        public void ChangeMoney(float changeAmount)
+        public void ChangeMoney(float changeAmount, bool shouldAffectQuota = true)
         {
             if (changeAmount > 0) _earnedMoney += changeAmount;
             Money += changeAmount;
