@@ -15,6 +15,7 @@ namespace RushHour
         [Header("Tutorial Assignments")]
         [SerializeField] private GameObject _uiHireButtonParent;
         [SerializeField] private GameObject _uiHireButtonArrow;
+        [SerializeField] private Button _uiHireButton;
         [SerializeField] private GameObject _uiDragUnitParent;
         [SerializeField] private GameObject _uiMoneyParent;
         [SerializeField] private GameObject _uiTimerParent;
@@ -96,7 +97,8 @@ namespace RushHour
                 _uiHireButtonArrow.SetActive(true);
                 _blockedUnitDropMask.SetActive(true);
                 _uiMoneyParent.SetActive(true);
-                _uiDragUnitParent.SetActive(true);
+                _uiHireButton.onClick.AddListener(TutorialManager_OnHireButtonClicked);
+                ContextManager.OnContextUpdated += TutorialManager_OnContextChange;
                 MoveCameraTo(_customerIntroCameraTransform.position);
                 // Unpause after tower is placed
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerBought;
@@ -105,6 +107,8 @@ namespace RushHour
             if (secs == 10)
             {
                 TowerMove.OnTowerDropped -= TutorialManager_OnTowerBought;
+                _uiHireButton.onClick.RemoveListener(TutorialManager_OnHireButtonClicked);
+                ContextManager.OnContextUpdated -= TutorialManager_OnContextChange;
             }
             // Then, unsubscribe after enemy converted
             if (secs == 11)
@@ -131,6 +135,17 @@ namespace RushHour
         private void ToggleTimeScale()
         {
             Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
+        }
+
+        private void TutorialManager_OnHireButtonClicked()
+        {
+            // Toggle whether animation is visible
+            _uiDragUnitParent.SetActive(true);
+        }
+        private void TutorialManager_OnContextChange(object obj, ContextType contextType)
+        {
+            // Toggle whether animation is visible
+            _uiDragUnitParent.SetActive(false);
         }
 
         private void TutorialManager_OnTowerBought(object sender, bool isValid)

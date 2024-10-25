@@ -5337,6 +5337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiHireButtonParent: {fileID: 1668746835}
   _uiHireButtonArrow: {fileID: 870481054}
+  _uiHireButton: {fileID: 1668746839}
   _uiDragUnitParent: {fileID: 1130287778}
   _uiMoneyParent: {fileID: 819839434}
   _uiTimerParent: {fileID: 893282702}
@@ -14735,6 +14736,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4141873423230003606, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
   m_PrefabInstance: {fileID: 6945600932890301842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1668746839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3559228641177127696, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+  m_PrefabInstance: {fileID: 6945600932890301842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668746835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1674759288
 GameObject:
   m_ObjectHideFlags: 0
