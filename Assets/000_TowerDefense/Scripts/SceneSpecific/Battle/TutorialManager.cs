@@ -1,5 +1,6 @@
 using DG.Tweening;
 using RushHour.CameraControls;
+using RushHour.Tower;
 using RushHour.Tower.Components;
 using System;
 using System.Collections;
@@ -122,6 +123,7 @@ namespace RushHour
                 _moveUnitIntroPopup.SetActive(true);
                 _blockedUnitMoveDropMask.SetActive(true);
                 Time.timeScale = 0;
+                FindObjectOfType<TowerEntity>().CanInteract = true;
                 FindObjectOfType<TowerMove>().IsGrabbable = true;  // Allow player to move unit now
                 MoveCameraTo(_moveUnitIntroCameraTransform.position);
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
@@ -158,6 +160,7 @@ namespace RushHour
                 _salaryPopup.SetActive(true);
                 _uiHireButtonArrow.SetActive(false);
                 _uiDragUnitParent.SetActive(false);
+                FindObjectOfType<TowerEntity>().CanInteract = false;
                 FindObjectOfType<TowerMove>().IsGrabbable = false;
             }
         }
