@@ -15,8 +15,8 @@ MonoBehaviour:
   <Cost>k__BackingField: 100
   <SalaryPerHour>k__BackingField: 10
   <EffectRadius>k__BackingField: 3
-  <StrongAgainst>k__BackingField: 1
-  <WeakAgainst>k__BackingField: 2
+  <StrongAgainst>k__BackingField: 0
+  <WeakAgainst>k__BackingField: 0
   <Name>k__BackingField: Intern
   <Description>k__BackingField: Not the best, but tries his hardest. Passes out fliers.
   <UIIcon>k__BackingField: {fileID: 21300000, guid: 8e149f6b0a796d94cb3a51b1367c563b, type: 3}

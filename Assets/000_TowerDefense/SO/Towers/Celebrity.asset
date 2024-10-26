@@ -15,6 +15,8 @@ MonoBehaviour:
   <Cost>k__BackingField: 200
   <SalaryPerHour>k__BackingField: 50
   <EffectRadius>k__BackingField: 4
+  <StrongAgainst>k__BackingField: 2
+  <WeakAgainst>k__BackingField: 0
   <Name>k__BackingField: Celebrity
   <Description>k__BackingField: Everyone wants an autograph! More influence over
     young people.
