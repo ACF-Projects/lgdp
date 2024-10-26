@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9671ae6c7230a479b5da8cbc3d4292, type: 3}
+  m_Name: Old Man
+  m_EditorClassIdentifier: 
+  <Health>k__BackingField: 18
+  <Damage>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 0.6
+  <Reward>k__BackingField: 60
+  <Type>k__BackingField: 1
+  enemyPrefab: {fileID: 2239673229879574395, guid: 5b4ca04af5093954cba0e96a89a7f28c, type: 3}
