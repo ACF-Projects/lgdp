@@ -60,9 +60,9 @@ namespace RushHour.Tower
             var stats = new TowerStats();
             stats.cost = new("Salary", TowerData.SalaryPerHour);
             stats.range = new("Range", TowerData.EffectRadius);
-            stats.targetType = new("Target", "");
-            stats.strongAgainst = new("", TowerData.StrongAgainst);
-            stats.weakAgainst = new("", TowerData.WeakAgainst);
+            //stats.targetType = new("Target", "");
+            //stats.strongAgainst = new("", TowerData.StrongAgainst);
+            //stats.weakAgainst = new("", TowerData.WeakAgainst);
             return stats;
         }
 
