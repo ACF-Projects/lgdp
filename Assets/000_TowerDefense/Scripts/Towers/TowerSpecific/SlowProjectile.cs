@@ -41,7 +41,6 @@ namespace RushHour.Tower
             {
                 enemy.AddSlow((slowMultiplier, slowDuration));
                 enemy.TakeDamage(damage);
-                print("added slow");
             }
         }
     }
