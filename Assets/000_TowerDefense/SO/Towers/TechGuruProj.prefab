@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8509314101010672803}
   - component: {fileID: 400879438846793006}
-  - component: {fileID: 693636181282679885}
+  - component: {fileID: 333947195182735768}
   m_Layer: 0
   m_Name: TechGuruProj
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &693636181282679885
+--- !u!114 &333947195182735768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816512817058331630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8903fa6521171a14a96106a434cd4705, type: 3}
+  m_Script: {fileID: 11500000, guid: aa7dd9fc72a772a42bccf8ea9bd9182d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

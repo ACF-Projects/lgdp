@@ -5,7 +5,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 
 namespace RushHour
 {
@@ -28,6 +27,44 @@ namespace RushHour
 
         public bool IsDead { get; private set; }
 
+        private float speedMultiplier;
+
+        private List<SpeedModifier> speedModifiers = new();
+
+        private class SpeedModifier
+        {
+            public float multiplier;
+            public float duration;
+        }
+
+        private class SpeedModifierCompare : IComparer<SpeedModifier>
+        {
+            public int Compare(SpeedModifier x, SpeedModifier y)
+            {
+                if(x.multiplier > y.multiplier)
+                {
+                    return -1;
+                }
+                else if(x.multiplier < y.multiplier)
+                {
+                    return 1;
+                }
+                else
+                {
+                    if(x.duration < y.duration)
+                    {
+                        return -1;
+                    }
+                    else if(x.duration > y.duration)
+                    {
+                        return 1;
+                    }
+
+                    return 0;
+                }
+            }
+        }
+
         public void Init(WaypointPOC waypoint, EnemyData enemyData)
         {
             this.waypoint = waypoint;
@@ -43,14 +80,28 @@ namespace RushHour
             {
                 CheckWaypoint();
                 Rotate();
+                UpdateSlows();
             }
+        }
+
+        private void UpdateSlows()
+        {
+            speedMultiplier = 0;
+            float dt = Time.deltaTime;
+            for (int i = speedModifiers.Count - 1; i >= 0; --i)
+            {
+                speedModifiers[i].duration -= dt;
+                if (speedModifiers[i].duration < 0) speedModifiers.RemoveAt(i);
+            }
+            if (speedModifiers.Count == 0) return;
+            speedMultiplier = speedModifiers[0].multiplier;
         }
 
         private void CheckWaypoint()
         {
             if (Vector2.Distance(transform.position, waypoint.waypoints[currentWaypoint].position) > 0.05f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, waypoint.waypoints[currentWaypoint].position, _enemyData.MoveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, waypoint.waypoints[currentWaypoint].position, _enemyData.MoveSpeed * (1f - speedMultiplier) * Time.deltaTime);
                 return;
             }
             if (currentWaypoint < waypoint.waypoints.Count - 1)
@@ -110,6 +161,12 @@ namespace RushHour
         public void ReachedStore()
         {
             OnStoreReached?.Invoke(this);
+        }
+
+        public void AddSlow((float, float) slowEffect)
+        {
+            speedModifiers.Add(new SpeedModifier() { multiplier = slowEffect.Item1, duration = slowEffect.Item2});
+            speedModifiers.Sort(new SpeedModifierCompare());
         }
 
     }

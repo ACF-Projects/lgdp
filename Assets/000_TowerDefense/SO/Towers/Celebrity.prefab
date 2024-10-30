@@ -53,6 +53,7 @@ MonoBehaviour:
   blockedLayers:
     serializedVersion: 2
     m_Bits: 328
+  IsGrabbable: 1
 --- !u!114 &7652597786586047568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  CanInteract: 1
 --- !u!1 &4297605041261512871
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +419,7 @@ MonoBehaviour:
   cooldown: 0.5
   damage: 1
   projectileSpeed: 4
-  projectile: {fileID: 5848030480314584596, guid: 84943040fee81b6479b06622c5b69c13, type: 3}
+  projectile: {fileID: 6758163073016366582, guid: 84943040fee81b6479b06622c5b69c13, type: 3}
   projectileShootSFX: {fileID: 8300000, guid: 24b66f816a3a32e46a1a1044cbf3248e, type: 3}
   projectileSFXVolume: 0.6
 --- !u!58 &2113770262839937025
