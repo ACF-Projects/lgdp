@@ -233,12 +233,12 @@ MonoBehaviour:
   - {fileID: 1431510909732462000}
   visual: {fileID: 9193514491456168541}
   IsActivated: 0
-  cooldown: 0.8
+  cooldown: 1.3
   damage: 0.3
   projectileSpeed: 4
   projectile: {fileID: -3946414190974920021, guid: 68d37022bf42dfc4d8dd6f7af982d193, type: 3}
-  projectileShootSFX: {fileID: 8300000, guid: 24b66f816a3a32e46a1a1044cbf3248e, type: 3}
-  projectileSFXVolume: 0.6
+  projectileShootSFX: {fileID: 8300000, guid: 0119227dd03763140a93a663649e1794, type: 3}
+  projectileSFXVolume: 0.45
 --- !u!58 &9126122687512158014
 CircleCollider2D:
   m_ObjectHideFlags: 0
