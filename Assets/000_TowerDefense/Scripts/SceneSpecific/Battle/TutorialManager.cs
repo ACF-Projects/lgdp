@@ -34,6 +34,7 @@ namespace RushHour
         [SerializeField] private GameObject _moveUnitIntroPopup;
         [SerializeField] private Transform _moveUnitIntroCameraTransform;
         [SerializeField] private GameObject _blockedUnitMoveDropMask;  // To force the player to put a unit in one spot
+        [SerializeField] private Button _fireButton;  // To fire a unit
 
         private Vector3 _storedCamPosition;  // Stored camera position, check to see how much camera moved
 
@@ -54,6 +55,7 @@ namespace RushHour
             _uiHireButtonArrow.SetActive(false);
             _moveUnitIntroPopup.SetActive(false);
             _uiDragUnitParent.SetActive(false);
+            _fireButton.interactable = false;
             EnemySpawner.CanSpawnEnemies = false;
         }
 
@@ -127,10 +129,10 @@ namespace RushHour
                 MoveCameraTo(_moveUnitIntroCameraTransform.position);
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
             }
-            if (secs == 31)
+            if (secs == 27)
             {
-                FindObjectOfType<TowerEntity>().CanInteract = true;
                 TowerMove.OnTowerDropped -= TutorialManager_OnTowerMoved;
+                _fireButton.interactable = true;
             }
         }
 
@@ -160,7 +162,6 @@ namespace RushHour
                 _salaryPopup.SetActive(true);
                 _uiHireButtonArrow.SetActive(false);
                 _uiDragUnitParent.SetActive(false);
-                FindObjectOfType<TowerEntity>().CanInteract = false;
                 FindObjectOfType<TowerMove>().IsGrabbable = false;
             }
         }

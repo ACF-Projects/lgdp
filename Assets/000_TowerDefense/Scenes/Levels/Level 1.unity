@@ -5355,6 +5355,7 @@ MonoBehaviour:
   _moveUnitIntroPopup: {fileID: 402675073}
   _moveUnitIntroCameraTransform: {fileID: 1750230816}
   _blockedUnitMoveDropMask: {fileID: 662717243}
+  _fireButton: {fileID: 1632976241}
 --- !u!1 &34898193
 GameObject:
   m_ObjectHideFlags: 0
@@ -14886,6 +14887,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1632976241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3046039404345258445, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+  m_PrefabInstance: {fileID: 6945600932890301842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1661987776
 GameObject:
   m_ObjectHideFlags: 0
@@ -18811,6 +18823,22 @@ PrefabInstance:
     - target: {fileID: 2697608562579224207, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046039404345258445, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046039404345258445, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046039404345258445, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046039404345258445, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3325422476367084714, guid: b92f70b46fbb5d54ebac0d25ef4306c5, type: 3}
       propertyPath: m_AnchorMax.y
