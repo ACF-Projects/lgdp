@@ -81,6 +81,7 @@ namespace RushHour
         public float TotalSalaryPaid = 0;
 
         [Header("Battle Properties")]
+        [SerializeField] private int _startingMoney = 100;  // How much the player starts with
         [SerializeField] private int _requiredQuota = 100;  // How much is needed to win level
         public int RequiredQuota => _requiredQuota;
 
@@ -104,6 +105,11 @@ namespace RushHour
                     _instance = this;
                 }
             }
+        }
+
+        private void Start()
+        {
+            Money = _startingMoney;  // Set starting money
         }
 
         private void OnEnable()

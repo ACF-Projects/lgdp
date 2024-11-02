@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a88571c6310aed4d8706e3c22b63f5e, type: 3}
-  m_Name: Celebrity
+  m_Name: Singer
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 200
   <SalaryPerHour>k__BackingField: 50
   <EffectRadius>k__BackingField: 4
   <StrongAgainst>k__BackingField: 2
   <WeakAgainst>k__BackingField: 0
-  <Name>k__BackingField: Celebrity
+  <Name>k__BackingField: Singer
   <Description>k__BackingField: Everyone wants an autograph! More influence over
     young people.
   <UIIcon>k__BackingField: {fileID: 21300000, guid: f884974ba58c5e0458606a48ccc55ef3, type: 3}
