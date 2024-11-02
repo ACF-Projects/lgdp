@@ -23,7 +23,7 @@ namespace RushHour.Tower
         {
             var stats = base.GetStats();
             stats.mainValue = new("Power", damage);
-            stats.hitSpeed = new("Speed", 1f / cooldown);
+            stats.hitSpeed = new("Speed", (Mathf.Round(1f / cooldown) * 100f) / 100f);
             return stats;
         }
 

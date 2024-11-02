@@ -28,6 +28,7 @@ namespace RushHour
         [SerializeField] private GameObject _blockedUnitDropMask;  // To force the player to put a unit in one spot
         [SerializeField] private GameObject _salaryPopup;
         [SerializeField] private GameObject _quotaIntroPopup;
+        [SerializeField] private GameObject _endTutorialPopup;
         [SerializeField] private CameraPanning _cameraController;  // To pan the camera
         [SerializeField] private Transform _customerIntroCameraTransform;  // Camera will go here during customer intro
         [SerializeField] private Transform _moneyIntroCameraTransform;  // Camera will go here during money earned intro
@@ -55,6 +56,7 @@ namespace RushHour
             _uiHireButtonArrow.SetActive(false);
             _moveUnitIntroPopup.SetActive(false);
             _uiDragUnitParent.SetActive(false);
+            _endTutorialPopup.SetActive(false);
             _fireButton.interactable = false;
             EnemySpawner.CanSpawnEnemies = false;
         }
@@ -118,7 +120,7 @@ namespace RushHour
             {
                 BattleManager.Instance.OnMoneyChanged += TutorialManager_OnGainedMoney;
             }
-            if (secs == 26)
+            if (secs == 27)
             {
                 BattleManager.Instance.OnMoneyChanged -= TutorialManager_OnGainedMoney;
                 _quotaIntroPopup.SetActive(false);
@@ -129,10 +131,19 @@ namespace RushHour
                 MoveCameraTo(_moveUnitIntroCameraTransform.position);
                 TowerMove.OnTowerDropped += TutorialManager_OnTowerMoved;
             }
-            if (secs == 27)
+            if (secs == 28)
             {
                 TowerMove.OnTowerDropped -= TutorialManager_OnTowerMoved;
                 _fireButton.interactable = true;
+            }
+            if (secs == 34)
+            {
+                MoveCameraTo(_endTutorialPopup.transform.position);
+                _endTutorialPopup.SetActive(true);
+            }
+            if (secs == 44)
+            {
+                _endTutorialPopup.SetActive(false);
             }
         }
 
