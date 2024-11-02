@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a88571c6310aed4d8706e3c22b63f5e, type: 3}
   m_Name: Loudspeaker
   m_EditorClassIdentifier: 
-  <Cost>k__BackingField: 1
+  <Cost>k__BackingField: 300
   <SalaryPerHour>k__BackingField: 40
   <EffectRadius>k__BackingField: 3
   <StrongAgainst>k__BackingField: 0

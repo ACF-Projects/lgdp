@@ -420,7 +420,7 @@ MonoBehaviour:
   damage: 1
   projectileSpeed: 4
   projectile: {fileID: 3825600223906818683, guid: ccdb6fd0ecca76f45ab25d8350782151, type: 3}
-  projectileShootSFX: {fileID: 8300000, guid: 24b66f816a3a32e46a1a1044cbf3248e, type: 3}
+  projectileShootSFX: {fileID: 8300000, guid: eaff0bd8bd351024c9339f5ccd1ddd8b, type: 3}
   projectileSFXVolume: 0.6
 --- !u!58 &2113770262839937025
 CircleCollider2D:

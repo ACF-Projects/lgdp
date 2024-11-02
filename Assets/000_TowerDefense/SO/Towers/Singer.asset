@@ -15,7 +15,7 @@ MonoBehaviour:
   <Cost>k__BackingField: 400
   <SalaryPerHour>k__BackingField: 50
   <EffectRadius>k__BackingField: 4
-  <StrongAgainst>k__BackingField: 2
+  <StrongAgainst>k__BackingField: 0
   <WeakAgainst>k__BackingField: 0
   <Name>k__BackingField: Singer
   <Description>k__BackingField: Everyone wants an autograph! Affects everyone around
@@ -23,6 +23,6 @@ MonoBehaviour:
   <UIIcon>k__BackingField: {fileID: 21300000, guid: f884974ba58c5e0458606a48ccc55ef3, type: 3}
   <TowerSprite>k__BackingField: {fileID: 21300000, guid: f884974ba58c5e0458606a48ccc55ef3, type: 3}
   <SpriteScale>k__BackingField: {x: 0.3, y: 0.3}
-  PlacementSFX: {fileID: 0}
-  PlacementSFXVolume: 1
+  PlacementSFX: {fileID: 8300000, guid: 4a4bb43bf5d3fdb439d70a2197a33f25, type: 3}
+  PlacementSFXVolume: 0.4
   towerPrefab: {fileID: 8018462193866847556, guid: 7c170003efcb0504aa6e1a73f90b730b, type: 3}
