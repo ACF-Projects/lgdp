@@ -89,6 +89,8 @@ namespace RushHour.Tower
             {
                 var proj = Instantiate(projectile, transform.position, Quaternion.identity);
                 proj.Init(currentEnemy, projectileSpeed, damage, TowerData);
+                proj.transform.rotation = transform.GetChild(0).Find("Sprite").rotation;  // Make projectile rotation equal to this tower's rotation
+                proj.transform.Rotate(0, 0, -90);  // To correct the Z-rotation for the sprite
                 currentTimer = cooldown;
                 // Play sound effect
                 if (projectileShootSFX != null)
