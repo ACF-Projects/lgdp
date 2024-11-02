@@ -125,14 +125,18 @@ namespace RushHour
         public void TakeDamage(float damage, EnemyType weaknesses = 0, EnemyType resistances = 0)
         {
             if (IsDead) return;
-
-            if (weaknesses.HasFlag(EnemyData.Type))
+            
+            // Only compare flags if it's not None
+            if (EnemyData.Type != EnemyType.None)
             {
-                damage *= Constants.WEAKNESS_DAMAGE_MULTIPLIER;
-            }
-            else if(resistances.HasFlag(EnemyData.Type))
-            {
-                damage *= Constants.RESISTANCE_DAMAGE_MULTIPLIER;
+                if (weaknesses.HasFlag(EnemyData.Type))
+                {
+                    damage *= Constants.WEAKNESS_DAMAGE_MULTIPLIER;
+                }
+                else if (resistances.HasFlag(EnemyData.Type))
+                {
+                    damage *= Constants.RESISTANCE_DAMAGE_MULTIPLIER;
+                }
             }
 
             _currentHealth -= damage;
