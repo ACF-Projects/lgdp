@@ -1724,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 1907249979}
     - target: {fileID: 2295882667406485090, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: _requiredQuota
-      value: 800
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 2295882667406485090, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: _startingMoney

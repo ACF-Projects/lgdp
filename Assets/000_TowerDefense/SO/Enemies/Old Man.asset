@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9671ae6c7230a479b5da8cbc3d4292, type: 3}
   m_Name: Old Man
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 18
+  <Health>k__BackingField: 22
   <Damage>k__BackingField: 1
   <MoveSpeed>k__BackingField: 0.6
-  <Reward>k__BackingField: 60
+  <Reward>k__BackingField: 80
   <Type>k__BackingField: 1
   enemyPrefab: {fileID: 2239673229879574395, guid: 5b4ca04af5093954cba0e96a89a7f28c, type: 3}

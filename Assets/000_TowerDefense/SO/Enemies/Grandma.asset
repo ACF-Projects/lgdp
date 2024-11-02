@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9671ae6c7230a479b5da8cbc3d4292, type: 3}
   m_Name: Grandma
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 20
+  <Health>k__BackingField: 25
   <Damage>k__BackingField: 1
   <MoveSpeed>k__BackingField: 0.4
-  <Reward>k__BackingField: 60
+  <Reward>k__BackingField: 80
   <Type>k__BackingField: 1
   enemyPrefab: {fileID: 8700903697523382289, guid: b9378450a031a184abacae8db1f795ba, type: 3}

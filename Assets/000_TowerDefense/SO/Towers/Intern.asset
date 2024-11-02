@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intern
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 100
-  <SalaryPerHour>k__BackingField: 10
+  <SalaryPerHour>k__BackingField: 20
   <EffectRadius>k__BackingField: 3
   <StrongAgainst>k__BackingField: 0
   <WeakAgainst>k__BackingField: 0
