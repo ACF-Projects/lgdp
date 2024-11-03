@@ -1,17 +1,18 @@
-using RushHour.Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RushHour.Data;
 
 namespace RushHour.Tower
 {
-    public class FollowTower : TowerHandler
+    public class SpreadTower : TowerHandler
     {
         [Header("Projectile Properties")]
         [SerializeField] private float cooldown;
         [SerializeField] private float damage;
         [SerializeField] private float projectileSpeed;
-        [SerializeField] private BasicProjectile projectile;
+        [SerializeField] private int numProjectiles;
+        [SerializeField] private float initialOffset;
+        [SerializeField] private Projectile projectile;
         [SerializeField] private AudioClip projectileShootSFX;
         [SerializeField] private float projectileSFXVolume;
 
@@ -23,7 +24,7 @@ namespace RushHour.Tower
         {
             var stats = base.GetStats();
             stats.mainValue = new("Power", damage);
-            stats.hitSpeed = new("Speed", 1f / cooldown);
+            stats.hitSpeed = new("Speed", (Mathf.Round(1f / cooldown) * 100f) / 100f);
             return stats;
         }
 
@@ -42,7 +43,7 @@ namespace RushHour.Tower
             if (IsActivated)
             {
                 TargetEnemy();
-                FaceEnemy();
+                //FaceEnemy();
                 TryAttack();
             }
         }
@@ -87,8 +88,13 @@ namespace RushHour.Tower
             if (currentTimer > 0f) currentTimer -= Time.deltaTime;
             else
             {
-                var proj = Instantiate(projectile, transform.position, Quaternion.identity);
-                proj.Init(currentEnemy, projectileSpeed, damage, TowerData);
+                for (int i = 0; i < numProjectiles; i++)
+                {
+                    float angle = initialOffset + (360 / numProjectiles) * i;
+                    var proj = Instantiate(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+                    proj.Init(currentEnemy, projectileSpeed, damage, TowerData);
+                }
+                
                 currentTimer = cooldown;
                 // Play sound effect
                 if (projectileShootSFX != null)

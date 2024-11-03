@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa9229f6662ed14c9625d8dc9f0b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
   towerCollider: {fileID: 9076583540150694458}
   blockedLayers:
     serializedVersion: 2
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9097d3903e34d5488f778a9160b1ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
 --- !u!114 &2485069966160991282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f422cc88a8bcc842be8d3803763bb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
 --- !u!114 &4822401550543081111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ca75f2d27310c4587fa20f6d35b878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
 --- !u!1 &4272330007343554794
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf373f02341eb5a4f98fae8564ca4019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
   CanInteract: 1
 --- !u!1 &4297605041261512871
 GameObject:
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0ca1367a8331c4fb4d0832d3a300a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TowerHandler>k__BackingField: {fileID: 5066438297004789980}
+  <TowerHandler>k__BackingField: {fileID: -5413309646039950048}
   effectPreview: {fileID: 2431412441225408367}
   effectTrigger: {fileID: 2113770262839937025}
 --- !u!1 &8018462193866847556
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2835361303147212445}
-  - component: {fileID: 5066438297004789980}
+  - component: {fileID: -5413309646039950048}
   - component: {fileID: 2113770262839937025}
   m_Layer: 0
   m_Name: Singer
@@ -395,7 +395,7 @@ Transform:
   - {fileID: 3075063129798386130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5066438297004789980
+--- !u!114 &-5413309646039950048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8018462193866847556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84292747a1e651f44b11af13888c8dc6, type: 3}
+  m_Script: {fileID: 11500000, guid: df3371a3fe9f11748832d310a14c1ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _towerComponents:
@@ -419,7 +419,9 @@ MonoBehaviour:
   cooldown: 0.5
   damage: 1
   projectileSpeed: 4
-  projectile: {fileID: 3825600223906818683, guid: ccdb6fd0ecca76f45ab25d8350782151, type: 3}
+  numProjectiles: 8
+  initialOffset: 0
+  projectile: {fileID: -3298307525570824604, guid: ccdb6fd0ecca76f45ab25d8350782151, type: 3}
   projectileShootSFX: {fileID: 8300000, guid: eaff0bd8bd351024c9339f5ccd1ddd8b, type: 3}
   projectileSFXVolume: 0.6
 --- !u!58 &2113770262839937025
