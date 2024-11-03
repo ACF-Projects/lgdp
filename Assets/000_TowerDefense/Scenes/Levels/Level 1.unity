@@ -16130,6 +16130,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: AllTowerData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: AllTowerData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 850496d577e47574f81e2fa35dfbdabc, type: 2}
+    - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: AllTowerData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 97f12fd0bfbc8744982890877f6dc0ee, type: 2}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: _waypoint
       value: 

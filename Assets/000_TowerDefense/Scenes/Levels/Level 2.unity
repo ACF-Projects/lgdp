@@ -3740,11 +3740,11 @@ PrefabInstance:
     - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: AllTowerData.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 850496d577e47574f81e2fa35dfbdabc, type: 2}
+      objectReference: {fileID: 11400000, guid: f1a1bb2a0df251b42bf8e0f143f1d648, type: 2}
     - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: AllTowerData.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: f1a1bb2a0df251b42bf8e0f143f1d648, type: 2}
+      objectReference: {fileID: 11400000, guid: 850496d577e47574f81e2fa35dfbdabc, type: 2}
     - target: {fileID: 40424358028115063, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: AllTowerData.Array.data[3]
       value: 
