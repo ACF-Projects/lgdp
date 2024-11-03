@@ -18,8 +18,8 @@ MonoBehaviour:
   <StrongAgainst>k__BackingField: 2
   <WeakAgainst>k__BackingField: 1
   <Name>k__BackingField: Tech Guru
-  <Description>k__BackingField: Tech-savvy nerd who sends out Google Forms. More
-    influence over technology users.
+  <Description>k__BackingField: Loves tech, sends out Google Forms. More influence
+    over phone users.
   <UIIcon>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
   <TowerSprite>k__BackingField: {fileID: 21300000, guid: 7c637b7fb60a3a244919728ca6d31e28, type: 3}
   <SpriteScale>k__BackingField: {x: 0.3, y: 0.3}

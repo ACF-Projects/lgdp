@@ -16136,7 +16136,7 @@ PrefabInstance:
       objectReference: {fileID: 1907249979}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[0].EnemyData
@@ -16171,6 +16171,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: eabcdd87a7fa1644ea3d632b30eb54a4, type: 2}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[8].EnemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fd14471d4561344d9d4106a3a62aea6, type: 2}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[0].EnemyCount
       value: 1
       objectReference: {fileID: 0}
@@ -16203,6 +16207,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[8].EnemyCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[1].TimeBeforeSpawn
       value: 17
       objectReference: {fileID: 0}
@@ -16231,6 +16239,10 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[8].TimeBeforeSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[1].TimeBetweenSpawns
       value: 0
       objectReference: {fileID: 0}
@@ -16257,6 +16269,10 @@ PrefabInstance:
     - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: Waves.Array.data[7].TimeBetweenSpawns
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479802646190648328, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
+      propertyPath: Waves.Array.data[8].TimeBetweenSpawns
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2295882667406485090, guid: 28235e6d8487e0b4bac613d3082fcf7c, type: 3}
       propertyPath: _requiredQuota

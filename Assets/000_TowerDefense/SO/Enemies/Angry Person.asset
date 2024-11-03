@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9671ae6c7230a479b5da8cbc3d4292, type: 3}
   m_Name: Angry Person
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 6
+  <Health>k__BackingField: 14
   <Damage>k__BackingField: 1
-  <MoveSpeed>k__BackingField: 1.4
+  <MoveSpeed>k__BackingField: 1.5
   <Reward>k__BackingField: 70
   <Type>k__BackingField: 0
   enemyPrefab: {fileID: 9086555870461423091, guid: c385204bda0461c49bd4804df66cc2cf, type: 3}
