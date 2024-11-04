@@ -13,6 +13,7 @@ namespace RushHour.UserInterface
 
         [Header("Object Assignments")]
         [SerializeField] private Image _slotImage;
+        [SerializeField] private Image _slotBGImage;
         [SerializeField] private TextMeshProUGUI _costText;
         [Header("Audio Assignments")]
         [SerializeField] private AudioClip _placedUnitSFX;
@@ -24,7 +25,7 @@ namespace RushHour.UserInterface
 
         public void Initialize(TowerData data)
         {
-            _costText.text = "<size=21>Cost: <color=#159614>$" + data.Cost.ToString() + "</color></size>\n(<color=\"red\">-$" + data.SalaryPerHour.ToString() + "/hr</color>)";
+            _costText.text = "<size=24>$" + data.Cost.ToString() + "</size>\n(<color=\"red\">-$" + data.SalaryPerHour.ToString() + "/hr</color>)";
             _slotImage.sprite = data.UIIcon;
             _cachedData = data;
             DisableDragIfTooPoor();
@@ -50,6 +51,8 @@ namespace RushHour.UserInterface
         public void DisableDragIfTooPoor()
         {
             _isDraggable = BattleManager.Instance.Money >= _cachedData.Cost;
+            _slotBGImage.color = BattleManager.Instance.Money >= _cachedData.Cost ? Color.white : new Color(0.6f, 0.6f, 0.6f);
+            _slotImage.color = BattleManager.Instance.Money >= _cachedData.Cost ? Color.white : new Color(0.6f, 0.6f, 0.6f);
             _costText.color = BattleManager.Instance.Money >= _cachedData.Cost ? Color.black : Color.red;
         }
 

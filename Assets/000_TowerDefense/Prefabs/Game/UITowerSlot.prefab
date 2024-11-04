@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=21>Cost: <color=#159614>$1000</color></size>
+  m_text: '<size=21>$1000</size>
 
     (<color="red">-$100/hr</color>)'
   m_isRightToLeft: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slotImage: {fileID: 5797617323023747195}
+  _slotBGImage: {fileID: 9141316096724019302}
   _costText: {fileID: 9137002320570833134}
   _placedUnitSFX: {fileID: 8300000, guid: b7fa9116a2c4e814cae56e29ebf99773, type: 3}
 --- !u!225 &3802250647260201470
