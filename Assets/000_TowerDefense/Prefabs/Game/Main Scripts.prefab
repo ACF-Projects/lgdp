@@ -49,6 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8b71ec176a1504caadc280917832b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConvertedCustomers: 0
+  TotalSalaryPaid: 0
+  _startingMoney: 100
+  _requiredQuota: 100
 --- !u!114 &40424358028115063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +67,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllTowerData:
   - {fileID: 11400000, guid: ec969ea1d3b4d024aaa229930a0b08f2, type: 2}
+  - {fileID: 11400000, guid: 75b3319bd004f7a41a61d4992f708c03, type: 2}
   - {fileID: 11400000, guid: f1a1bb2a0df251b42bf8e0f143f1d648, type: 2}
+  - {fileID: 11400000, guid: 850496d577e47574f81e2fa35dfbdabc, type: 2}
   - {fileID: 11400000, guid: 97f12fd0bfbc8744982890877f6dc0ee, type: 2}
+  - {fileID: 11400000, guid: 0ec7b1c9ffaa95042b60b2ff527711cc, type: 2}
 --- !u!114 &1479802646190648328
 MonoBehaviour:
   m_ObjectHideFlags: 0
