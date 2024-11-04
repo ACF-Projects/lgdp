@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Moneybags
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 600
-  <SalaryPerHour>k__BackingField: 100
-  <EffectRadius>k__BackingField: 6
+  <SalaryPerHour>k__BackingField: 400
+  <EffectRadius>k__BackingField: 4
   <StrongAgainst>k__BackingField: 0
   <WeakAgainst>k__BackingField: 1
   <Name>k__BackingField: Moneybags

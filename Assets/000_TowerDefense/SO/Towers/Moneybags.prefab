@@ -140,8 +140,8 @@ MonoBehaviour:
   - {fileID: 1742448812860938454}
   visual: {fileID: 3586178021901501718}
   IsActivated: 0
-  cooldown: 1
-  damage: 4
+  cooldown: 1.4
+  damage: 20
   projectileSpeed: 6
   projectile: {fileID: 4907885151454261648, guid: bd0ef6833b4853e4c8c2d284c22b8e81, type: 3}
   projectileShootSFX: {fileID: 8300000, guid: 24b66f816a3a32e46a1a1044cbf3248e, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TechGuru
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 200
-  <SalaryPerHour>k__BackingField: 40
+  <SalaryPerHour>k__BackingField: 30
   <EffectRadius>k__BackingField: 3.5
   <StrongAgainst>k__BackingField: 2
   <WeakAgainst>k__BackingField: 1
